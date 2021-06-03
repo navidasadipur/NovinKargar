@@ -1,12 +1,12 @@
 using System.Web.Mvc;
-using drugStore7.Infrastructure.Repositories;
-using drugStore7.Web.Areas.Customer.Controllers;
-using drugStore7.Web.Controllers;
+using NovinTehran.Infrastructure.Repositories;
+using NovinTehran.Web.Areas.Customer.Controllers;
+using NovinTehran.Web.Controllers;
 using Unity;
 using Unity.Injection;
 using Unity.Mvc5;
 
-namespace drugStore7.Web
+namespace NovinTehran.Web
 {
     public static class UnityConfig
     {

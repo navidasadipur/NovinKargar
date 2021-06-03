@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using drugStore7.Infrastructure;
+using NovinTehran.Infrastructure;
 using Kendo.Mvc.UI;
-using drugStore7.Web.ViewModels;
-using drugStore7.Core.Models;
+using NovinTehran.Web.ViewModels;
+using NovinTehran.Core.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace drugStore7.Web.Areas.Admin.Controllers
+namespace NovinTehran.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class RolesController : Controller

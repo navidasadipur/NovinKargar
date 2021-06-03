@@ -1,11 +1,11 @@
-﻿using drugStore7.Infratructure.Repositories;
+﻿using NovinTehran.Infratructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace drugStore7.Web.Areas.Admin.Controllers
+namespace NovinTehran.Web.Areas.Admin.Controllers
 {
     public class EmailSubscriptionController : Controller
     {

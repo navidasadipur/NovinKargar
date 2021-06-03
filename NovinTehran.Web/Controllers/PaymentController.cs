@@ -1,9 +1,9 @@
-﻿using drugStore7.Core.Models;
-using drugStore7.Core.Utility;
-using drugStore7.Infrastructure.Repositories;
-using drugStore7.Infratructure.Services;
-using drugStore7.Web.Providers;
-using drugStore7.Web.ViewModels;
+﻿using NovinTehran.Core.Models;
+using NovinTehran.Core.Utility;
+using NovinTehran.Infrastructure.Repositories;
+using NovinTehran.Infratructure.Services;
+using NovinTehran.Web.Providers;
+using NovinTehran.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace drugStore7.Web.Controllers
+namespace NovinTehran.Web.Controllers
 {
     public class PaymentController : Controller
     {

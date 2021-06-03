@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using drugStore7.Web.ViewModels;
+using NovinTehran.Web.ViewModels;
 
-namespace drugStore7.Web.Controllers
+namespace NovinTehran.Web.Controllers
 {
     [Authorize]
     public class ManageController : Controller

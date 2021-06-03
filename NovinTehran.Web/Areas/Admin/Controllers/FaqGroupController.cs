@@ -4,10 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using drugStore7.Core.Models;
-using drugStore7.Infrastructure.Repositories;
+using NovinTehran.Core.Models;
+using NovinTehran.Infrastructure.Repositories;
 
-namespace drugStore7.Web.Areas.Admin.Controllers
+namespace NovinTehran.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class FaqGroupController : Controller

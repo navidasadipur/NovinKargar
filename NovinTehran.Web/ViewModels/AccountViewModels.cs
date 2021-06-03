@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace drugStore7.Web.ViewModels
+namespace NovinTehran.Web.ViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {

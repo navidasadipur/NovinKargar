@@ -7,13 +7,13 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using drugStore7.Core.Models;
-using drugStore7.Core.Utility;
-using drugStore7.Infrastructure.Repositories;
-using drugStore7.Web.Controllers;
-using drugStore7.Web.ViewModels;
+using NovinTehran.Core.Models;
+using NovinTehran.Core.Utility;
+using NovinTehran.Infrastructure.Repositories;
+using NovinTehran.Web.Controllers;
+using NovinTehran.Web.ViewModels;
 
-namespace drugStore7.Web.Areas.Customer.Controllers
+namespace NovinTehran.Web.Areas.Customer.Controllers
 {
     [Authorize]
     public class AuthController : Controller

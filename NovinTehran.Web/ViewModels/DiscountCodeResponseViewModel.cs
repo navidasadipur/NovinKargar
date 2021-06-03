@@ -1,11 +1,11 @@
-﻿using drugStore7.Core.Models;
-using drugStore7.Infrastructure.Repositories;
+﻿using NovinTehran.Core.Models;
+using NovinTehran.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace drugStore7.Web.ViewModels
+namespace NovinTehran.Web.ViewModels
 {
     public class DiscountCodeResponseViewModel
     {

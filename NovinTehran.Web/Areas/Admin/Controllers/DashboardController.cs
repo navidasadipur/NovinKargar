@@ -1,5 +1,5 @@
-﻿using drugStore7.Infrastructure;
-using drugStore7.Infrastructure.Helpers;
+﻿using NovinTehran.Infrastructure;
+using NovinTehran.Infrastructure.Helpers;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -7,9 +7,9 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using drugStore7.Web.ViewModels;
+using NovinTehran.Web.ViewModels;
 
-namespace drugStore7.Web.Areas.Admin.Controllers
+namespace NovinTehran.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class DashboardController : Controller

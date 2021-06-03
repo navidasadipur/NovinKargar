@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace drugStore7.Web.Areas.Admin
+namespace NovinTehran.Web.Areas.Admin
 {
     public class AdminAreaRegistration : AreaRegistration 
     {

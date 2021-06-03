@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using drugStore7.Core.Models;
-using drugStore7.Web.Models;
+using NovinTehran.Core.Models;
+using NovinTehran.Web.Models;
 using Microsoft.AspNet.Identity;
 
-namespace drugStore7.Web.Providers
+namespace NovinTehran.Web.Providers
 {
     public class CustomerAuthorize : AuthorizeAttribute
     {

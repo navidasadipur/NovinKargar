@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using drugStore7.Core.Models;
+using NovinTehran.Core.Models;
 
-namespace drugStore7.Web.ViewModels
+namespace NovinTehran.Web.ViewModels
 {
     public class NewProductGroupViewModel
     {
