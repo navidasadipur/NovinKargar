@@ -1,4 +1,4 @@
-﻿using drugStore7.Core.Utility;
+﻿using NovinTehran.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace drugStore7.Core.Models
+namespace NovinTehran.Core.Models
 {
     public class EPayment : IBaseEntity
     {

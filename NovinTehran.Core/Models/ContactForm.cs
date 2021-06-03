@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace drugStore7.Core.Models
+namespace NovinTehran.Core.Models
 {
     public class ContactForm : IBaseEntity
     {

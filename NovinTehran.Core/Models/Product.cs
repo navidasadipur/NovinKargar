@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace drugStore7.Core.Models
+namespace NovinTehran.Core.Models
 {
     public class Product : IBaseEntity
     {
