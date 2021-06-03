@@ -1,53 +1,70 @@
 ﻿<!DOCTYPE html>
-<html dir="rtl" lang="fa-IR">
+<html lang="en">
 
 <head>
-    <title>Seven7 | @ViewData["Title"]</title>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="irstheme">
 
-    <meta name="keywords" content="HTML5 Template">
-    <meta name="description" content="Molla - Bootstrap eCommerce Template">
-    <meta name="author" content="p-themes">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/Content/client/pic/Logo_drug_store.png">
-    <meta name="apple-mobile-web-app-title" content="Molla">
-    <meta name="application-name" content="Molla">
-    <meta name="msapplication-TileColor" content="#cc9966">
-    <meta name="msapplication-config" content="/Content/client/assets/images/icons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Plugins CSS File -->
-    <link rel="stylesheet" href="/Content/client/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/Content/client/assets/css/bootstrap-rtl.min.css">
-    <link rel="stylesheet" href="/Content/client/assets/css/plugins/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="/Content/client/assets/css/plugins/magnific-popup/magnific-popup.css">
-    <!-- Main CSS File -->
-    <link rel="stylesheet" href="/Content/client/assets/css/style.css">
-    <link rel="stylesheet" href="/Content/client/assets/css/skins/skin-demo-22.css">
-    <link rel="stylesheet" href="/Content/client/assets/css/demos/demo-22.css">
-    <link rel="stylesheet" href="/Content/client/assets/css/my-style.css">
-    <link rel="stylesheet" href="/Content/client/assets/css/plugins/nouislider/nouislider.css">
+    <title> نوین تهران </title>
+    <link rel="icon" type="image/png" href="/Content/client/assets/images/fav-icon.png">
+    <link href="/Content/client/assets/css/themify-icons.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/flaticon.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/animate.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/owl.theme.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/slick.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/slick-theme.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/swiper.min.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="/Content/client/assets/css/style.css" rel="stylesheet">
 
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />*@
 
 
 </head>
-<body class="">
+
+<body>
+
+    <!-- start page-wrapper -->
     <div class="page-wrapper">
-        <!-- Header start -->
+
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+        </div>
+        <!-- end preloader -->
+        <!-- Start header -->
+
         @Html.Action("HeaderSection", "Home", new { area = "" })
-        <div class="spacer"></div>
-        <!-- Header end -->
+
+        <!-- end of header -->
+
         @RenderBody()
-        <!-- Footer section start -->
+
+        <!-- start site-footer -->
+
         @Html.Action("FooterSection", "Home", new { area = "" })
-        <!-- Footer section end -->
+
+        <!-- end site-footer -->
 
     </div>
-
+    <!-- end of page-wrapper -->
     @*<div class="container newsletter-popup-container mfp-hide" id="newsletter-popup-form">
             <div class="row justify-content-center">
                 <div class="col-10">
@@ -241,25 +258,38 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js" integrity="sha512-hktawXAt9BdIaDoaO9DlLp6LYhbHMi5A36LcXQeHgVKUH6kJMOQsAtIw2kmQ9RERDpnSTlafajo6USh9JUXckw==" crossorigin="anonymous"></script>*@
 
-    <!-- Plugins JS File -->
-    <script src="/Content/client/assets/js/jquery.min.js"></script>
-    <script src="/Content/client/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/Content/client/assets/js/jquery.hoverIntent.min.js"></script>
-    <script src="/Content/client/assets/js/jquery.waypoints.min.js"></script>
-    <script src="/Content/client/assets/js/superfish.min.js"></script>
-    <script src="/Content/client/assets/js/owl.carousel.min.js"></script>
-    <script src="/Content/client/assets/js/wNumb.js"></script>
-    <script src="/Content/client/assets/js/bootstrap-input-spinner.js"></script>
-    <script src="/Content/client/assets/js/jquery.elevateZoom.min.js"></script>
-    <script src="/Content/client/assets/js/bootstrap-input-spinner.js"></script>
-    <script src="/Content/client/assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="/Content/client/assets/js/nouislider.min.js"></script>
-    <!-- <script src="assets/js/jquery.magnific-popup.min.js"></script> -->
-    <!-- Main JS File -->
-    <script src="/Content/client/assets/js/main.js"></script>
+    @*<!-- Plugins JS File -->
+        <script src="/Content/client/assets/js/jquery.min.js"></script>
+        <script src="/Content/client/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/Content/client/assets/js/jquery.hoverIntent.min.js"></script>
+        <script src="/Content/client/assets/js/jquery.waypoints.min.js"></script>
+        <script src="/Content/client/assets/js/superfish.min.js"></script>
+        <script src="/Content/client/assets/js/owl.carousel.min.js"></script>
+        <script src="/Content/client/assets/js/wNumb.js"></script>
+        <script src="/Content/client/assets/js/bootstrap-input-spinner.js"></script>
+        <script src="/Content/client/assets/js/jquery.elevateZoom.min.js"></script>
+        <script src="/Content/client/assets/js/bootstrap-input-spinner.js"></script>
+        <script src="/Content/client/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="/Content/client/assets/js/nouislider.min.js"></script>
+        <!-- <script src="/Content/client/assets/js/jquery.magnific-popup.min.js"></script> -->
+        <!-- Main JS File -->
+        <script src="/Content/client/assets/js/main.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>*@
+
+
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="/Content/client/assets/js/jquery.min.js"></script>
+    <script src="/Content/client/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins for this template -->
+    <script src="/Content/client/assets/js/jquery-plugin-collection.js"></script>
+
+    <!-- Custom script for this template -->
+    <script src="/Content/client/assets/js/script.js"></script>
+
 
 
     <script>
