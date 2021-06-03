@@ -10703,13 +10703,13 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\7_drugStore.Core\7_drugStore.Core.csproj">
+    <ProjectReference Include="..\NovinTehran.Core\NovinTehran.Core.csproj">
       <Project>{c9289f3f-fb24-495e-a361-11d0f3c81456}</Project>
-      <Name>7_drugStore.Core</Name>
+      <Name>NovinTehran.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\7_drugStore.Infratructure\7_drugStore.Infratructure.csproj">
+    <ProjectReference Include="..\NovinTehran.Infratructure\NovinTehran.Infratructure.csproj">
       <Project>{0d2ff993-9241-444d-8bb7-44b31ccd4165}</Project>
-      <Name>7_drugStore.Infratructure</Name>
+      <Name>NovinTehran.Infratructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
