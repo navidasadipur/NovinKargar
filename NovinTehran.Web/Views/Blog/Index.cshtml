@@ -123,20 +123,9 @@
                 <div class="blog-sidebar">
                     @Html.Action("ArticleCategoriesSection", "Blog")
 
-                    @Html.Action("TopArticlesSection", "Blog", new { take = 3 } )
-                    
-                    <div class="widget tag-widget">
-                        <h3>Tags</h3>
-                        <ul class="tags">
-                            <li><a href="#">نوین تهران</a></li>
-                            <li><a href="#">مکانیک</a></li>
-                            <li><a href="#">کار</a></li>
-                            <li><a href="#">اداری</a></li>
-                            <li><a href="#">کارمند</a></li>
-                            <li><a href="#">نوین تهران </a></li>
-                            <li><a href="#">نوین تهران اینترنتی</a></li>
-                        </ul>
-                    </div>
+                    @Html.Action("TopArticlesSection", "Blog", new { take = 3 })
+
+                    @Html.Action("TagsSection", "Blog")
                 </div>
             </div>
         </div>
