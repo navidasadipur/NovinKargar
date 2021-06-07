@@ -70,12 +70,8 @@
         </div>
     </div>*@
 
-<main class="main">
-    <div class="page-header text-center" style="background-image: url('/Files/StaticContentImages/Image/@ViewBag.BanerImage')">
-        <div class="container">
-            <h1 class="page-title">@ViewBag.Title@*<span>صفحات</span>*@</h1>
-        </div><!-- End .container -->
-    </div><!-- End .page-header -->
+
+@*
     <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
         <div class="container">
             <ol class="breadcrumb">
@@ -118,7 +114,89 @@
 
         </div><!-- End .page-content -->
     </div>
-</main><!-- End .main -->
+</main><!-- End .main -->*@
+
+
+
+
+<!-- start page-title -->
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <h2>@ViewBag.Title</h2>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start contact-info-section -->
+<section class="contact-info-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="contact-info clearfix">
+                    <div>
+                        <div class="icon">
+                            <i class="ti-email"></i>
+                        </div>
+                        <h5>@Model.Email.Title</h5>
+                        <p><a href="mailto:@Model.Email.ShortDescription">@Model.Email.ShortDescription</a></p>
+                    </div>
+                    <div>
+                        <div class="icon">
+                            <i class="ti-headphone-alt"></i>
+                        </div>
+                        <h5>@Model.Phone.Title</h5>
+                        <p><a href="tel:@Model.Phone.ShortDescription">@Model.Phone.ShortDescription</a></p>
+                    </div>
+                    <div>
+                        <div class="icon">
+                            <i class="ti-location-pin"></i>
+                        </div>
+                        <h5>@Model.Address.Title</h5>
+                        <p>@Model.Address.ShortDescription</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end contact-info-section -->
+<!-- start contact-section -->
+
+@Html.Action("ContactUsForm", "Home")
+
+<!-- end contact-section -->
+<!-- start contact-map-section -->
+<section class="contact-map-section">
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            @*<iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=%D8%AA%D9%87%D8%B1%D8%A7%D9%86%20%D8%8C%20%D9%85%DB%8C%D8%AF%D8%A7%D9%86%20%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br>*@
+            @Html.Raw(Model.Map.Description)
+            <br>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                    height: 500px;
+                    width: 100%;
+                }
+            </style>
+            <style>
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 500px;
+                    width: 100%;
+                }
+            </style>
+        </div>
+    </div>
+</section>
+<!-- end contact-map-section -->
+
+
 
 
 

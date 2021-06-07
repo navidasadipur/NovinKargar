@@ -21,6 +21,9 @@ namespace NovinTehran.Core.Models
         [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         [EmailAddress(ErrorMessage = "{0} وارد شده معتبر نیست")]
         public string Email { get; set; }
+        [MaxLength(600)]
+        [Display(Name = "موضوع")]
+        public string Subject { get; set; }
         [Display(Name = "پیام")]
         [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
