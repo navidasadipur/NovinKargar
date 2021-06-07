@@ -1,6 +1,6 @@
 ﻿@model List<NovinTehran.Web.ViewModels.LatestArticlesViewModel>
 
-<div class="widget">
+@*<div class="widget">
     <h3 class="widget-title">آخرین اخبار</h3><!-- End .widget-title -->
 
     <ul class="posts-list">
@@ -20,4 +20,23 @@
             </li>
         }
     </ul><!-- End .posts-list -->
-</div><!-- End .widget -->
+</div><!-- End .widget -->*@
+
+
+<div class="widget recent-post-widget">
+    <h3>آخرین مقاله ها</h3>
+    <div class="posts">
+        @foreach (var item in Model)
+        {
+            <div class="post">
+                <div class="img-holder">
+                    <img src="/Files/ArticleImages/Thumb/@item.Image" alt>
+                </div>
+                <div class="details">
+                    <h4><a href="/Blog/Article/@item.Id/@item.Title">@item.Title</a></h4>
+                    <span class="date"><i class="ti-timer"></i>@item.PersianDate</span>
+                </div>
+            </div>
+        }
+    </div>
+</div>
