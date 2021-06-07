@@ -4896,7 +4896,7 @@
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Blog\AdBlogSection.cshtml" />
     <Content Include="Views\Blog\TagsSection.cshtml" />
-    <Content Include="Views\Blog\SocialsSection.cshtml" />
+    <Content Include="Views\Blog\ShareSocialsSection.cshtml" />
     <Content Include="Views\Blog\RelatedBlogsSection.cshtml" />
     <Content Include="Views\Shop\SocialsSection.cshtml" />
     <Content Include="Views\Shop\ProductDetailsDescrioptinSection.cshtml" />

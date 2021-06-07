@@ -2,9 +2,9 @@
 
 
 
-<div class="widget tag-widget">
-    <h3>برچسب ها</h3>
-    <ul class="tags">
+<div class="tag">
+    <span>تگ : </span>
+    <ul>
         @for (int i = 0; i < Model.Count(); i++)
         {
             <li><a href="/Blog?searchString=@Model[i].Title.Replace(" ", "+")">@Model[i].Title</a></li>

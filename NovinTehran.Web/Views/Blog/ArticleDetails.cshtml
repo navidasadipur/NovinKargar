@@ -4,219 +4,8 @@
 }
 
 
-@*<div class="contant">
-    <div id="banner-part" class="banner inner-banner" style="background-image:url(@ViewBag.Banner)">
-        <div class="container">
-            <div class="bread-crumb-main">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1 class="banner-title">مقاله @Model.Title</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="breadcrumb">
-                            <ul class="inline">
-                                <li><a href="/">خانه</a></li>
-                                <li><a href="/Blog">بلاگ</a></li>
-                                <li><a href="#">@Model.Title</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ptb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="blog-detail-part pb-md-60">
-                        <img src="~/Files/ArticleImages/Image/@Model.Image" alt="@Model.Title" class="blog-img">
-                        <div class="blog-detail">
-                            <div class="blog-detail-inner">
-                                <span>@Model.Author @Model.PersianDate</span>
-                                <h2>@Model.Title</h2>
-                                <p>
-                                    @Model.ShortDescription
-                                </p>
-                                @Html.Raw(Model.Description)
-                                @foreach (var item in Model.HeadLines)
-                                {
-                                    <blockquote>
-                                        <h3>@item.Title</h3>
-                                        <p>@Html.Raw(item.Description)</p>
-                                    </blockquote>
-                                }
 
-                                <div class="tag-social">
-                                    @*<div class="social-icon float-right">
-                                            <ul>
-                                                <li>اشتراک گذاری :</li>
-                                                <li>
-                                                    <a href="#"><i class="fa fa-facebook" title="facebook"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fa fa-twitter" title="twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fa fa-instagram" title="instagram"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fa fa-youtube" title="youtube"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="detail-tags float-left mt-1">
-                                            <div class="small-title mb-0">عطر مردانه</div>
-                                            <span><a href="#">عطر و ادکلن</a></span>
-                                            <span><a href="#">ادکلن</a></span>
-                                        </div>*@@*
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="line"></div>
-                                <div class="comments-part">
-                                    <h3 class="mb-30">درباره نویسنده</h3>
-                                    <div class="comment mb-0 position-r">
-                                        <div class="comment-user" style="max-width: 70px">
-                                            <img src="/Files/UserAvatars/@Model.AuthorImage" alt="@Model.Author">
-                                        </div>
-                                        <div class="comment-detail">
-                                            <div class="mb-2">
-                                                <h4 class="head-four">@Model.Author</h4>
-                                            </div>
-                                            <p class="comment-msg">
-                                                @Model.AuthorInfo
-                                            </p>
-                                            @*<div class="social-icon ml-auto">
-                                                    <a href="#" title="Follow on Facebook">
-                                                        <i class="fa active fa-facebook"></i>
-                                                    </a>
-                                                    <a href="#" title="Follow on twitter"><i class="fa fa-twitter"></i></a>
-                                                    <a href="#" title="Follow on linkedin">
-                                                        <i class="fa  fa-linkedin"></i>
-                                                    </a>
-                                                </div>*@@*
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="line"></div>
-                            </div>
-                            <div class="comment-part">
-                                <h3 class="mb-30">@Model.ArticleComments.Count دیدگاه</h3>
-                                <ul class="comment-list mt-30">
-                                    @foreach (var comment in Model.ArticleComments.Where(c => c.ParentId == null))
-                                    {
-                                        <li>
-                                            <div class="comment-user" style="max-width: 70px">
-                                                <img src="/Files/UserAvatars/user-avatar.png" alt="@comment.Name">
-                                            </div>
-                                            <div class="comment-detail">
-                                                <span class="bloger-date">@comment.Name @comment.AddedDate</span>
-                                                <p>
-                                                    @comment.Message
-                                                </p>
-                                                <a onclick="AnswerComment('@comment.Id','@comment.Name')" class="reply-btn btn btn-color small">پاسخ</a>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </li>
-                                        foreach (var childComment in Model.ArticleComments.Where(c => c.ParentId == comment.Id))
-                                        {
-                                            <li>
-                                                <ul class="comment-list child-comment">
-                                                    <li>
-                                                        <div class="comment-user" style="max-width: 70px">
-                                                            <img src="/Files/UserAvatars/user-avatar.png" alt="@childComment.Name">
-                                                        </div>
-                                                        <div class="comment-detail">
-                                                            <span class="bloger-date">@childComment.Name @childComment.AddedDate</span>
-                                                            <p>
-                                                                @childComment.Message
-                                                            </p>
-                                                            @*<a href="#" class="reply-btn btn btn-color small">پاسخ</a>*@@*
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </li>
-
-                                                </ul>
-                                            </li>
-                                        }
-                                    }
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="leave-comment-part main-form pt-100">
-                            <h4 id="answerPerson"></h4>
-                            <h3 class="mb-30">دیدگاه خود را بنویسید</h3>
-                            @using (Html.BeginForm("PostComment", "Blog", FormMethod.Post, new { id = "commentform" }))
-                            {
-                                <input type="hidden" id="ArticleId" name="ArticleId" value="@Model.Id">
-                                <input type="hidden" id="ParentId" name="ParentId" value="">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="Name" id="Name" placeholder="نام و نام خانوادگی" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="Email" id="Email" placeholder="ایمیل" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea placeholder="پیغام" name="Message" id="Message" rows="4" required></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn-color">ارسال دیدگاه</button>
-                                    </div>
-                                </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div id="sidebar-main" class="sidebar sidebar-default sidebar-separate sidebar-fixed">
-                        <div class="sidebar-content">
-                            <div class="sidebar-default">
-                                <form method="get" action="/Blog" id="form" class="category-content searching">
-                                    <input type="text" name="searchString" title="searchString" value="@ViewBag.SearchString" placeholder="جستجو...">
-                                    <a href="#" onclick="$('#form').submit()">
-                                        <i class="fa fa-search" title="جستجو"></i>
-                                    </a>
-                                </form>
-                            </div>
-                            @Html.Action("ArticleCategoriesSection", "Blog")
-                            @if (Model.Tags.Any())
-                            {
-                                <div class="sidebar-default">
-                                    <div class="category-content">
-                                        <h2 class="cat-title">برچسب ها</h2>
-                                        <div class="tags-grp row mlr_-5">
-                                            <ul>
-                                                @foreach (var tag in Model.Tags)
-                                                {
-                                                    <li><a href="/Blog?searchString=@tag.Title" rel="tag">@tag.Title</a></li>
-                                                }
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                            @Html.Action("TopArticlesSection", "Blog", new { take = 3 })
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>*@
-
-
-
-
-
-<main class="main">
+@*<main class="main">
     <div class="page-header text-center" style="background-image: url('/Files/StaticContentImages/Image/@ViewBag.BanerImage')">
         <div class="container">
             <h1 class="page-title">جزئیات وبلاگ</h1>
@@ -259,7 +48,7 @@
 
                             <div class="entry-cats">
                                 <a href="/Blog?category=@Model.CategoryId">@Model.CategoryTitle</a>@*،
-                                    <a href="#">فروشگاه</a>*@
+                                    <a href="#">فروشگاه</a>
                             </div><!-- End .entry-cats -->
 
                             <div class="entry-content editor-content">
@@ -271,61 +60,6 @@
                                 @Html.Raw(Model.Description)
 
 
-                                @*<div class="pb-1"></div><!-- End .mb-1 -->
-
-                                    <img src="/Content/client/assets/images/medicine_images/blog-detail/Untitled-2.jpg" alt="image"
-                                         class="float-right">
-
-                                    <h3>لورم ایپسوم متن ساختگی </h3>
-
-                                    <ul>
-                                        <li>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با
-                                            تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                        </li>
-                                        <li>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                            تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم
-                                            ایپسوم متن ساختگی با تولید سادگی نامفهوم.
-                                        </li>
-                                        <li>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                            تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم
-                                            ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                            سادگی نامفهوم
-                                        </li>
-                                    </ul>
-
-                                    <div class="pb-1 clearfix"></div><!-- End .clearfix -->
-
-                                    <p>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                        سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم <a href="#">
-                                            لورم
-                                            ایپسوم
-                                        </a> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                        ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی
-                                        نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی
-                                        با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                    </p>
-
-                                    <blockquote>
-                                        <p>
-                                            “ لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                            تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ”
-                                        </p>
-                                    </blockquote>
-
-                                    <p>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                        سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                        ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید
-                                        سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                    </p>
-
-                                    <div class="pb-1"></div><!-- End .pb-1 -->*@
                                 @if (Model.HeadLines.Count() != null)
                                 {
                                     foreach (var headLine in Model.HeadLines)
@@ -336,32 +70,7 @@
                                         </p>
                                     }
                                 }
-                                @*<h3>لورم ایپسوم متن ساختگی با تولید سادگی</h3>
 
-                                    <img src="/Content/client/assets/images/medicine_images/blog-detail/Untitled-3.jpg" alt="image">
-
-                                    <p>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                        سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن
-                                        ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی
-                                        نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم <a href="#">
-                                            لورم
-                                            ایپسوم
-                                        </a> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                        ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی
-                                        نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                    </p>
-
-                                    <p>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                        سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن
-                                        ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                        تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم
-                                        ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                        سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                        ساختگی با تولید سادگی نامفهوم
-                                    </p>*@
                             </div><!-- End .entry-content -->
 
                             <div class="entry-footer row no-gutters flex-column flex-md-row">
@@ -451,7 +160,7 @@
                                         </figure>
 
                                         <div class="comment-body">
-                                            @*<a href="#" class="comment-reply">پاسخ</a>*@
+                                           
                                             <div class="comment-user">
                                                 <p>نام: @comment.Name</p>
                                                 <span class="comment-date">@comment.AddedDate</span>
@@ -467,89 +176,7 @@
                                 </li>
                             }
 
-                            @*<li>
-            <div class="comment">
-                <figure class="comment-media">
-                    <a href="#">
-                        <img src="/Content/client/assets/images/blog/comments/1.jpg" alt="User name">
-                    </a>
-                </figure>
 
-                <div class="comment-body">
-                    <a href="#" class="comment-reply">پاسخ</a>
-                    <div class="comment-user">
-                        <h4><a href="#">کاربر 1</a></h4>
-                        <span class="comment-date">9 فروردین 1399 - 2:19 بعدازظهر</span>
-                    </div> <!-- End .comment-user -->
-
-                    <div class="comment-content">
-                        <p>
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم
-                            ایپسوم متن
-                            ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                            تولید
-                            سادگی نامفهوم.
-                        </p>
-                    </div><!-- End .comment-content -->
-                </div><!-- End .comment-body -->
-            </div><!-- End .comment -->
-
-            <ul>
-                <li>
-                    <div class="comment">
-                        <figure class="comment-media">
-                            <a href="#">
-                                <img src="/Content/client/assets/images/blog/comments/2.jpg"
-                                     alt="User name">
-                            </a>
-                        </figure>
-
-                        <div class="comment-body">
-                            <a href="#" class="comment-reply">پاسخ</a>
-                            <div class="comment-user">
-                                <h4><a href="#">کاربر 2</a></h4>
-                                <span class="comment-date">
-                                    9 فروردین 1399 - 2:19
-                                    بعدازظهر
-                                </span>
-                            </div><!-- End .comment-user -->
-
-                            <div class="comment-content">
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p>
-                            </div><!-- End .comment-content -->
-                        </div><!-- End .comment-body -->
-                    </div><!-- End .comment -->
-                </li>
-            </ul>
-        </li>
-
-                            <li>
-                                <div class="comment">
-                                    <figure class="comment-media">
-                                        <a href="#">
-                                            <img src="/Content/client/assets/images/blog/comments/3.jpg" alt="User name">
-                                        </a>
-                                    </figure>
-
-                                    <div class="comment-body">
-                                        <a href="#" class="comment-reply">پاسخ</a>
-                                        <div class="comment-user">
-                                            <h4><a href="#">کاربر 3</a></h4>
-                                            <span class="comment-date">9 فروردین 1399 - 2:19 بعدازظهر</span>
-                                        </div> <!-- End .comment-user -->
-
-                                        <div class="comment-content">
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                                ساختگی با تولید سادگی نامفهوم
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                                ساختگی با تولید سادگی نامفهوم
-                                            </p>
-                                        </div><!-- End .comment-content -->
-                                    </div><!-- End .comment-body -->
-                                </div><!-- End .comment -->
-                            </li>*@
                         </ul>
                     </div><!-- End .comments -->
                     <div class="reply">
@@ -587,7 +214,7 @@
                                 <i class="icon-long-arrow-left"></i>
                             </button>
                         }
-                        </div><!-- End .reply -->
+                    </div><!-- End .reply -->
                 </div><!-- End .col-lg-9 -->
 
                 <aside class="col-lg-3">
@@ -602,7 +229,7 @@
                                 <button type="submit" class="btn">
                                     <i class="icon-search"></i><span class="sr-only">جستجو</span>
                                 </button>
-                                @*<a href="#" onclick="$('#form').submit()">*@
+                               
                                 </a>
                             </form>
                         </div><!-- End .widget -->
@@ -628,14 +255,218 @@
                                         تولید سادگی نامفهوم
                                     </p>
                                 </div><!-- End .widget-text-content -->
-                            </div><!-- End .widget -->*@
+                            </div><!-- End .widget -->
                     </div><!-- End .sidebar -->
                 </aside><!-- End .col-lg-3 -->
             </div><!-- End .row -->
         </div><!-- End .container -->
     </div><!-- End .page-content -->
-</main><!-- End .main -->
+</main><!-- End .main -->*@
 
+
+
+
+
+
+<!-- start page-title -->
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <h2>بلاگ</h2>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start blog-single-section -->
+<section class="blog-single-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-10 col-md-offset-1">
+                <div class="blog-content">
+                    <div class="post format-standard-image">
+                        <div class="entry-media">
+                            <img src="/Content/client/assets/images/blog/img-4.jpg" alt>
+                        </div>
+                        <ul class="entry-meta">
+                            <li><a href="#"><i class="ti-time"></i> @Model.PersianDate</a></li>
+                            <li><a href="#"><i class="ti-book"></i> @Model.Author</a></li>
+                            <li><a href="#"><i class="ti-comment-alt"></i>@Model.ArticleComments.Count()</a></li>
+                        </ul>
+                        <h2>@Model.Title</h2>
+                        <p>
+                           @Model.ShortDescription
+                        </p>
+                        @Html.Raw(Model.Description)
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                        </p>
+                        <h3>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                        </h3>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                        </p>
+                        <blockquote>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                        </blockquote>
+                    </div>
+
+                    <div class="tag-share clearfix">
+                        @Html.Action("TagsSection", "Blog")
+
+                        @Html.Action("ShareSocialsSection", "Blog")
+                    </div> <!-- end tag-share -->
+
+                    <div class="author-box">
+                        <div class="author-avatar">
+                            <a href="#" target="_blank"><img src="/Content/client/assets/images/blog-details/author.jpg" alt></a>
+                        </div>
+                        <div class="author-content">
+                            <a href="#" class="author-name">هلن رضایی</a>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                            </p>
+                            <div class="socials">
+                                <ul class="social-link">
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> <!-- end author-box -->
+
+
+
+                    <div class="comments-area">
+                        <div class="comments-section">
+                            <h3 class="comments-title">4 کامنت</h3>
+                            <ol class="comments">
+                                <li class="comment even thread-even depth-1" id="comment-1">
+                                    <div id="div-comment-1">
+                                        <div class="comment-theme">
+                                            <div class="comment-image"><img src="/Content/client/assets/images/blog-details/comments-author/img-1.jpg" alt></div>
+                                        </div>
+                                        <div class="comment-main-area">
+                                            <div class="comment-wrapper">
+                                                <div class="comments-meta">
+                                                    <h4>هلن رضایی <span class="comments-date">25 اردیبهشت 1400</span></h4>
+                                                </div>
+                                                <div class="comment-area">
+                                                    <p>
+                                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                                                    </p>
+                                                    <div class="comments-reply">
+                                                        <a class="comment-reply-link" href="#"><span>بازخورد</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="children">
+                                        <li class="comment">
+                                            <div>
+                                                <div class="comment-theme">
+                                                    <div class="comment-image"><img src="/Content/client/assets/images/blog-details/comments-author/img-2.jpg" alt></div>
+                                                </div>
+                                                <div class="comment-main-area">
+                                                    <div class="comment-wrapper">
+                                                        <div class="comments-meta">
+                                                            <h4>هلن رضایی <span class="comments-date">25 اردیبهشت 1400</span></h4>
+                                                        </div>
+                                                        <div class="comment-area">
+                                                            <p>
+                                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                                                            </p>
+                                                            <div class="comments-reply">
+                                                                <a class="comment-reply-link" href="#"><span>بازخورد</span></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul>
+                                                <li class="comment">
+                                                    <div>
+                                                        <div class="comment-theme">
+                                                            <div class="comment-image"><img src="/Content/client/assets/images/blog-details/comments-author/img-3.jpg" alt></div>
+                                                        </div>
+                                                        <div class="comment-main-area">
+                                                            <div class="comment-wrapper">
+                                                                <div class="comments-meta">
+                                                                    <h4>حسین رضایی <span class="comments-date">25 اردیبهشت 1400</span></h4>
+                                                                </div>
+                                                                <div class="comment-area">
+                                                                    <p>
+                                                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                                                                    </p>
+                                                                    <div class="comments-reply">
+                                                                        <a class="comment-reply-link" href="#"><span>بازخورد</span></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="comment">
+                                    <div>
+                                        <div class="comment-theme">
+                                            <div class="comment-image"><img src="/Content/client/assets/images/blog-details/comments-author/img-1.jpg" alt></div>
+                                        </div>
+                                        <div class="comment-main-area">
+                                            <div class="comment-wrapper">
+                                                <div class="comments-meta">
+                                                    <h4>هلن رضایی <span class="comments-date">25 اردیبهشت 1400</span></h4>
+                                                </div>
+                                                <div class="comment-area">
+                                                    <p>
+                                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                                                    </p>
+                                                    <div class="comments-reply">
+                                                        <a class="comment-reply-link" href="#"><span>بازخورد</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div> <!-- end comments-section -->
+
+                        <div class="comment-respond">
+                            <h3 class="comment-reply-title">نظرات خود را بنویسید</h3>
+                            <form method="post" id="commentform" class="comment-form">
+
+                                <div class="form-inputs">
+                                    <input placeholder="نام کاربری" type="text">
+                                    <input placeholder="ایمیل" type="email">
+                                </div>
+                                <div class="form-textarea">
+                                    <textarea id="comment" placeholder="متن را بنویسید..."></textarea>
+                                </div>
+                                <div class="form-submit">
+                                    <input id="submit" value="ارسال" type="submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!-- end comments-area -->
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+</section>
+<!-- end blog-single-section -->
 
 
 

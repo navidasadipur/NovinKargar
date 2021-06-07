@@ -213,13 +213,13 @@ namespace NovinTehran.Web.Controllers
             return RedirectToAction("ArticleDetails", new { id = form.ArticleId });
         }
 
-        public ActionResult SocialsSection()
+        public ActionResult ShareSocialsSection()
         {
             SocialViewModel model = new SocialViewModel();
 
             model.Facebook = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Facebook);
             model.Twitter = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Twitter);
-            model.Pinterest = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Pinterest);
+            model.Instagram = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Instagram);
             model.Linkedin = _staticContentRepo.GetStaticContentDetail((int)StaticContents.linkedin);
 
             return PartialView(model);
