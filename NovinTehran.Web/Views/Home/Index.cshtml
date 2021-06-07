@@ -10,41 +10,11 @@
 @Html.Action("HomeTopSliderSection", "Home")
 
 <!-- end of hero slider -->
+
 <!-- start about-section-s2 -->
-<section class="about-section-s2 mt-5 section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col col-md-6 text-right">
-                <div class="section-title-s3">
-                    <span>درباره ما</span>
-                    <h2>هر آنچه باید درباره ما بدانید</h2>
-                </div>
-                <div class="details">
-                    <p>
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                        است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                        تکنولوژی مورد نیاز، و کاربردهای آن
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                        است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                        تکنولوژی مورد نیاز، و کاربردهای آن
-                    </p>
-                    <ul>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col col-md-6 text-left">
-                <div class="img-holder">
-                    <img src="/Content/client/assets/images/about-1.jpg" alt="">
-                    <img src="/Content/client/assets/images/about-2.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div> <!-- end container -->
-</section>
+
+@Html.Action("HomeAboutSection", "Home")
+
 <!-- end about-section-s2 -->
 
 
@@ -606,82 +576,82 @@
 
 @*<main class="main">
 
-    @Html.Action("HomeTopSliderSection", "Home")
+        @Html.Action("HomeTopSliderSection", "Home")
 
 
 
-    <div class="featured-back" style="background-image: url(/Files/StaticContentImages/Image/@ViewBag.BackImage)">
-        <div class="container">
-            <div class="section-title">
-                <ul class="nav nav-pills nav-border-anim" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="tab-featured-link" data-toggle="tab" href="#tab-featured"
-                           role="tab" aria-controls="tab-featured" aria-selected="true"><span>جدیدترین</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="tab-best-link" data-toggle="tab" href="#tab-best" role="tab"
-                           aria-controls="tab-best" aria-selected="false"><span>پرفروش ترین</span></a>
-                    </li>
-                </ul>
+        <div class="featured-back" style="background-image: url(/Files/StaticContentImages/Image/@ViewBag.BackImage)">
+            <div class="container">
+                <div class="section-title">
+                    <ul class="nav nav-pills nav-border-anim" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="tab-featured-link" data-toggle="tab" href="#tab-featured"
+                               role="tab" aria-controls="tab-featured" aria-selected="true"><span>جدیدترین</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab-best-link" data-toggle="tab" href="#tab-best" role="tab"
+                               aria-controls="tab-best" aria-selected="false"><span>پرفروش ترین</span></a>
+                        </li>
+                    </ul>
 
 
-                <a class="link" href="/Shop">مشاهده همه محصولات</a>
-            </div>
+                    <a class="link" href="/Shop">مشاهده همه محصولات</a>
+                </div>
 
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="tab-content">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="tab-content">
 
-                        @Html.Action("LatestProductsSection", "Home", new { take = 8 })
+                            @Html.Action("LatestProductsSection", "Home", new { take = 8 })
 
-                        @Html.Action("TopSoldProductsSection", "Home", new { take = 6 })
+                            @Html.Action("TopSoldProductsSection", "Home", new { take = 6 })
 
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
-
-            <div class="mb-2"></div><!-- End .mb-6 -->
-        </div><!-- End .container -->
-    </div>
+                <div class="mb-2"></div><!-- End .mb-6 -->
+            </div><!-- End .container -->
+        </div>
 
 
-    @Html.Action("OffersSection", "Home")
+        @Html.Action("OffersSection", "Home")
 
-    @Html.Action("ServicesSection", "Home")
+        @Html.Action("ServicesSection", "Home")
 
-    @Html.Action("HighRateProductsSection", "Home", new { take = 5 })
+        @Html.Action("HighRateProductsSection", "Home", new { take = 5 })
 
-    @Html.Action("LatestArticlesSection", "Home", new { take = 4 })
+        @Html.Action("LatestArticlesSection", "Home", new { take = 4 })
 
-    <div class="newsletter m-0"
-         style="background-image: url(/Files/StaticContentImages/Image/@ViewBag.NewsBackImage);">
-        <div class="container">
-            <div class="subscribe text-center">
-                <div class="intro">
-                    <h3 class="title text-center">@ViewBag.NewsTitle</h3>
-                    <h4 class="content">@ViewBag.NewsShorDescription</h4>
-                </div>
-                <div class="subscribe action">
-                    <form action="/Home/AddEmailSubscription" method="post">
-                        <div class="input-group">
-                            <input name="Email" id="Name" type="email" required placeholder="آدرس ایمیل خود را وارد کنید" aria-label="Email Adress">
-                            <div class="input-group-append">
-                                <button class="btn btn-subscribe" type="submit">
-                                    <span>
-                                        همین حالا عضو
-                                        شوید
-                                    </span>
-                                </button>
-                            </div><!-- .End .input-group-append -->
-                        </div><!-- .End .input-group -->
-                    </form>
+        <div class="newsletter m-0"
+             style="background-image: url(/Files/StaticContentImages/Image/@ViewBag.NewsBackImage);">
+            <div class="container">
+                <div class="subscribe text-center">
+                    <div class="intro">
+                        <h3 class="title text-center">@ViewBag.NewsTitle</h3>
+                        <h4 class="content">@ViewBag.NewsShorDescription</h4>
+                    </div>
+                    <div class="subscribe action">
+                        <form action="/Home/AddEmailSubscription" method="post">
+                            <div class="input-group">
+                                <input name="Email" id="Name" type="email" required placeholder="آدرس ایمیل خود را وارد کنید" aria-label="Email Adress">
+                                <div class="input-group-append">
+                                    <button class="btn btn-subscribe" type="submit">
+                                        <span>
+                                            همین حالا عضو
+                                            شوید
+                                        </span>
+                                    </button>
+                                </div><!-- .End .input-group-append -->
+                            </div><!-- .End .input-group -->
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</main>*@
+    </main>*@
 

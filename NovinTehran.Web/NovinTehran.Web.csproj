@@ -4902,10 +4902,11 @@
     <Content Include="Views\Shop\ProductDetailsDescrioptinSection.cshtml" />
     <Content Include="Views\Shop\ProductDetailsBrandSection.cshtml" />
     <Content Include="Views\Home\MobileHeaderSection.cshtml" />
-    <Content Include="Views\Home\HighRateProductsSection.cshtml" />
+    <Content Include="Views\Home\HomeAboutSection.cshtml" />
     <Content Include="Views\Home\ServicesSection.cshtml" />
     <Content Include="Views\Shop\ProductFeaturesSection.cshtml" />
     <Content Include="Views\Home\WishListSection.cshtml" />
+    <Content Include="Views\Home\HighRateProductsSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

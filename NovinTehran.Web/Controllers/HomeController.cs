@@ -70,9 +70,9 @@ namespace NovinTehran.Web.Controllers
 
             ViewBag.BackImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.BackGroundImage).Image;
 
-            ViewBag.NewsBackImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).Image;
-            ViewBag.NewsTitle = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).Title;
-            ViewBag.NewsShorDescription = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).ShortDescription;
+            //ViewBag.NewsBackImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).Image;
+            //ViewBag.NewsTitle = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).Title;
+            //ViewBag.NewsShorDescription = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).ShortDescription;
 
             return View(popup);
         }
@@ -190,6 +190,20 @@ namespace NovinTehran.Web.Controllers
         public ActionResult HomeTopSliderSection()
         {
             var content = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.HomeTopSlider);
+            return PartialView(content);
+        }
+
+        public ActionResult HomeAboutSection()
+        {
+            var homeAbout = _staticContentRepo.GetStaticContentDetail((int)StaticContents.HomeAboutDescription);
+
+            ViewBag.Title = homeAbout.Title;
+
+            ViewBag.ShortDescription = homeAbout.ShortDescription;
+
+            ViewBag.Description = homeAbout.Description;
+
+            var content = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.HomeAboutSection);
             return PartialView(content);
         }
 

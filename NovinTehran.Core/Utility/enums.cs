@@ -44,7 +44,7 @@ namespace NovinTehran.Core.Utility
 
         Logo = 14,
         BackGroundImage = 2,
-        NewsBackImage = 8,
+        HomeAboutDescription = 8,
 
         BlogAd = 32,
     }
@@ -56,6 +56,7 @@ namespace NovinTehran.Core.Utility
         AboutProperties,
 
         HomeTopSlider = 17,
+        HomeAboutSection = 4,
         Contact = 2,
 
         Guide = 9,
