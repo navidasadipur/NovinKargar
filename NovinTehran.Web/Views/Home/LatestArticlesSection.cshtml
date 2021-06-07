@@ -1,76 +1,77 @@
 ﻿@model List<NovinTehran.Web.ViewModels.LatestArticlesViewModel>
 
 @*<section class="blog-section pb-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="heading-part text-center mb-30 mb-sm-20">
-                    <h2 class="main_title">آخرین اخبار</h2>
-                </div>
-            </div>
-        </div>
-        <div class="blog-contant list-view mb_-30">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="blog-item first-blog">
-                        <div class="blog-image">
-                            <a href="/Blog/Article/@Model[1].Id/@Model[1].Title">
-                                <img src="~/Files/ArticleImages/Image/@Model[1].Image" alt="@Model[0].Title">
-                            </a>
-                        </div>
-                        <div class="blog-detail">
-                            <span class="bloger-date">@Model[0].Author @Model[0].PersianDate</span>
-                            <h3 class="head-three mb-10">
-                                <a href="@Model[1].Id/@Model[1].Title">
-                                    @Model[0].Title
-                                </a>
-                            </h3>
-                            <p>
-                                @Model[0].ShortDescription
-                            </p>
-                            <a href="#" class="readmore-btn">بیشتر بخوانید</a>
-                        </div>
+                <div class="col-12">
+                    <div class="heading-part text-center mb-30 mb-sm-20">
+                        <h2 class="main_title">آخرین اخبار</h2>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="blog-item">
-                                <div class="blog-image">
+            </div>
+            <div class="blog-contant list-view mb_-30">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="blog-item first-blog">
+                            <div class="blog-image">
+                                <a href="/Blog/Article/@Model[1].Id/@Model[1].Title">
+                                    <img src="~/Files/ArticleImages/Image/@Model[1].Image" alt="@Model[0].Title">
+                                </a>
+                            </div>
+                            <div class="blog-detail">
+                                <span class="bloger-date">@Model[0].Author @Model[0].PersianDate</span>
+                                <h3 class="head-three mb-10">
                                     <a href="@Model[1].Id/@Model[1].Title">
-                                        <img src="/Files/ArticleImages/Thumb/@Model[1].Image" alt="@Model[1].Title">
+                                        @Model[0].Title
                                     </a>
-                                </div>
-                                <div class="blog-detail">
-                                    <span class="bloger-date">@Model[1].Author @Model[1].PersianDate</span>
-                                    <h3 class="head-three mb-10">
-                                        <a href="@Model[1].Id/@Model[1].Title">@Model[1].Title</a>
-                                    </h3>
-                                    <p>
-                                        @Model[1].ShortDescription
-                                    </p>
-                                    <a href="#" class="readmore-btn">بیشتر بخوانید</a>
-                                </div>
+                                </h3>
+                                <p>
+                                    @Model[0].ShortDescription
+                                </p>
+                                <a href="#" class="readmore-btn">بیشتر بخوانید</a>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="blog-item">
-                                <div class="blog-image">
-                                    <a href="@Model[1].Id/@Model[1].Title">
-                                        <img src="/Files/ArticleImages/Thumb/@Model[2].Image" alt="@Model[2].Title">
-                                    </a>
-                                </div>
-                                <div class="blog-detail">
-                                    <span class="bloger-date">@Model[2].Author @Model[2].PersianDate</span>
-                                    <h3 class="head-three mb-10">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="blog-item">
+                                    <div class="blog-image">
                                         <a href="@Model[1].Id/@Model[1].Title">
-                                            @Model[2].Title
+                                            <img src="/Files/ArticleImages/Thumb/@Model[1].Image" alt="@Model[1].Title">
                                         </a>
-                                    </h3>
-                                    <p>
-                                        @Model[2].ShortDescription
-                                    </p>
-                                    <a href="#" class="readmore-btn">بیشتر بخوانید</a>
+                                    </div>
+                                    <div class="blog-detail">
+                                        <span class="bloger-date">@Model[1].Author @Model[1].PersianDate</span>
+                                        <h3 class="head-three mb-10">
+                                            <a href="@Model[1].Id/@Model[1].Title">@Model[1].Title</a>
+                                        </h3>
+                                        <p>
+                                            @Model[1].ShortDescription
+                                        </p>
+                                        <a href="#" class="readmore-btn">بیشتر بخوانید</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="blog-item">
+                                    <div class="blog-image">
+                                        <a href="@Model[1].Id/@Model[1].Title">
+                                            <img src="/Files/ArticleImages/Thumb/@Model[2].Image" alt="@Model[2].Title">
+                                        </a>
+                                    </div>
+                                    <div class="blog-detail">
+                                        <span class="bloger-date">@Model[2].Author @Model[2].PersianDate</span>
+                                        <h3 class="head-three mb-10">
+                                            <a href="@Model[1].Id/@Model[1].Title">
+                                                @Model[2].Title
+                                            </a>
+                                        </h3>
+                                        <p>
+                                            @Model[2].ShortDescription
+                                        </p>
+                                        <a href="#" class="readmore-btn">بیشتر بخوانید</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -78,11 +79,10 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>*@
+    </section>*@
 
 
-<div class="container post">
+@*<div class="container post">
 
     <div class="section-title">
         <div>
@@ -125,7 +125,7 @@
 
                 <div class="entry-body text-center">
                     <div class="entry-meta">
-                        <a href="#">@article.PersianDate</a>@*، 0 دیدگاه*@ 
+                        <a href="#">@article.PersianDate</a>
                     </div><!-- End .entry-meta -->
 
                     <h3 class="entry-title text-center">
@@ -138,29 +138,58 @@
                 </div><!-- End .entry-body -->
             </article><!-- End .entry -->
         }
-        @*<article class="entry">
-            <figure class="entry-media">
-                <a href="single.html">
-                    <img src="./Content/client/assets/images/medicine_images/news/download-2.jpg" alt="توضیحات عکس">
-                </a>
-            </figure><!-- End .entry-media -->
-
-            <div class="entry-body text-center">
-                <div class="entry-meta">
-                    <a href="#">22 فروردین 1399</a>، 0 دیدگاه
-                </div><!-- End .entry-meta -->
-
-                <h3 class="entry-title text-center">
-                    <a href="single.html">هرآنچه در مورد امگا 3 باید بدانید</a>
-                </h3><!-- End .entry-title -->
-
-                <div class="entry-content">
-                    <a href="single.html" class="read-more">ادامه خواندن</a>
-                </div><!-- End .entry-content -->
-            </div><!-- End .entry-body -->
-        </article><!-- End .entry -->*@
 
 
     </div><!-- End .owl-carousel -->
 
-</div>
+</div>*@
+
+
+
+<!-- start blog-section -->
+<section class="blog-section section-padding">
+    <div class="container">
+        <div class="row">
+
+            <div class="col col-lg-6 col-lg-offset-1 col-md-7">
+                <div class="text">
+                    @Html.Raw(ViewBag.Description)
+                </div>
+            </div>
+            <div class="col col-lg-5 col-md-5">
+                <div class="section-title-s3">
+                    <span>@ViewBag.Title</span>
+                    <h2>@ViewBag.ShortDescription</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="blog-grids">
+                    @foreach (var article in Model)
+                    {
+                        <div class="grid">
+                            <a href="Blog/Article/@article.Id/@article.Title.Replace(' ', '-')">
+                                <div class="entry-media">
+                                    <img src="/Files/ArticleImages/Image/@article.Image" alt="">
+                                </div>
+                            </a>
+                            <div class="details">
+                                <div class="entry-meta">
+                                    <ul>
+                                        <li>@article.PersianDate</li>
+                                        @*<li>5 کامنت</li>*@
+                                    </ul>
+                                </div>
+                                <h3><a href="Blog/Article/@article.Id/@article.Title.Replace(' ', '-')">@article.Title</a></h3>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+</section>
+<!-- end blog-section -->

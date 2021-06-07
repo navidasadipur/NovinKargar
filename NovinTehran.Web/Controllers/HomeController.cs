@@ -285,6 +285,14 @@ namespace NovinTehran.Web.Controllers
             foreach (var item in articles)
                 vm.Add(new LatestArticlesViewModel(item));
 
+            var latestArticleTitle = _staticContentRepo.GetStaticContentDetail((int)StaticContents.LatestArticleSection);
+
+            ViewBag.Title = latestArticleTitle.Title;
+
+            ViewBag.ShortDescription = latestArticleTitle.ShortDescription;
+
+            ViewBag.Description = latestArticleTitle.Description;
+
             return PartialView(vm);
         }
 
@@ -330,14 +338,16 @@ namespace NovinTehran.Web.Controllers
         [Route("About")]
         public ActionResult About()
         {
-            var about = _staticContentRepo.GetStaticContentDetail((int)StaticContents.AboutDescription);
+            //var about = _staticContentRepo.GetStaticContentDetail((int)StaticContents.AboutDescription);
 
-            var model = new AboutViewModel()
-            {
-                Title = about.Title,
-                AboutDescription = about.ShortDescription,
-                SignatureImage = about.Image,
-            };
+            //var model = new AboutViewModel()
+            //{
+            //    Title = about.Title,
+            //    AboutDescription = about.ShortDescription,
+            //    SignatureImage = about.Image,
+            //};
+
+            var model = new AboutViewModel();
 
             model.Image = _staticContentRepo.GetStaticContentDetail((int)StaticContents.firstImageAboutPage).Image;
 

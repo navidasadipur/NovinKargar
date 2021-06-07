@@ -20,7 +20,7 @@ namespace NovinTehran.Core.Utility
 
     public enum StaticContents
     {
-        AboutDescription = 15,
+        LatestArticleSection = 15,
         firstImageAboutPage = 16,
         WorkingHours = 1008,
         Youtube = 29,

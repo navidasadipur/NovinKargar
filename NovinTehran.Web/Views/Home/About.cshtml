@@ -47,9 +47,66 @@
         <div class="mb-2"></div><!-- End .mb-2 -->
 
         @Html.Action("OurTeamsSection", "Home")
-       
+
         @Html.Action("PartnersSection", "Home");
 
     </div><!-- End .page-content -->
 </main><!-- End .main -->
+<!-- start page-title -->
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <h2>درباره ما</h2>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start about-section-s2 -->
 
+@Html.Action("HomeAboutSection", "Home")
+
+<!-- end about-section-s2 -->
+<!-- start work-process -->
+
+
+
+<section class="work-process section-padding p-t-0">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="work-process-grids clearfix">
+                    <div class="grid">
+                        <div class="count">1</div>
+                        <h3>ثبت تقاضای کار</h3>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                            است
+                        </p>
+                    </div>
+                    <div class="grid">
+                        <div class="count">2</div>
+                        <h3>بررسی تقاضای شما</h3>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                            است
+                        </p>
+                    </div>
+                    <div class="grid">
+                        <div class="count">3</div>
+                        <h3>اعلام نتیجه تقاضای شما</h3>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                            است
+                        </p>
+                    </div>
+                    <div class="separator"></div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end contaienr -->
+</section>
+<!-- end work-process -->
+
+@Html.Action("LatestArticlesSection", "Home", new { take = 3 })
