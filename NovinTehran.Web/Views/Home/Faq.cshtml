@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<main class="main">
+@*<main class="main">
     <div class="page-header text-center" style="background-image: url('/Files/StaticContentImages/Image/@ViewBag.BanerImage')">
         <div class="container">
             <h1 class="page-title">@ViewBag.Title</h1>
@@ -15,7 +15,6 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/home">خانه</a></li>
-                @*<li class="breadcrumb-item"><a href="#">صفحات</a></li>*@
                 <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
             </ol>
         </div><!-- End .container -->
@@ -31,43 +30,43 @@
                     @for (int i = 0; i < faqGroup.Faqs.Count; i++)
                     {
                         @*if (i == 0)
-                        {
-                            <div class="card card-box card-sm bg-light">
-                                <div class="card-header" id="heading-1">
-                                    <h2 class="card-title">
-                                        <a role="button" data-toggle="collapse" href="#collapse-@i-@faqGroup.Id" aria-expanded="true"
-                                           aria-controls="collapse-@i-@faqGroup.Id">
-                                            @faqGroup.Faqs.ToList()[i].Question
-                                        </a>
-                                    </h2>
-                                </div><!-- End .card-header -->
-                                <div id="collapse-@i-@faqGroup.Id" class="collapse show" aria-labelledby="heading-1"
-                                     data-parent="#accordion-1">
-                                    <div class="card-body">
-                                        @faqGroup.Faqs.ToList()[i].Answer
-                                    </div><!-- End .card-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .card -->
-                        }
-                        else
-                        {*@
-                            <div class="card card-box card-sm bg-light">
-                                <div class="card-header" id="heading-2">
-                                    <h2 class="card-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-@i-@faqGroup.Id"
-                                           aria-expanded="false" aria-controls="collapse-@i-@faqGroup.Id">
-                                            @faqGroup.Faqs.ToList()[i].Question
-                                        </a>
-                                    </h2>
-                                </div><!-- End .card-header -->
-                                <div id="collapse-@i-@faqGroup.Id" class="collapse" aria-labelledby="heading-2"
-                                     data-parent="#accordion-1">
-                                    <div class="card-body">
-                                        @faqGroup.Faqs.ToList()[i].Answer
-                                    </div><!-- End .card-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .card -->
-                        @*}*@
+                            {
+                                <div class="card card-box card-sm bg-light">
+                                    <div class="card-header" id="heading-1">
+                                        <h2 class="card-title">
+                                            <a role="button" data-toggle="collapse" href="#collapse-@i-@faqGroup.Id" aria-expanded="true"
+                                               aria-controls="collapse-@i-@faqGroup.Id">
+                                                @faqGroup.Faqs.ToList()[i].Question
+                                            </a>
+                                        </h2>
+                                    </div><!-- End .card-header -->
+                                    <div id="collapse-@i-@faqGroup.Id" class="collapse show" aria-labelledby="heading-1"
+                                         data-parent="#accordion-1">
+                                        <div class="card-body">
+                                            @faqGroup.Faqs.ToList()[i].Answer
+                                        </div><!-- End .card-body -->
+                                    </div><!-- End .collapse -->
+                                </div><!-- End .card -->
+                            }
+                            else
+                            {
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading-2">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-@i-@faqGroup.Id"
+                                       aria-expanded="false" aria-controls="collapse-@i-@faqGroup.Id">
+                                        @faqGroup.Faqs.ToList()[i].Question
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse-@i-@faqGroup.Id" class="collapse" aria-labelledby="heading-2"
+                                 data-parent="#accordion-1">
+                                <div class="card-body">
+                                    @faqGroup.Faqs.ToList()[i].Answer
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
+                        @*}
 
 
                     }
@@ -75,7 +74,7 @@
                 </div><!-- End .card -->
             }
 
-     </div><!-- End .container -->
+        </div><!-- End .container -->
     </div><!-- End .page-content -->
 
     <div class="cta cta-display bg-image pt-4 pb-4"
@@ -100,6 +99,107 @@
         </div><!-- End .container -->
     </div><!-- End .cta -->
 </main><!-- End .main -->
+<!-- start page-title -->*@
 
 
 
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <h2>@ViewBag.Title</h2>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start faq-page-section -->
+<section class="section-padding faq-page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-10 col-lg-offset-1">
+                <div class="section-title-s2">
+                    <h2>
+                        @ViewBag.Title
+                    </h2>
+                </div>
+                <div class="faq-section">
+
+                    <div class="panel-group faq-accordion theme-accordion-s1" id="accordion">
+                        @foreach (var faqGroup in Model)
+                        {
+                            var i = 0;
+                            <h2 class="title text-center mb-3">@faqGroup.Title</h2><!-- End .title -->
+                            foreach (var faq in faqGroup.Faqs)
+                            {
+                                i++;
+
+                                if (i == 1)
+                                {
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@faq.Id" aria-expanded="true">@faq.Question</a>
+                                        </div>
+                                        <div id="collapse-@faq.Id" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <p>
+                                                    @faq.Answer
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-@faq.Id">@faq.Question</a>
+                                        </div>
+                                        <div id="collapse-@faq.Id" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p>
+                                                    @faq.Answer
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        }
+                        @*<div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="true">هر آنچه باید درباره ما بدانید</a>
+                            </div>
+                            <div id="collapse-1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <p>
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-2">همه آن چیز که باید درباره ما بدانید</a>
+                            </div>
+                            <div id="collapse-2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                                    </p>
+                                </div>
+                            </div>
+                        </div>*@
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end faq-page-section -->
