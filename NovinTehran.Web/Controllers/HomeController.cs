@@ -546,9 +546,9 @@ namespace NovinTehran.Web.Controllers
             return View(model);
         }
 
-        public ActionResult ServicesSection()
+        public ActionResult AboutRegisterSteps()
         {
-            var model = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.OurServices);
+            var model = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.AboutRegisterSteps);
 
             return PartialView(model);
         }

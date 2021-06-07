@@ -62,7 +62,7 @@ namespace NovinTehran.Core.Utility
         Guide = 9,
         Popup = 11,
         PageBanner = 12,
-        OurServices = 3,
+        AboutRegisterSteps = 3,
     }
 
     public enum PaymentStatus

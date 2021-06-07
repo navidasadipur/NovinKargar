@@ -4890,7 +4890,7 @@
     <Content Include="Views\Home\FooterSection.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\OurTeamsSection.cshtml" />
-    <Content Include="Views\Home\AboutOurPropertiesSection.cshtml" />
+    <Content Include="Views\Home\AboutRegisterSteps.cshtml" />
     <Content Include="Views\Home\ContactSocialsSection.cshtml" />
     <Content Include="Views\Home\Certificates.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />

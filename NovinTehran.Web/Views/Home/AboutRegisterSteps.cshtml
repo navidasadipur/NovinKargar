@@ -1,0 +1,42 @@
+﻿@model List<NovinTehran.Core.Models.StaticContentDetail>
+
+    @*<div class="row justify-content-center">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-sm-6">
+                <div class="icon-box icon-box-sm text-center">
+                    <span class="icon-box-icon">
+                        @Html.Raw(item.ShortDescription)
+                    </span>
+                    <div class="icon-box-content">
+                        <h3 class="icon-box-title">@item.Title </h3><!-- End .icon-box-title -->
+                        <div class="center">
+                            @Html.Raw(item.Description)
+                        </div>
+                    </div><!-- End .icon-box-content -->
+                </div><!-- End .icon-box -->
+            </div><!-- End .col-lg-4 col-sm-6 -->
+
+        }
+    </div><!-- End .row -->*@
+
+
+    <section class="work-process section-padding p-t-0">
+        <div class="container">
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="work-process-grids clearfix">
+                        @foreach (var item in Model)
+                        {
+                            <div class="grid">
+                                <div class="count">@item.Title</div>
+                                <h3>@item.ShortDescription</h3>
+                                @Html.Raw(item.Description)
+                            </div>
+                        }
+                        <div class="separator"></div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end contaienr -->
+    </section>
