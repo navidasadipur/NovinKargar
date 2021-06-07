@@ -22,87 +22,33 @@
         <div class="row">
             <div class="col col-md-8">
                 <div class="blog-content">
-                    <div class="post format-standard-image">
-                        <div class="entry-media">
-                            <a href="blog-details.html">
-                                <img src="/Content/client/assets/images/blog/img-4.jpg" alt>
-                            </a>
+                    @foreach (var article in Model)
+                    {
+                        <div class="post format-standard-image">
+                            <div class="entry-media">
+                                <a href="/Blog/Article/@article.Id/@article.Title.Replace(' ', '-')">
+                                    <img src="/Files/ArticleImages/Image/@article.Image" alt>
+                                </a>
+                            </div>
+                            <ul class="entry-meta">
+                                <li><a href="#"><i class="ti-time"></i> @article.PersianDate </a></li>
+                                <li><a href="#"><i class="ti-book"></i> @article.Author </a></li>
+                                @*<li><a href="#"><i class="ti-comment-alt"></i>5</a></li>*@
+                            </ul>
+                            <h3>
+                                <a href="/Blog/Article/@article.Id/@article.Title.Replace(' ', '-')">
+                                    @article.Title
+                                </a>
+                            </h3>
+                            <p>
+                                @article.ShortDescription
+                            </p>
+                            <a href="/Blog/Article/@article.Id/@article.Title.Replace(' ', '-')" class="theme-btn">بیشتر</a>
                         </div>
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="ti-time"></i> 25 اردیبهشت 1400</a></li>
-                            <li><a href="#"><i class="ti-book"></i> نوین تهران ، اداری</a></li>
-                            <li><a href="#"><i class="ti-comment-alt"></i>5</a></li>
-                        </ul>
-                        <h3>
-                            <a href="blog-details.html">
-                                هر آنچه باید درباره مجموعه ما بدانید
-                            </a>
-                        </h3>
-                        <p>
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                            فعلی تکنولوژی مورد نیاز، و کاربردهای آن
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                            فعلی تکنولوژی مورد نیاز، و کاربردهای آن
-                        </p>
-                        <a href="blog-details.html" class="theme-btn">بیشتر</a>
-                    </div>
-                    <div class="post format-gallery">
-                        <div class="entry-media post-slider">
-                            <img src="/Content/client/assets/images/blog/img-5.jpg" alt="">
-                            <img src="/Content/client/assets/images/blog/img-4.jpg" alt="">
-                        </div>
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="ti-time"></i> 25 اردیبهشت 1400</a></li>
-                            <li><a href="#"><i class="ti-book"></i> نوین تهران ، اداری</a></li>
-                            <li><a href="#"><i class="ti-comment-alt"></i>5</a></li>
-                        </ul>
-                        <h3>
-                            <a href="blog-details.html">
-                                هر آنچه باید درباره مجموعه ما بدانید
-                            </a>
-                        </h3>
-                        <p>
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                            فعلی تکنولوژی مورد نیاز، و کاربردهای آن
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                            فعلی تکنولوژی مورد نیاز، و کاربردهای آن
-                        </p>
-                        <a href="blog-details.html" class="theme-btn">بیشتر</a>
-                    </div>
-
-                    <div class="post format-video">
-                        <div class="entry-media">
-                            <a href="blog-details.html">
-                                <img src="/Content/client/assets/images/blog/img-6.jpg" alt>
-                            </a>
-                        </div>
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="ti-time"></i> 25 اردیبهشت 1400</a></li>
-                            <li><a href="#"><i class="ti-book"></i> نوین تهران ، اداری</a></li>
-                            <li><a href="#"><i class="ti-comment-alt"></i>5</a></li>
-                        </ul>
-                        <h3>
-                            <a href="blog-details.html">
-                                هر آنچه باید درباره مجموعه ما بدانید
-                            </a>
-                        </h3>
-                        <p>
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                            فعلی تکنولوژی مورد نیاز، و کاربردهای آن
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                            فعلی تکنولوژی مورد نیاز، و کاربردهای آن
-                        </p>
-                        <a href="#" class="theme-btn">بیشتر</a>
-                    </div>
+                    }
                     <div class="pagination-wrapper pagination-wrapper-right">
                         <ul class="pg-pagination">
-                            <li>
+                            @*<li>
                                 <a href="#" aria-label="Previous">
                                     <i class="fi flaticon-back"></i>
                                 </a>
@@ -114,7 +60,36 @@
                                 <a href="#" aria-label="Next">
                                     <i class="fi flaticon-next"></i>
                                 </a>
-                            </li>
+                            </li>*@
+
+                            @{
+                                if (ViewBag.CurrentPage > 1)
+                                {
+                                    <li>
+                                        <a href="/Blog?pageNumber=@(ViewBag.CurrentPage - 1)@(ViewBag.CategoryId != null ? $"&Category={ViewBag.CategoryId}" : null)@(ViewBag.SearchString != null ? $"&searchString={ViewBag.SearchString}" : null)" aria-label="Previous">
+                                            <i class="fi flaticon-back"></i>
+                                        </a>
+                                    </li>
+                                }
+                                for (int i = 1; i <= ViewBag.PageCount; i++)
+                                {
+                                    <li class="@(i == ViewBag.CurrentPage ? "active" : null)" aria-current="page">
+                                        <a class="page-link "
+                                           href="/Blog?pageNumber=@i@(ViewBag.CategoryId != null ? $"&category={ViewBag.CategoryId}" : null)@(ViewBag.SearchString != null ? $"&searchString={ViewBag.SearchString}" : null)">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
+                                if (ViewBag.CurrentPage < ViewBag.PageCount)
+                                {
+                                    <li>
+                                        <a href="/Blog?pageNumber=@(ViewBag.CurrentPage + 1)@(ViewBag.CategoryId != null ? $"&category={ViewBag.CategoryId}" : null)@(ViewBag.SearchString != null ? $"&searchString={ViewBag.SearchString}" : null)" aria-label="Next">
+                                            <i class="fi flaticon-next"></i>
+                                        </a>
+                                    </li>
+                                }
+
+                            }
                         </ul>
                     </div>
                 </div>
@@ -135,7 +110,7 @@
 
 
 
-<main class="main">
+@*<main class="main">
     <div class="page-header text-center" style="background-image: url('/Files/StaticContentImages/Image/@ViewBag.BanerImage')">
         <div class="container">
             <h1 class="page-title">@ViewBag.Title</h1>
@@ -197,10 +172,6 @@
                                         <h2 class="entry-title">
                                             <a href="/Blog/Article/@article.Id/@article.Title.Replace(' ', '-')">@article.Title</a>
                                         </h2><!-- End .entry-title -->
-                                        @*<div class="entry-cats">
-                                                <a href="#">بهداشت</a>،
-                                                <a href="#">فروشگاه</a>
-                                            </div> <!-- End .entry-cats -->*@
 
                                         <div class="entry-content">
                                             <p>
@@ -258,4 +229,4 @@
             </div><!-- End .row -->
         </div><!-- End .container -->
     </div><!-- End .page-content -->
-</main><!-- End .main -->
+</main><!-- End .main -->*@
