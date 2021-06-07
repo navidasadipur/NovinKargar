@@ -1,53 +1,7 @@
 ﻿@model List<NovinTehran.Core.Models.StaticContentDetail>
 
 
-
-@*<section id="banner-part" class="menu-section pb-100">
-    <div class="banner main-banner owl-carousel">
-        @foreach (var item in Model.Where(m => m.Image != null))
-        {
-            string link = "";
-            if (!String.IsNullOrEmpty(item.Link))
-            {
-                link = item.Link;
-            }
-            <a href="@link" style="display:block;">
-                <div class="banner">
-
-                    <img src="/Files/StaticContentImages/Image/@item.Image" alt="@item.Title">
-                    <div class="banner-detail">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="banner-detail-inner">
-                                        @if (item.Title != null)
-                                        {
-                                            <span class="subtitle1">@item.Title</span>
-                                        }
-                                        @if (item.ShortDescription != null)
-                                        {
-                                            <h1 class="banner-title">@item.ShortDescription</h1>
-                                        }
-                                        @if (item.ShortDescription != null)
-                                        {
-                                            <div class="subtitle2">
-                                                <span class="part1">@Html.Raw(item.Description)</span>
-                                            </div>
-                                        }
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        }
-    </div>
-</section>*@
-
-
-
-<div class="container">
+@*<div class="container">
 
     <div class="row">
         <div class="col-lg-12 col-12">
@@ -88,36 +42,6 @@
                             </div>
                         </div><!-- End .intro-slide -->
                     }
-                    @*<div class="intro-slide banner-lg"
-                         style="background-image: url(/Content/client/assets/images/medicine_images/header/102838-2.jpg);">
-                        <div class="intro">
-                            <div class="title">
-                                <a>پیشنهاد روزانه</a>
-                            </div>
-                            <div class="content">
-                                <h3><span>بیشتر از</span> 20% <span>تخفیف</span></h3>
-                                <h4>تخفیف مکمل های ورزشی</h4>
-                            </div>
-                            <div class="action">
-                                <a href="category.html">خرید</a>
-                            </div>
-                        </div>
-                    </div><!-- End .intro-slide -->
-
-                    <div class="intro-slide banner-lg"
-                         style="background-image: url(/Content/client/assets/images/medicine_images/header/Magnesium_tablets-4.jpg);">
-                        <div class="intro">
-                            <div class="title">
-                                <a>محصولات جدید</a>
-                            </div>
-                            <div class="content">
-                                <h3>برندهای منتخب<br>بیش از <span>30% تخفیف</span></h3>
-                            </div>
-                            <div class="action">
-                                <a href="category.html">خرید</a>
-                            </div>
-                        </div>
-                    </div><!-- End .intro-slide -->*@
 
 
                 </div><!-- End .intro-slider owl-carousel owl-simple -->
@@ -127,5 +51,66 @@
         </div>
     </div>
 
-</div>
+</div>*@
+
+
+<section class="hero-slider hero-slider-s2">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            @foreach (var item in Model)
+            {
+                string link = "";
+                if (!String.IsNullOrEmpty(item.Link))
+                {
+                    link = item.Link;
+                }
+                <div class="swiper-slide">
+                    <div class="slide-inner slide-bg-image" data-background="/Files/StaticContentImages/Image/@item.Image">
+                        <div class="container">
+                            <div data-swiper-parallax="300" class="slide-title">
+                                <h2>@item.Title</h2>
+                            </div>
+                            <div data-swiper-parallax="400" class="slide-text">
+                                <p>
+                                    @Html.Raw(item.Description)
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div data-swiper-parallax="500" class="slide-btns">
+                                <a href="@item.Link" class="theme-btn">بیشتر</a>
+                            </div>
+                        </div>
+                    </div> <!-- end slide-inner -->
+                </div> <!-- end swiper-slide -->
+            }
+
+
+            @*<div class="swiper-slide">
+                <div class="slide-inner slide-bg-image" data-background="/Content/client/assets/images/slider/slide-2.jpg">
+                    <div class="container">
+                        <div data-swiper-parallax="300" class="slide-title">
+                            <h2>نوین تهران یکی از بهترین مجموعه ها است</h2>
+                        </div>
+                        <div data-swiper-parallax="400" class="slide-text">
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                                برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div data-swiper-parallax="500" class="slide-btns">
+                            <a href="services.html" class="theme-btn">بیشتر</a>
+                        </div>
+                    </div>
+                </div> <!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->*@
+        </div>
+        <!-- end swiper-wrapper -->
+        <!-- swipper controls -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
 
