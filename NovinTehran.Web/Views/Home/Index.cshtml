@@ -10,7 +10,6 @@
 @Html.Action("HomeTopSliderSection", "Home")
 
 <!-- end of hero slider -->
-
 <!-- start about-section-s2 -->
 
 @Html.Action("HomeAboutSection", "Home")
@@ -363,7 +362,10 @@
 <!-- city -->
 <!-- end city -->
 <!-- start blog-section -->
-<section class="blog-section bg-white mt-5">
+
+@Html.Action("LatestArticlesSection", "Home", new { take = 3 })
+
+@*<section class="blog-section bg-white mt-5">
     <div class="container">
         <div class="row">
 
@@ -439,10 +441,9 @@
                 </div>
             </div>
         </div>
-    </div> <!-- end container -->
-</section>
+    </div>  end container 
+</section>*@
 <!-- end blog-section -->
-
 @*@if (Model.ShortDescription.Equals("فعال"))
     {
         <div id="newslater-popup" class="mfp-hide white-popup-block open align-center">

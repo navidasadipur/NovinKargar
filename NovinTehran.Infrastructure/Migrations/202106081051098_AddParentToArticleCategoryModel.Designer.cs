@@ -7,13 +7,13 @@ namespace NovinTehran.Infratructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddDescripotionToOfferModel : IMigrationMetadata
+    public sealed partial class AddParentToArticleCategoryModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDescripotionToOfferModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddParentToArticleCategoryModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106010811559_AddDescripotionToOfferModel"; }
+            get { return "202106081051098_AddParentToArticleCategoryModel"; }
         }
         
         string IMigrationMetadata.Source

@@ -13,6 +13,9 @@ namespace NovinTehran.Core.Models
         [Required(ErrorMessage = "لطفا نام دسته را وارد کنید")]
         public string Title { get; set; }
         public ICollection<Article> Articles { get; set; }
+        public int? ParentId { get; set; }
+        public virtual ArticleCategory Parent { get; set; }
+        public virtual ICollection<ArticleCategory> Children { get; set; }
         public string InsertUser { get; set; }
         public DateTime? InsertDate { get; set; }
         public string UpdateUser { get; set; }
