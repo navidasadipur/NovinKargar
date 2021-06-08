@@ -338,21 +338,15 @@
 
                     <div class="author-box">
                         <div class="author-avatar">
-                            <a href="#" target="_blank"><img src="/Content/client/assets/images/blog-details/author.jpg" alt></a>
+                            <a href="#" target="_blank"><img src="/Files/UserAvatars/@Model.AuthorImage" alt></a>
                         </div>
                         <div class="author-content">
-                            <a href="#" class="author-name">هلن رضایی</a>
+                            <a href="#" class="author-name">@Model.Author</a>
                             <p>
                                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
                             </p>
-                            <div class="socials">
-                                <ul class="social-link">
-                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                    <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="ti-instagram"></i></a></li>
-                                </ul>
-                            </div>
+                            @Html.Action("SocialsSection", "Blog")
+
                         </div>
                     </div> <!-- end author-box -->
 
@@ -360,9 +354,9 @@
 
                     <div class="comments-area">
                         <div class="comments-section">
-                            <h3 class="comments-title">4 کامنت</h3>
+                            <h3 class="comments-title">@Model.ArticleComments.Count() کامنت</h3>
                             <ol class="comments">
-                                <li class="comment even thread-even depth-1" id="comment-1">
+                                @*<li class="comment even thread-even depth-1" id="comment-1">
                                     <div id="div-comment-1">
                                         <div class="comment-theme">
                                             <div class="comment-image"><img src="/Content/client/assets/images/blog-details/comments-author/img-1.jpg" alt></div>
@@ -436,7 +430,7 @@
                                 <li class="comment">
                                     <div>
                                         <div class="comment-theme">
-                                            <div class="comment-image"><img src="/Content/client/assets/images/blog-details/comments-author/img-1.jpg" alt></div>
+                                            <div class="comment-image"><img src="/Content/client/assets/images/blog-details/anonymousUser.png" alt></div>
                                         </div>
                                         <div class="comment-main-area">
                                             <div class="comment-wrapper">
@@ -454,7 +448,32 @@
                                             </div>
                                         </div>
                                     </div>
-                                </li>
+                                </li>*@
+                                @foreach (var item in Model.ArticleComments)
+                                {
+                                    <li class="comment">
+                                        <div>
+                                            <div class="comment-theme">
+                                                <div class="comment-image"><img src="/Content/client/assets/images/blog-details/anonymousUser.png" alt></div>
+                                            </div>
+                                            <div class="comment-main-area">
+                                                <div class="comment-wrapper">
+                                                    <div class="comments-meta">
+                                                        <h4>@item.Name <span class="comments-date">@item.AddedDate</span></h4>
+                                                    </div>
+                                                    <div class="comment-area">
+                                                        <p>
+                                                            @item.Message
+                                                        </p>
+                                                        @*<div class="comments-reply">
+                                                            <a class="comment-reply-link" href="#"><span>بازخورد</span></a>
+                                                        </div>*@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
                             </ol>
                         </div> <!-- end comments-section -->
 
