@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
 using NovinTehran.Core.Models;
@@ -15,25 +16,44 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
             _repo = repo;
         }
         // GET: Admin/ArticleCategories
-        public ActionResult Index()
+        public ActionResult Index(int? parentId)
         {
-            return View(_repo.GetAll());
+            //return View(_repo.GetAll());
+
+            List<ArticleCategory> productGroups;
+
+            if (parentId == null)
+                productGroups = _repo.GetArticleCategoryTable();
+            else
+            {
+                productGroups = _repo.GetArticleCategoryTable(parentId.Value);
+                var parent = _repo.Get(parentId.Value);
+                ViewBag.PrevParent = parent.ParentId;
+                ViewBag.ParentId = parentId;
+                ViewBag.ParentName = parent.Title;
+            }
+
+
+            return View(productGroups);
         }
 
         // GET: Admin/ArticleCategories/Create
         public ActionResult Create()
         {
+            ViewBag.ParentId = new SelectList(_repo.GetMainArticleCategories(), "Id", "Title");
             return PartialView();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title")] ArticleCategory articleCategory)
+        public ActionResult Create([Bind(Include = "Id,Title, ParentId")] ArticleCategory articleCategory)
         {
             if (ModelState.IsValid)
             {
                 _repo.Add(articleCategory);
                 return RedirectToAction("Index");
             }
+
+            ViewBag.ParentId = new SelectList(_repo.GetMainArticleCategories(), "Id", "Title", articleCategory.Id);
 
             return View(articleCategory);
         }
@@ -50,18 +70,24 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.ParentId = new SelectList(_repo.GetMainArticleCategories(), "Id", "Title", articleCategory.Id);
+
             return PartialView(articleCategory);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title")] ArticleCategory articleCategory)
+        public ActionResult Edit([Bind(Include = "Id,Title, ParentId")] ArticleCategory articleCategory)
         {
             if (ModelState.IsValid)
             {
                 _repo.Update(articleCategory);
                 return RedirectToAction("Index");
             }
+
+            ViewBag.ParentId = new SelectList(_repo.GetMainArticleCategories(), "Id", "Title", articleCategory.Id);
+
             return View(articleCategory);
         }
 

@@ -20,24 +20,41 @@ namespace NovinTehran.Infrastructure.Repositories
 
         public List<ArticleCategory> GetArticleCategoryTable()
         {
-            return _context.ArticleCategories.Where(ac => ac.ParentId == null && ac.IsDeleted == false).Include(p => p.Children).ToList();
+            var allCategories = _context.ArticleCategories.Where(ac => ac.ParentId == null && ac.IsDeleted == false).Include(p => p.Children).ToList();
+
+            foreach (var category in allCategories)
+            {
+                category.Children = _context.ArticleCategories.Where(ac => ac.ParentId == category.Id && ac.IsDeleted == false).ToList();
+            }
+
+            return allCategories;
         }
+
         public List<ArticleCategory> GetArticleCategoryTable(int id)
         {
-            return _context.ArticleCategories.Where(p => p.ParentId == id && p.IsDeleted == false).Include(p => p.Children).ToList();
+            var allCategories = _context.ArticleCategories.Where(ac => ac.ParentId == id && ac.IsDeleted == false).Include(ac => ac.Children).ToList();
+
+            foreach (var category in allCategories)
+            {
+                category.Children = _context.ArticleCategories.Where(ac => ac.ParentId == category.Id && ac.IsDeleted == false).ToList();
+            }
+
+            return allCategories;
         }
+
         public ArticleCategory GetArticleCategory(int id)
         {
             var pg = _context.ArticleCategories.Include(ac => ac.Children)
                 .Include(ac => ac.Parent).FirstOrDefault(ac => ac.Id == id);
             return pg;
         }
+
         public List<Feature> GetFeatures()
         {
             return _context.Features.Where(f => f.IsDeleted == false).ToList();
         }
 
-        public List<ArticleCategory> GetArticleCategorys()
+        public List<ArticleCategory> GetArticleCategories()
         {
             return _context.ArticleCategories.Where(f => f.IsDeleted == false).Include(p => p.Children).OrderByDescending(p => p.InsertDate).ToList();
         }
