@@ -49,7 +49,7 @@
     </div>*@
 
 
-@using (Html.BeginForm("Login", "Auth", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "login-form", id = "form" }))
+@*@using (Html.BeginForm("Login", "Auth", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "login-form", id = "form" }))
 {
     @Html.AntiForgeryToken()
     <div>
@@ -60,16 +60,12 @@
         <label for="register-email-2">نام کاربری شما *</label>
         @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.UserName, "")
-        @*<input type="email" class="form-control" id="register-email-2"
-            name="register-email" required>*@
     </div><!-- End .form-group -->
 
     <div class="form-group">
         <label for="register-password-2">رمز عبور *</label>
         @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password" })
         @Html.ValidationMessageFor(m => m.Password, "")
-        @*<input type="password" class="form-control" id="register-password-2"
-            name="register-password" required>*@
     </div><!-- End .form-group -->
 
     <div class="form-footer">
@@ -80,9 +76,6 @@
         <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input"
                    id="register-policy-2" required>
-            @*<label class="custom-control-label" for="register-policy-2">
-                من با <a href="#" class="text-dark">قوانین و مقررات</a> موافقم *
-            </label>*@
         </div><!-- End .custom-checkbox -->
     </div><!-- End .form-footer -->
 
@@ -94,13 +87,38 @@
             ثبت نام
         </a>
     </div><!-- End .form-footer -->
+}*@
 
+
+@using (Html.BeginForm("Login", "Auth", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "comment-form", role = "login-form", id = "form" }))
+{
+    @*<form method="post" id="commentform" class="comment-form">*@
+
+        <div class="recruitment-form">
+            <div class="flex-form-login">
+                @*<input placeholder="نام کاربری " type="text">*@
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "نام کاربری" })
+                @Html.ValidationMessageFor(m => m.UserName, "")
+            </div>
+
+            <div class="flex-form-login">
+                @*<input placeholder="رمز عبور" type="password">*@
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password", @placeholder = "رمز عبور" })
+                @Html.ValidationMessageFor(m => m.Password, "")
+            </div>
+        </div>
+
+        <div class="form-submit btn-form">
+            <input id="submit" value="ورود" type="submit">
+        </div>
 }
 
 
-<script>
-    $.validator.unobtrusive.parse("#form");
-</script>
-@section scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
+
+    <script>
+        $.validator.unobtrusive.parse("#form");
+    </script>
+    @section scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

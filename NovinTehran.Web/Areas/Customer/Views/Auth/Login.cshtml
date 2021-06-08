@@ -4,34 +4,34 @@
 }
 
 @*<!-- breadcrumb area start -->
-<section class="breadcrumb-area breadcrumb-bg extra">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-inner">
-                    <!-- breadcrumb inner -->
-                    <div class="left-content-area">
-                        <!-- left content area -->
-                        <h1 class="title">ورود</h1>
-                    </div><!-- //. left content area -->
-                    <div class="right-content-area">
-                        <ul>
-                            <li><a href="/">خانه</a></li>
-                            <li>ورود</li>
-                        </ul>
-                    </div>
-                </div><!-- //. breadcrumb inner -->
+    <section class="breadcrumb-area breadcrumb-bg extra">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inner">
+                        <!-- breadcrumb inner -->
+                        <div class="left-content-area">
+                            <!-- left content area -->
+                            <h1 class="title">ورود</h1>
+                        </div><!-- //. left content area -->
+                        <div class="right-content-area">
+                            <ul>
+                                <li><a href="/">خانه</a></li>
+                                <li>ورود</li>
+                            </ul>
+                        </div>
+                    </div><!-- //. breadcrumb inner -->
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- breadcrumb area end -->*@
+    </section>
+    <!-- breadcrumb area end -->*@
 
 
 
 
 
-<main class="main">
+@*<main class="main">
     <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
         <div class="container">
             <ol class="breadcrumb">
@@ -69,7 +69,49 @@
             </div><!-- End .form-box -->
         </div><!-- End .container -->
     </div><!-- End .login-page section-bg -->
-</main><!-- End .main -->
+</main><!-- End .main -->*@
+
+
+
+
+<!-- start page-title -->
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <h2>@ViewBag.Title</h2>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start blog-single-section -->
+<section class="form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-8 col-md-offset-2">
+
+                <div class="comment-respond form-box">
+                    <h3 class="form-title">@ViewBag.Title</h3>
+                    @Html.Action("LoginPartial", "Auth", new { area = "Customer" })
+                    <div class="recruitment-form form-link">
+                        <div class="flex-form">
+                            <a href="register.html">حساب کاربری ندارم</a>
+                        </div>
+                        <div class="flex-form">
+                            <a href="forgot.html">فراموشی رمز عبور</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+</section>
+<!-- end blog-single-section -->
+
+
+
 
 <style>
     .field-validation-error span {
