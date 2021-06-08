@@ -86,8 +86,22 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
                 #region Upload Image
                 if (UserAvatar != null)
                 {
+                    //var newFileName = Guid.NewGuid() + Path.GetExtension(UserAvatar.FileName);
+                    //UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/" + newFileName));
+
+                    //form.User.Avatar = newFileName;
+
+                    //Saving Temp Image
                     var newFileName = Guid.NewGuid() + Path.GetExtension(UserAvatar.FileName);
-                    UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/" + newFileName));
+                    UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName));
+
+                    // Resize Image
+                    ImageResizer image = new ImageResizer(80, 80, true);
+                    image.Resize(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName),
+                        Server.MapPath("/Files/UserAvatars/Image/" + newFileName));
+
+                    // Deleting Temp Image
+                    System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName));
 
                     form.User.Avatar = newFileName;
                 }
@@ -139,11 +153,25 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
                 #region Upload Image
                 if (UserAvatar != null)
                 {
-                    if (System.IO.File.Exists(Server.MapPath("/Files/UserAvatars/" + users.Avatar)))
-                        System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/" + users.Avatar));
+                    if (System.IO.File.Exists(Server.MapPath("/Files/UserAvatars/Image/" + users.Avatar)))
+                        System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/Image/" + users.Avatar));
 
+                    //var newFileName = Guid.NewGuid() + Path.GetExtension(UserAvatar.FileName);
+                    //UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/" + newFileName));
+
+                    //users.Avatar = newFileName;
+
+                    //Saving Temp Image
                     var newFileName = Guid.NewGuid() + Path.GetExtension(UserAvatar.FileName);
-                    UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/" + newFileName));
+                    UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName));
+
+                    // Resize Image
+                    ImageResizer image = new ImageResizer(80, 80, true);
+                    image.Resize(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName),
+                        Server.MapPath("/Files/UserAvatars/Image/" + newFileName));
+
+                    // Deleting Temp Image
+                    System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName));
 
                     users.Avatar = newFileName;
                 }
@@ -195,11 +223,25 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
                 #region Upload Image
                 if (UserAvatar != null)
                 {
-                    if (System.IO.File.Exists(Server.MapPath("/Files/UserAvatars/" + users.Avatar)))
-                        System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/" + users.Avatar));
+                    if (System.IO.File.Exists(Server.MapPath("/Files/UserAvatars/Image/" + users.Avatar)))
+                        System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/Image/" + users.Avatar));
 
+                    //var newFileName = Guid.NewGuid() + Path.GetExtension(UserAvatar.FileName);
+                    //UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/" + newFileName));
+
+                    //users.Avatar = newFileName;
+
+                    //Saving Temp Image
                     var newFileName = Guid.NewGuid() + Path.GetExtension(UserAvatar.FileName);
-                    UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/" + newFileName));
+                    UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName));
+
+                    // Resize Image
+                    ImageResizer image = new ImageResizer(80, 80, true);
+                    image.Resize(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName),
+                        Server.MapPath("/Files/UserAvatars/Image/" + newFileName));
+
+                    // Deleting Temp Image
+                    System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName));
 
                     users.Avatar = newFileName;
                 }

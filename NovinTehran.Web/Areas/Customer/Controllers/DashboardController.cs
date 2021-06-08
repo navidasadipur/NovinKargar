@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using NovinTehran.Core.Models;
 using NovinTehran.Core.Utility;
+using NovinTehran.Infrastructure.Helpers;
 using NovinTehran.Infrastructure.Repositories;
 using NovinTehran.Web.ViewModels;
 
@@ -106,11 +107,26 @@ namespace NovinTehran.Web.Areas.Customer.Controllers
                 #region Upload Image
                 if (UserAvatar != null)
                 {
-                    if (System.IO.File.Exists(Server.MapPath("/Files/UserAvatars/" + form.Avatar)))
-                        System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/" + form.Avatar));
+                    if (System.IO.File.Exists(Server.MapPath("/Files/UserAvatars/Image/" + form.Avatar)))
+                        System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/Image/" + form.Avatar));
 
+                    //var newFileName = Guid.NewGuid() + Path.GetExtension(UserAvatar.FileName);
+
+                    //UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/Image/" + newFileName));
+
+                    //form.Avatar = newFileName;
+
+                    //Saving Temp Image
                     var newFileName = Guid.NewGuid() + Path.GetExtension(UserAvatar.FileName);
-                    UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/" + newFileName));
+                    UserAvatar.SaveAs(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName));
+
+                    // Resize Image
+                    ImageResizer image = new ImageResizer(80, 80, false);
+                    image.Resize(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName),
+                        Server.MapPath("/Files/UserAvatars/Image/" + newFileName));
+
+                    // Deleting Temp Image
+                    System.IO.File.Delete(Server.MapPath("/Files/UserAvatars/Temp/" + newFileName));
 
                     form.Avatar = newFileName;
                 }

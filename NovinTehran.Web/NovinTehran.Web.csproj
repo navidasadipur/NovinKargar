@@ -4907,6 +4907,7 @@
     <Content Include="Views\Shop\ProductFeaturesSection.cshtml" />
     <Content Include="Views\Home\WishListSection.cshtml" />
     <Content Include="Views\Home\HighRateProductsSection.cshtml" />
+    <Content Include="Views\Blog\SocialsSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
