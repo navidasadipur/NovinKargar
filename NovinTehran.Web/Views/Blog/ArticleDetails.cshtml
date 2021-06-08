@@ -342,9 +342,9 @@
                         </div>
                         <div class="author-content">
                             <a href="#" class="author-name">@Model.Author</a>
+                            
                             <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای آن
-                            </p>
+                                @Model.AuthorInfo                            </p>
                             @Html.Action("SocialsSection", "Blog")
 
                         </div>
@@ -479,19 +479,49 @@
 
                         <div class="comment-respond">
                             <h3 class="comment-reply-title">نظرات خود را بنویسید</h3>
-                            <form method="post" id="commentform" class="comment-form">
-
+                            @*<form method="post" id="commentform" class="comment-form">*@
+                            @using (Html.BeginForm("PostComment", "Blog", FormMethod.Post, new { id = "commentform", @class = "comment-form" }))
+                            {
+                                <input type="hidden" id="ArticleId" name="ArticleId" value="@Model.Id">
                                 <div class="form-inputs">
-                                    <input placeholder="نام کاربری" type="text">
-                                    <input placeholder="ایمیل" type="email">
+                                    <input id="Name" name="Name" placeholder="نام کاربری" type="text">
+                                    <input id="Email" name="Email" placeholder="ایمیل" type="email">
                                 </div>
                                 <div class="form-textarea">
-                                    <textarea id="comment" placeholder="متن را بنویسید..."></textarea>
+                                    <textarea name="Message" id="Message" placeholder="متن را بنویسید..."></textarea>
                                 </div>
                                 <div class="form-submit">
                                     <input id="submit" value="ارسال" type="submit">
                                 </div>
-                            </form>
+                            }
+
+                            @*@using (Html.BeginForm("PostComment", "Blog", FormMethod.Post, new { id = "commentform" }))
+        {
+            <input type="hidden" id="ArticleId" name="ArticleId" value="@Model.Id">
+            <label for="Message" class="sr-only">دیدگاه</label>
+            <textarea name="Message" id="Message" cols="30" rows="4"
+                      class="form-control" required placeholder="دیدگاه شما *"></textarea>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="Name" class="sr-only">نام</label>
+                    <input type="text" class="form-control" id="Name" name="Name"
+                           required placeholder="نام شما *">
+                </div><!-- End .col-md-6 -->
+
+                <div class="col-md-6">
+                    <label for="Email" class="sr-only">ایمیل</label>
+                    <input type="email" class="form-control" id="Email" name="Email"
+                           required placeholder="ایمیل شما *">
+                </div><!-- End .col-md-6 -->
+            </div><!-- End .row -->
+
+            <button type="submit" class="btn btn-outline-primary-2 float-right">
+                <span>ارسال دیدگاه</span>
+                <i class="icon-long-arrow-left"></i>
+            </button>
+        }*@
+
                         </div>
                     </div> <!-- end comments-area -->
                 </div>
@@ -509,6 +539,9 @@
 <style>
     .my-error-class {
         color: darkred !important; /* red */
+        display: block;
+          position: relative;
+  
     }
 </style>
 @section Scripts {
@@ -525,10 +558,10 @@
                 }
             },
             messages: {
-                Name: "نام خود را وارد کنید",
+                Name: "",
                 Message: "پیام خود را وارد کنید",
                 Email: {
-                    required: "ایمیل خود را وارد کنید",
+                    required: "",
                     email: "ایمیل وارد شده معتبر نیست"
                 },
             }
