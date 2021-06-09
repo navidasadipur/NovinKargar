@@ -169,5 +169,6 @@ namespace NovinTehran.Web.ViewModels
         public int Id { get; set; }
         public string Title { get; set; }
         public int ArticleCount { get; set; }
+        public virtual ICollection<ArticleCategory> Children { get; set; }
     }
 }

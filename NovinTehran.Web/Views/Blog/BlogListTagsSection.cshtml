@@ -1,0 +1,12 @@
+﻿@model List<NovinTehran.Core.Models.ArticleTag>
+
+
+<div class="widget tag-widget">
+    <h3>Tags</h3>
+    <ul class="tags">
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            <li><a href="/Blog?searchString=@Model[i].Title.Replace(" ", "+")">@Model[i].Title</a></li>
+        }
+        </ul>
+</div>

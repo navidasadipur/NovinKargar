@@ -84,9 +84,10 @@ namespace NovinTehran.Web.Controllers
 
             return View(vm);
         }
+
         public ActionResult ArticleCategoriesSection()
         {
-            var categories = _articlesRepo.GetArticleCategories();
+            var categories = _articleCategoriesRepo.GetMainArticleCategories();
 
             var articleCategoriesVm = new List<ArticleCategoriesViewModel>();
 
@@ -96,11 +97,13 @@ namespace NovinTehran.Web.Controllers
                 vm.Id = item.Id;
                 vm.Title = item.Title;
                 vm.ArticleCount = _articlesRepo.GetArticlesCount(item.Id);
+                vm.Children = item.Children;
                 articleCategoriesVm.Add(vm);
             }
 
             return PartialView(articleCategoriesVm);
         }
+
         public ActionResult TopArticlesSection(int take)
         {
             var vm = new List<LatestArticlesViewModel>();
@@ -118,7 +121,19 @@ namespace NovinTehran.Web.Controllers
             return PartialView(model);
         }
 
-        public ActionResult TagsSection()
+        public ActionResult ArticleDetailsTagsSection(int id)
+        {
+            //SocialViewModel model = new SocialViewModel();
+
+            //model.Instagram = _staticContentDetailsRepo.GetStaticContentDetail(1009).Link;
+            //model.Aparat = _staticContentDetailsRepo.GetStaticContentDetail(1012).Link;
+
+            var tags = _articleTagsRepo.GetArticleTags(id);
+
+            return PartialView(tags);
+        }
+
+        public ActionResult BlogListTagsSection()
         {
             //SocialViewModel model = new SocialViewModel();
 

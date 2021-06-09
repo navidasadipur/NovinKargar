@@ -4866,7 +4866,6 @@
     <Content Include="Views\Blog\ArticleCategoriesSection.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\TopArticlesSection.cshtml" />
-    <Content Include="Views\Blog\ArticleDetails.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Shop\ProductsGrid.cshtml" />
     <Content Include="Views\Home\HeaderSection.cshtml" />
@@ -4897,7 +4896,7 @@
     <Content Include="Views\Home\Certificates.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Blog\AdBlogSection.cshtml" />
-    <Content Include="Views\Blog\TagsSection.cshtml" />
+    <Content Include="Views\Blog\ArticleDetailsTagsSection.cshtml" />
     <Content Include="Views\Blog\ShareSocialsSection.cshtml" />
     <Content Include="Views\Blog\RelatedBlogsSection.cshtml" />
     <Content Include="Views\Shop\SocialsSection.cshtml" />
@@ -4910,6 +4909,8 @@
     <Content Include="Views\Home\WishListSection.cshtml" />
     <Content Include="Views\Home\HighRateProductsSection.cshtml" />
     <Content Include="Views\Blog\SocialsSection.cshtml" />
+    <Content Include="Views\Blog\ArticleDetails.cshtml" />
+    <Content Include="Views\Blog\BlogListTagsSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
