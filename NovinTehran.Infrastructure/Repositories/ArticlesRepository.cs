@@ -31,7 +31,7 @@ namespace NovinTehran.Infrastructure.Repositories
         }
         public List<ArticleCategory> GetArticleCategories()
         {
-            return _context.ArticleCategories.Where(a => a.IsDeleted == false).ToList();
+            return _context.ArticleCategories.Where(a => a.IsDeleted == false).Include(a => a.Children).ToList();
         }
         public void AddArticle(Article article)
         {
