@@ -16,7 +16,36 @@
 <div class="widget category-widget">
     <h3>دسته بندی ها</h3>
     <ul>
-        <button type="button" class="btn btn-info collaps-btn" data-toggle="collapse"
+        @foreach (var item in Model)
+        {
+            <button type="button" class="btn btn-info collaps-btn" data-toggle="collapse"
+                    data-target="#demo-@item.Id">
+                @item.Title<span class="pull-left">+</span>
+            </button>
+            <div id="demo-@item.Id" class="collapse">
+                @if (item.Children.Count() > 0)
+                {
+                    foreach (var subItem in item.Children)
+                    {
+                        if (subItem.IsDeleted)
+                        {
+                            continue;
+                        }
+
+                        <form>
+
+                            <div class="checkbox custome-checkBox">
+                                <label><input type="checkbox" value="@subItem.Id">@subItem.Title</label>
+                            </div>
+                        </form>
+
+                    }
+
+                }
+            </div>
+        }
+
+        @*<button type="button" class="btn btn-info collaps-btn" data-toggle="collapse"
                 data-target="#demo">
             استخدام<span class="pull-left">+</span>
         </button>
@@ -32,74 +61,6 @@
                     <label><input type="checkbox" value="">استخدام</label>
                 </div>
             </form>
-        </div>
-        <button type="button" class="btn btn-info collaps-btn" data-toggle="collapse"
-                data-target="#demo2">
-            شغل آزاد<span class="pull-left">+</span>
-        </button>
-        <div id="demo2" class="collapse">
-            <form>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">شغل آزاد 1</label>
-                </div>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">شغل آزاد 2</label>
-                </div>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">شغل آزاد 3</label>
-                </div>
-            </form>
-        </div>
-        <button type="button" class="btn btn-info collaps-btn" data-toggle="collapse"
-                data-target="#demo3">
-            کارمند<span class="pull-left">+</span>
-        </button>
-        <div id="demo3" class="collapse">
-            <form>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">کارمند 1</label>
-                </div>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">کارمند 2</label>
-                </div>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">کارمند 3</label>
-                </div>
-            </form>
-        </div>
-        <button type="button" class="btn btn-info collaps-btn" data-toggle="collapse"
-                data-target="#demo4">
-            مکانیک<span class="pull-left">+</span>
-        </button>
-        <div id="demo4" class="collapse">
-            <form>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">مکانیک 1</label>
-                </div>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">مکانیک 2</label>
-                </div>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">مکانیک 3</label>
-                </div>
-            </form>
-        </div>
-        <button type="button" class="btn btn-info collaps-btn" data-toggle="collapse"
-                data-target="#demo5">
-            تعمیرات کامپیوتر<span class="pull-left">+</span>
-        </button>
-        <div id="demo5" class="collapse">
-            <form>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">تعمیرات کامپیوتر 1</label>
-                </div>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">تعمیرات کامپیوتر 2</label>
-                </div>
-                <div class="checkbox custome-checkBox">
-                    <label><input type="checkbox" value="">تعمیرات کامپیوتر 3</label>
-                </div>
-            </form>
-        </div>
+        </div>*@
     </ul>
 </div>
