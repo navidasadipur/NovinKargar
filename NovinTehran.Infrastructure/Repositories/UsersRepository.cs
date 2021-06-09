@@ -43,6 +43,11 @@ namespace NovinTehran.Infrastructure.Repositories
             return _context.Users.FirstOrDefault(u => u.PhoneNumber == phoneNumber && u.IsDeleted == false);
         }
 
+        public User GetUserByEmail(string Email)
+        {
+            return _context.Users.FirstOrDefault(u => u.Email == Email && u.IsDeleted == false);
+        }
+
         public List<User> GetUsers()
         {
             var usersList = _userManager.Users.ToList();
