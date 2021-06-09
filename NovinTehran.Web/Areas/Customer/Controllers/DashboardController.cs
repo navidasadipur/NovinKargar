@@ -156,12 +156,14 @@ namespace NovinTehran.Web.Areas.Customer.Controllers
             return View(form);
 
         }
+
         public ActionResult ResetMyPassword(string id)
         {
             ViewBag.Message = null;
             ViewBag.UserId = id;
             return PartialView();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetMyPassword(ResetMyPasswordViewModel model)
