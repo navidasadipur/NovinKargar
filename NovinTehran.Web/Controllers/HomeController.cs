@@ -147,12 +147,15 @@ namespace NovinTehran.Web.Controllers
             var vm = new FooterViewModel()
             {
                 Phone = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Phone),
+                Email = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Email),
+                Address = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Address),
                 Logo = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Logo),
                 Facebook = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Facebook),
                 Twitter = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Twitter),
                 Instagram = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Instagram),
                 Youtube = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Youtube),
                 Pinterest = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Pinterest),
+                LinkedIn = _staticContentRepo.GetStaticContentDetail((int)StaticContents.linkedin)
             };
 
             return PartialView(vm);
