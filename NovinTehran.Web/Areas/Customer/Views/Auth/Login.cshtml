@@ -90,16 +90,27 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-8 col-md-offset-2">
-
+                @if (!string.IsNullOrEmpty(ViewBag.LoginError))
+                {
+                    <div class="container margin-top-50">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-warning">
+                                    <span class="text-danger">@ViewBag.LoginError</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
                 <div class="comment-respond form-box">
                     <h3 class="form-title">@ViewBag.Title</h3>
                     @Html.Action("LoginPartial", "Auth", new { area = "Customer" })
                     <div class="recruitment-form form-link">
                         <div class="flex-form">
-                            <a href="register.html">حساب کاربری ندارم</a>
+                            <a href="/Customer/Auth/Register">حساب کاربری ندارم</a>
                         </div>
                         <div class="flex-form">
-                            <a href="forgot.html">فراموشی رمز عبور</a>
+                            <a href="/Customer/Dashboard/ResetMyPassword">فراموشی رمز عبور</a>
                         </div>
                     </div>
 

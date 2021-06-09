@@ -50,75 +50,76 @@
 
 
 @*@using (Html.BeginForm("Login", "Auth", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "login-form", id = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <div>
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    </div>
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
 
-    <div class="form-group">
-        <label for="register-email-2">نام کاربری شما *</label>
-        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.UserName, "")
-    </div><!-- End .form-group -->
+        <div class="form-group">
+            <label for="register-email-2">نام کاربری شما *</label>
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.UserName, "")
+        </div><!-- End .form-group -->
 
-    <div class="form-group">
-        <label for="register-password-2">رمز عبور *</label>
-        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password" })
-        @Html.ValidationMessageFor(m => m.Password, "")
-    </div><!-- End .form-group -->
+        <div class="form-group">
+            <label for="register-password-2">رمز عبور *</label>
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password" })
+            @Html.ValidationMessageFor(m => m.Password, "")
+        </div><!-- End .form-group -->
 
-    <div class="form-footer">
-        <button type="submit" class="btn btn-outline-primary-2 ml-3">
-            <span>ورود</span>
-            <i class="icon-long-arrow-left"></i>
-        </button>
-        <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input"
-                   id="register-policy-2" required>
-        </div><!-- End .custom-checkbox -->
-    </div><!-- End .form-footer -->
+        <div class="form-footer">
+            <button type="submit" class="btn btn-outline-primary-2 ml-3">
+                <span>ورود</span>
+                <i class="icon-long-arrow-left"></i>
+            </button>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input"
+                       id="register-policy-2" required>
+            </div><!-- End .custom-checkbox -->
+        </div><!-- End .form-footer -->
 
-    <br>
-    <br>
+        <br>
+        <br>
 
-    <div class="form-footer">
-        <a class="btn btn-outline-primary-2 ml-12 col-12" href="/Customer/Auth/Register">
-            ثبت نام
-        </a>
-    </div><!-- End .form-footer -->
-}*@
+        <div class="form-footer">
+            <a class="btn btn-outline-primary-2 ml-12 col-12" href="/Customer/Auth/Register">
+                ثبت نام
+            </a>
+        </div><!-- End .form-footer -->
+    }*@
 
 
 @using (Html.BeginForm("Login", "Auth", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "comment-form", role = "login-form", id = "form" }))
 {
+    @Html.AntiForgeryToken()
     @*<form method="post" id="commentform" class="comment-form">*@
 
-        <div class="recruitment-form">
-            <div class="flex-form-login">
-                @*<input placeholder="نام کاربری " type="text">*@
-                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "نام کاربری" })
-                @Html.ValidationMessageFor(m => m.UserName, "")
-            </div>
-
-            <div class="flex-form-login">
-                @*<input placeholder="رمز عبور" type="password">*@
-                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password", @placeholder = "رمز عبور" })
-                @Html.ValidationMessageFor(m => m.Password, "")
-            </div>
+    <div class="recruitment-form">
+        <div class="flex-form-login">
+            @*<input placeholder="نام کاربری " type="text">*@
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "نام کاربری" })
+            @Html.ValidationMessageFor(m => m.UserName, "")
         </div>
 
-        <div class="form-submit btn-form">
-            <input id="submit" value="ورود" type="submit">
+        <div class="flex-form-login">
+            @*<input placeholder="رمز عبور" type="password">*@
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password", @placeholder = "رمز عبور" })
+            @Html.ValidationMessageFor(m => m.Password, "")
         </div>
+    </div>
+
+    <div class="form-submit btn-form">
+        <input id="submit" value="ورود" type="submit">
+    </div>
 }
 
 
 
 
-    <script>
-        $.validator.unobtrusive.parse("#form");
-    </script>
-    @section scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+<script>
+    $.validator.unobtrusive.parse("#form");
+</script>
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
