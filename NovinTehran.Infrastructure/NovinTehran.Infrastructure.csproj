@@ -115,6 +115,14 @@
     <Compile Include="Migrations\202106081051098_AddParentToArticleCategoryModel.Designer.cs">
       <DependentUpon>202106081051098_AddParentToArticleCategoryModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.cs" />
+    <Compile Include="Migrations\202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.Designer.cs">
+      <DependentUpon>202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091334064_AddServiceTables.cs" />
+    <Compile Include="Migrations\202106091334064_AddServiceTables.Designer.cs">
+      <DependentUpon>202106091334064_AddServiceTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106081051098_AddParentToArticleCategoryModel.resx">
       <DependentUpon>202106081051098_AddParentToArticleCategoryModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.resx">
+      <DependentUpon>202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091334064_AddServiceTables.resx">
+      <DependentUpon>202106091334064_AddServiceTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

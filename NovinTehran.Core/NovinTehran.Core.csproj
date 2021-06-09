@@ -77,7 +77,11 @@
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Models\AdditionalFeature.cs" />
+    <Compile Include="Models\ServiceOrder.cs" />
+    <Compile Include="Models\ServiceHeadLine.cs" />
+    <Compile Include="Models\Service.cs" />
     <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ServiceCategory.cs" />
     <Compile Include="Models\ArticleCategory.cs" />
     <Compile Include="Models\ArticleComment.cs" />
     <Compile Include="Models\ArticleHeadLine.cs" />
