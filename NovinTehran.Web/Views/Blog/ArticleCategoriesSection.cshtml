@@ -18,13 +18,16 @@
     <ul>
         @foreach (var item in Model)
         {
+            <a href="/Blog?category=@item.Id">@item.Title</a>
             <button type="button" class="btn btn-info collaps-btn" data-toggle="collapse"
                     data-target="#demo-@item.Id">
-                @item.Title<span class="pull-left">+</span>
+
+                <span class="pull-left">+</span>
             </button>
             <div id="demo-@item.Id" class="collapse">
                 @if (item.Children.Count() > 0)
                 {
+
                     foreach (var subItem in item.Children)
                     {
                         if (subItem.IsDeleted)
@@ -32,12 +35,16 @@
                             continue;
                         }
 
-                        <form>
+
+                        <div class="checkbox custome-checkBox">
+                            <a href="/Blog?category=@item.Id">@subItem.Title</a>
+                        </div>
+                        @*<form>
 
                             <div class="checkbox custome-checkBox">
                                 <label><input type="checkbox" value="@subItem.Id">@subItem.Title</label>
                             </div>
-                        </form>
+                        </form>*@
 
                     }
 
