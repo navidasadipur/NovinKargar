@@ -7,13 +7,13 @@ namespace NovinTehran.Infratructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddServiceTables : IMigrationMetadata
+    public sealed partial class addServiceModelsAndAddToMyDbContext : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddServiceTables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addServiceModelsAndAddToMyDbContext));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106091334064_AddServiceTables"; }
+            get { return "202106120558119_addServiceModelsAndAddToMyDbContext"; }
         }
         
         string IMigrationMetadata.Source

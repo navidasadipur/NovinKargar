@@ -7,13 +7,13 @@ namespace NovinTehran.Infratructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class testmigration : IMigrationMetadata
+    public sealed partial class addServiceModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(testmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addServiceModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101061208070_test-migration"; }
+            get { return "202106120532054_addServiceModels"; }
         }
         
         string IMigrationMetadata.Source

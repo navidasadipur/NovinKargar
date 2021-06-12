@@ -55,6 +55,10 @@ namespace NovinTehran.Infrastructure
         public DbSet<SMSLog> SMSLogs { get; set; }
         public DbSet<OurTeam> OurTeams { get; set; }
         public DbSet<Certificate> Certificates { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<ServiceCategory> ServiceCategories { get; set; }
+        public DbSet<ServiceHeadLine> ServiceHeadLines { get; set; }
+        public DbSet<ServiceOrder> ServiceOrders { get; set; }
 
     }
 }

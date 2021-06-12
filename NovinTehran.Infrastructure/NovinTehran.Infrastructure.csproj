@@ -7,8 +7,8 @@
     <ProjectGuid>{0D2FF993-9241-444D-8BB7-44B31CCD4165}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Seshin.Infratructure</RootNamespace>
-    <AssemblyName>Seshin.Infratructure</AssemblyName>
+    <RootNamespace>NovinTehran.Infratructure</RootNamespace>
+    <AssemblyName>NovinTehran.Infratructure</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -87,41 +87,13 @@
     <Compile Include="Helpers\ImageResizer.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Helpers\PersianCulture.cs" />
-    <Compile Include="Migrations\202101061204360_edit.cs" />
-    <Compile Include="Migrations\202101061204360_edit.Designer.cs">
-      <DependentUpon>202101061204360_edit.cs</DependentUpon>
+    <Compile Include="Migrations\202106120532054_addServiceModels.cs" />
+    <Compile Include="Migrations\202106120532054_addServiceModels.Designer.cs">
+      <DependentUpon>202106120532054_addServiceModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101061208070_test-migration.cs" />
-    <Compile Include="Migrations\202101061208070_test-migration.Designer.cs">
-      <DependentUpon>202101061208070_test-migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101061210005_test-migration2.cs" />
-    <Compile Include="Migrations\202101061210005_test-migration2.Designer.cs">
-      <DependentUpon>202101061210005_test-migration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101250951198_Update-properties-for-Keywords.cs" />
-    <Compile Include="Migrations\202101250951198_Update-properties-for-Keywords.Designer.cs">
-      <DependentUpon>202101250951198_Update-properties-for-Keywords.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104201049539_Updated-User-Table-Required-Values.cs" />
-    <Compile Include="Migrations\202104201049539_Updated-User-Table-Required-Values.Designer.cs">
-      <DependentUpon>202104201049539_Updated-User-Table-Required-Values.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.cs" />
-    <Compile Include="Migrations\202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.Designer.cs">
-      <DependentUpon>202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106081051098_AddParentToArticleCategoryModel.cs" />
-    <Compile Include="Migrations\202106081051098_AddParentToArticleCategoryModel.Designer.cs">
-      <DependentUpon>202106081051098_AddParentToArticleCategoryModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.cs" />
-    <Compile Include="Migrations\202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.Designer.cs">
-      <DependentUpon>202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106091334064_AddServiceTables.cs" />
-    <Compile Include="Migrations\202106091334064_AddServiceTables.Designer.cs">
-      <DependentUpon>202106091334064_AddServiceTables.cs</DependentUpon>
+    <Compile Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.cs" />
+    <Compile Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.Designer.cs">
+      <DependentUpon>202106120558119_addServiceModelsAndAddToMyDbContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
@@ -171,39 +143,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101061204360_edit.resx">
-      <DependentUpon>202101061204360_edit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101061208070_test-migration.resx">
-      <DependentUpon>202101061208070_test-migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101061210005_test-migration2.resx">
-      <DependentUpon>202101061210005_test-migration2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101250951198_Update-properties-for-Keywords.resx">
-      <DependentUpon>202101250951198_Update-properties-for-Keywords.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104201049539_Updated-User-Table-Required-Values.resx">
-      <DependentUpon>202104201049539_Updated-User-Table-Required-Values.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.resx">
-      <DependentUpon>202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106081051098_AddParentToArticleCategoryModel.resx">
-      <DependentUpon>202106081051098_AddParentToArticleCategoryModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.resx">
-      <DependentUpon>202106091330156_AddServiceAndServiceCategoryAndServiceOrderAndServiceHeadLineTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106091334064_AddServiceTables.resx">
-      <DependentUpon>202106091334064_AddServiceTables.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\NovinTehran.Core\NovinTehran.Core.csproj">
       <Project>{c9289f3f-fb24-495e-a361-11d0f3c81456}</Project>
       <Name>NovinTehran.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106120532054_addServiceModels.resx">
+      <DependentUpon>202106120532054_addServiceModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.resx">
+      <DependentUpon>202106120558119_addServiceModelsAndAddToMyDbContext.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
