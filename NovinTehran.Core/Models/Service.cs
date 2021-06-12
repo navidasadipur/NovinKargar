@@ -9,7 +9,7 @@ namespace NovinTehran.Core.Models
     public class Service : IBaseEntity
     {
         public int Id { get; set; }
-        [Display(Name = "عنوان مقاله")]
+        [Display(Name = "عنوان سرویس")]
         [MaxLength(600,ErrorMessage = "{0} باید از 600 کارکتر کمتر باشد")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string Title { get; set; }
