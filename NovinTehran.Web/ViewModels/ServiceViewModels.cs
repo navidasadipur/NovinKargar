@@ -74,6 +74,26 @@ namespace NovinTehran.Web.ViewModels
     //    [Display(Name = "تاریخ ثبت")]
     //    public string PersianDate { get; set; }
     //}
+    public class ServicesListViewModel
+    {
+        public ServicesListViewModel()
+        {
+        }
+
+        public ServicesListViewModel(ServiceCategory serviceCategory)
+        {
+            this.Id = serviceCategory.Id;
+            this.Title = serviceCategory.Title;
+            if (serviceCategory.Services != null)
+            {
+                this.Services = serviceCategory.Services.ToList();
+            }
+        }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public List<Service> Services { get; set; }
+    }
+
 
     public class LatestServicesViewModel
     {

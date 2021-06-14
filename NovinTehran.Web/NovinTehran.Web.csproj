@@ -230,6 +230,7 @@
     <Compile Include="Areas\Customer\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -4920,13 +4921,19 @@
     <Content Include="Views\Shop\ProductDetailsBrandSection.cshtml" />
     <Content Include="Views\Home\MobileHeaderSection.cshtml" />
     <Content Include="Views\Home\HomeAboutSection.cshtml" />
-    <Content Include="Views\Home\ServicesSection.cshtml" />
+    <Content Include="Views\Home\ServiceSection.cshtml" />
     <Content Include="Views\Shop\ProductFeaturesSection.cshtml" />
     <Content Include="Views\Home\WishListSection.cshtml" />
     <Content Include="Views\Home\HighRateProductsSection.cshtml" />
     <Content Include="Views\Blog\SocialsSection.cshtml" />
     <Content Include="Views\Blog\ArticleDetails.cshtml" />
     <Content Include="Views\Blog\BlogListTagsSection.cshtml" />
+    <Content Include="Views\Service\ServiceCategoriesSection.cshtml" />
+    <Content Include="Views\Service\ServiceDetails.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\RelatedBlogsSection.cshtml" />
+    <Content Include="Views\Service\TopArticlesSection.cshtml" />
+    <Content Include="Views\Service\ServiceOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

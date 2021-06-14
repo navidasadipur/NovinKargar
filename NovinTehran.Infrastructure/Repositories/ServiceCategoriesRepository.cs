@@ -49,6 +49,20 @@ namespace NovinTehran.Infrastructure.Repositories
             return _context.ServiceCategories.Where(f => f.IsDeleted == false).OrderByDescending(p => p.InsertDate).ToList();
         }
 
+        public List<ServiceCategory> GetAllServiceCategoriesWithServices()
+        {
+            var serviceCategories = _context.ServiceCategories.Where(sc => sc.IsDeleted == false).Include(sc => sc.Services).OrderByDescending(sc => sc.InsertDate).ToList();
+
+            foreach (var category in serviceCategories)
+            {
+                var services = _context.Services.Where(s => s.IsDeleted == false && s.ServiceCategoryId == category.Id).OrderByDescending(s => s.InsertDate).ToList();
+
+                category.Services = services;
+            }
+
+            return serviceCategories;
+        }
+
         public ServiceCategory AddNewServiceCategory(int parentId, string title)
         {
             var ServiceCategory = new ServiceCategory();

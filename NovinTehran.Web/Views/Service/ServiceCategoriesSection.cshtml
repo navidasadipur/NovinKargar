@@ -1,0 +1,38 @@
+﻿@*@model List<NovinTehran.Web.ViewModels.ArticleCategoriesViewModel>
+
+
+
+<div class="widget category-widget">
+    <h3>دسته بندی ها</h3>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <a href="/Blog?category=@item.Id">@item.Title</a>
+            <button type="button" class="btn btn-info collaps-btn" data-toggle="collapse"
+                    data-target="#demo-@item.Id">
+
+                <span class="pull-left">+</span>
+            </button>
+            <div id="demo-@item.Id" class="collapse">
+                @if (item.Children.Count() > 0)
+                {
+
+                    foreach (var subItem in item.Children)
+                    {
+                        if (subItem.IsDeleted)
+                        {
+                            continue;
+                        }
+
+
+                        <div class="checkbox custome-checkBox">
+                            <a href="/Blog?category=@item.Id">@subItem.Title</a>
+                        </div>
+
+                    }
+
+                }
+            </div>
+        }
+    </ul>
+</div>*@
