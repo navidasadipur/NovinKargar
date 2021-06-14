@@ -49,8 +49,8 @@ columns.Bound(item => @item.Id).IncludeInMenu(false).Sortable(false).Title("دس
         @<text>
             <a class='btn btn-sm btn-clean btn-icon mr-2' href="/Admin/Services/Edit/@item.Id"><i class='far fa-edit text-primary'></i></a>
             <a class='btn btn-sm btn-clean btn-icon' onclick="@(CheckPermission.Check("servicesdelete") ? $"btnDelete({item.Id})" : "accessDenied()")"><i class='far fa-trash-alt text-danger'></i></a>
-            @Html.ActionLink("سرتیتر ها", "Index", "ServiceHeadLines", new { serviceId = @item.Id }, new { @class = "btn btn-primary btn-sm ml-2" })
-            @Html.ActionLink("کامنت ها", "Index", "ServiceComments", new { serviceId = @item.Id }, new { @class = "btn btn-primary btn-sm ml-2" })
+            @Html.ActionLink("سرتیتر ها", "Index", "ServiceHeadLines", new { serviceId = @item.Id }, new { @class = "btn btn-primary btn-sm ml-4" })
+            @*@Html.ActionLink("کامنت ها", "Index", "ServiceComments", new { serviceId = @item.Id }, new { @class = "btn btn-primary btn-sm ml-2" })*@
         </text>
         ).Width(300);
 })
