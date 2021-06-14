@@ -395,18 +395,18 @@ namespace NovinTehran.Web.Controllers
                 Address = address
             };
 
-            var banner = "";
-            try
-            {
-                banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ ارتباط با ما").Image;
-                banner = "/Files/StaticContentImages/Image/" + banner;
-            }
-            catch
-            {
+            //var banner = "";
+            //try
+            //{
+            //    banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ ارتباط با ما").Image;
+            //    banner = "/Files/StaticContentImages/Image/" + banner;
+            //}
+            //catch
+            //{
 
-            }
+            //}
 
-            ViewBag.banner = banner;
+            //ViewBag.banner = banner;
 
             ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
 

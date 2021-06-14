@@ -1,41 +1,43 @@
 ﻿@model NovinTehran.Core.Models.ContactForm
+
+
 @*<div class="heading-part mb-30">
-    <h3>اطلاعات را وارد کنید</h3>
-</div>
-<div class="form-detail">
-    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form", @class = "main-form" }))
-    {
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="form-group">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { placeholder = "نام و نام خانوادگی" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        <h3>اطلاعات را وارد کنید</h3>
+    </div>
+    <div class="form-detail">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form", @class = "main-form" }))
+        {
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { placeholder = "نام و نام خانوادگی" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { placeholder = "شماره موبایل" } })
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "ایمیل" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.Message, 4, 4, new { htmlAttributes = new { placeholder = "پیام" } })
+                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn-color">ارسال</button>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="form-group">
-                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { placeholder = "شماره موبایل" } })
-                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="col-lg-4 col-12">
-                <div class="form-group">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "ایمیل" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group">
-                    @Html.TextAreaFor(model => model.Message, 4, 4, new { htmlAttributes = new { placeholder = "پیام" } })
-                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn-color">ارسال</button>
-            </div>
-        </div>
-    }
-</div>*@
+        }
+    </div>
 
 @*<div class="touch-container row justify-content-center">
     <div class="col-md-9 col-lg-7">
@@ -70,71 +72,86 @@
                     @*<label for="csubject" class="sr-only">موضوع</label>
             <input type="text" class="form-control" id="csubject" placeholder="موضوع پیام شما">*@@*
 
-                    <label for="cmessage" class="sr-only">پیام</label>
-                    <textarea class="form-control" cols="30" rows="4" id="cmessage" required name="Message"
-                              placeholder="متن پیام شما *"></textarea>
+                        <label for="cmessage" class="sr-only">پیام</label>
+                        <textarea class="form-control" cols="30" rows="4" id="cmessage" required name="Message"
+                                  placeholder="متن پیام شما *"></textarea>
 
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-outline-primary-2 btn-minwidth-sm">
-                            <span>تایید و ارسال</span>
-                            <i class="icon-long-arrow-left"></i>
-                        </button>
-                    </div><!-- End .text-center -->
-                }
-
-        </div><!-- End .col-md-9 col-lg-7 -->
-    </div><!-- End .row -->
-</div><!-- End .container -->*@
-
-
-<section class="form-section contact-form">
-    <div class="container">
-        <div class="row">
-            <div class="col col-md-10 col-md-offset-1">
-                <div class="comment-respond">
-                    <h3 class="form-title text-center">با ما در ارتباط باشید</h3>
-                    @*<form method="post" id="commentform" class="comment-form">*@
-                    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form", @class = "comment-form" }))
-                    {
-
-                        <div class="recruitment-form">
-                            <div class="flex-form">
-                                <input id="cname" name="Name" placeholder="نام " type="text">
-                            </div>
-                            <div class="flex-form">
-                                <input id="cemail" name="Email" placeholder="ایمیل" type="text">
-                            </div>
-                            <div class="flex-form">
-                                <input id="cphone" name="Phone" placeholder="شماره تماس" type="email">
-                            </div>
-                            <div class="flex-form">
-                                <input id="csubject" name="Subject" placeholder="موضوع" type="text">
-                            </div>
-                            @*<div class="flex-form">
-                                <select name="job" id="job">
-                                    <option>موضوع را انتخاب کنید</option>
-                                    <option>موضوع اول</option>
-                                    <option>موضوع دوم</option>
-                                    <option>موضوع سوم</option>
-                                </select>
-                            </div>*@
-
-                        </div>
-                        <div class="form-textarea des-form">
-                            <textarea id="cmessage" required name="Message" placeholder="توضیحات ..."></textarea>
-                        </div>
-                        <div class="form-submit btn-form">
-                            <input id="submit" value="ارسال" type="submit">
-                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-outline-primary-2 btn-minwidth-sm">
+                                <span>تایید و ارسال</span>
+                                <i class="icon-long-arrow-left"></i>
+                            </button>
+                        </div><!-- End .text-center -->
                     }
-                </div>
-            </div>
-        </div>
-    </div> <!-- end container -->
-</section>
+
+            </div><!-- End .col-md-9 col-lg-7 -->
+        </div><!-- End .row -->
+    </div><!-- End .container -->*@
+
+
+            <section class="form-section contact-form">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-10 col-md-offset-1">
+                            <div class="comment-respond">
+                                <h3 class="form-title text-center">با ما در ارتباط باشید</h3>
+                                @*<form method="post" id="commentform" class="comment-form">*@
+                                @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form", @class = "comment-form" }))
+                                {
+
+                                    <div class="recruitment-form">
+                                        <div class="flex-form">
+                                            @*<input id="cname" name="Name" placeholder="نام " type="text">*@
+                                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { placeholder = "نام " } })
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="flex-form">
+                                            @*<input id="cemail" name="Email" placeholder="ایمیل" type="text">*@
+                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "ایمیل" } })
+                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="flex-form">
+                                            @*<input id="cphone" name="Phone" placeholder="شماره تماس" type="email">*@
+                                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { placeholder = "شماره تماس" } })
+                                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="flex-form">
+                                            @*<input id="csubject" name="Subject" placeholder="موضوع" type="text">*@
+                                            @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { placeholder = "موضوع" } })
+                                            @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                                        </div>
+                                        @*<div class="flex-form">
+                                                <select name="job" id="job">
+                                                    <option>موضوع را انتخاب کنید</option>
+                                                    <option>موضوع اول</option>
+                                                    <option>موضوع دوم</option>
+                                                    <option>موضوع سوم</option>
+                                                </select>
+                                            </div>*@
+
+                                    </div>
+                                    <div class="form-textarea des-form">
+                                        @*<textarea id="cmessage" required name="Message" placeholder="توضیحات ..."></textarea>*@
+                                        @Html.TextAreaFor(model => model.Message, new { placeholder = "توضیحات ..." })
+                                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-submit btn-form">
+                                        <input id="submit" value="ارسال" type="submit">
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </section>
 
 
 
-@*<script>
-    $.validator.unobtrusive.parse("#form");
-</script>*@
+            @section scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+
+
+                @*<script>
+                    $.validator.unobtrusive.parse("#form");
+                </script>*@
+            }

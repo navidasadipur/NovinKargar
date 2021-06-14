@@ -95,6 +95,10 @@
     <Compile Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.Designer.cs">
       <DependentUpon>202106120558119_addServiceModelsAndAddToMyDbContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106130728153_SubjectInContactForm.cs" />
+    <Compile Include="Migrations\202106130728153_SubjectInContactForm.Designer.cs">
+      <DependentUpon>202106130728153_SubjectInContactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.resx">
       <DependentUpon>202106120558119_addServiceModelsAndAddToMyDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106130728153_SubjectInContactForm.resx">
+      <DependentUpon>202106130728153_SubjectInContactForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
