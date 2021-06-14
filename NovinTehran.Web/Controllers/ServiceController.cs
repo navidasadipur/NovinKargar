@@ -286,5 +286,14 @@ namespace NovinTehran.Web.Controllers
 
             return PartialView(relatedServices);
         }
+
+        public ActionResult ServiceOrder(int id)
+        {
+            
+
+            ViewBag.ServiceTitle = _servicesRepo.GetService(id).Title;
+
+            return View();
+        }
     }
 }
