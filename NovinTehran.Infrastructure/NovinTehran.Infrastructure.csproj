@@ -95,6 +95,10 @@
     <Compile Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.Designer.cs">
       <DependentUpon>202106120558119_addServiceModelsAndAddToMyDbContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106141212124_ModifyAnotationsOfServiceOrders.cs" />
+    <Compile Include="Migrations\202106141212124_ModifyAnotationsOfServiceOrders.Designer.cs">
+      <DependentUpon>202106141212124_ModifyAnotationsOfServiceOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.resx">
       <DependentUpon>202106120558119_addServiceModelsAndAddToMyDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106141212124_ModifyAnotationsOfServiceOrders.resx">
+      <DependentUpon>202106141212124_ModifyAnotationsOfServiceOrders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

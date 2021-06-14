@@ -15,18 +15,22 @@ namespace NovinTehran.Web.Controllers
         private readonly ServicesRepository _servicesRepo;
         private readonly ServiceCategoriesRepository _serviceCategoriesRepo;
         private readonly StaticContentDetailsRepository _staticContentRepo;
+        private readonly CustomersRepository _customerRepo;
+
         //private readonly ServiceTagsRepository _serviceTagsRepo;
 
         public ServiceController(
             ServicesRepository servicesRepo,
             ServiceCategoriesRepository serviceCategoriesRepo,
             StaticContentDetailsRepository staticContentDetailsRepo
+            , CustomersRepository customerRepo
             //ServiceTagsRepository serviceTagsRepo
             )
         {
             _servicesRepo = servicesRepo;
             _serviceCategoriesRepo = serviceCategoriesRepo;
             _staticContentRepo = staticContentDetailsRepo;
+            this._customerRepo = customerRepo;
             _serviceCategoriesRepo = serviceCategoriesRepo;
             //_serviceTagsRepo = serviceTagsRepo;
         }
@@ -289,11 +293,43 @@ namespace NovinTehran.Web.Controllers
 
         public ActionResult ServiceOrder(int id)
         {
-            
+            var serviceOrder = new ServiceOrder();
 
-            ViewBag.ServiceTitle = _servicesRepo.GetService(id).Title;
+            var customer = _customerRepo.GetCurrentCustomer();
 
-            return View();
+            var service = _servicesRepo.GetService(id);
+
+            if (customer != null)
+            {
+                serviceOrder.ServiceId = id;
+                serviceOrder.Service = service;
+                serviceOrder.Customer = customer;
+            }
+
+            return View(serviceOrder);
+        }
+
+        [HttpPost]
+        public ActionResult ServiceOrder(ServiceOrder model)
+        {
+            var serviceOrder = new ServiceOrder();
+
+            var customer = _customerRepo.GetCurrentCustomer();
+
+            if (customer != null)
+            {
+                //serviceOrder.CustomerFirstName = customer.User.FirstName;
+                //serviceOrder.CustomerLastName = customer.User.LastName;
+                //serviceOrder.Email = customer.User.Email;
+                //serviceOrder.Phone = customer.User.PhoneNumber;
+                //serviceOrder.PostalCode = customer.PostalCode;
+                //serviceOrder.Address = customer.Address;
+                serviceOrder.Customer = customer;
+            }
+
+            //ViewBag.ServiceTitle = _servicesRepo.GetService(id).Title;
+
+            return View(serviceOrder);
         }
     }
 }

@@ -120,55 +120,55 @@
 
 
 @*<!-- start page-title -->
-<section class="page-title">
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <h2>@ViewBag.Title</h2>
-                <h3>@ViewBag.ServiceTitle</h3>
-            </div>
-        </div> <!-- end row -->
-    </div> <!-- end container -->
-</section>
-<!-- end page-title -->
-<!-- start contact-info-section -->
-<section class="contact-info-section section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="contact-info clearfix">
-                    <div>
-                        <div class="icon">
-                            <i class="ti-email"></i>
+    <section class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col col-xs-12">
+                    <h2>@ViewBag.Title</h2>
+                    <h3>@ViewBag.ServiceTitle</h3>
+                </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
+    </section>
+    <!-- end page-title -->
+    <!-- start contact-info-section -->
+    <section class="contact-info-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="contact-info clearfix">
+                        <div>
+                            <div class="icon">
+                                <i class="ti-email"></i>
+                            </div>
+                            <h5>@Model.Email.Title</h5>
+                            <p><a href="mailto:@Model.Email.ShortDescription">@Model.Email.ShortDescription</a></p>
                         </div>
-                        <h5>@Model.Email.Title</h5>
-                        <p><a href="mailto:@Model.Email.ShortDescription">@Model.Email.ShortDescription</a></p>
-                    </div>
-                    <div>
-                        <div class="icon">
-                            <i class="ti-headphone-alt"></i>
+                        <div>
+                            <div class="icon">
+                                <i class="ti-headphone-alt"></i>
+                            </div>
+                            <h5>@Model.Phone.Title</h5>
+                            <p><a href="tel:@Model.Phone.ShortDescription">@Model.Phone.ShortDescription</a></p>
                         </div>
-                        <h5>@Model.Phone.Title</h5>
-                        <p><a href="tel:@Model.Phone.ShortDescription">@Model.Phone.ShortDescription</a></p>
-                    </div>
-                    <div>
-                        <div class="icon">
-                            <i class="ti-location-pin"></i>
+                        <div>
+                            <div class="icon">
+                                <i class="ti-location-pin"></i>
+                            </div>
+                            <h5>@Model.Address.Title</h5>
+                            <p>@Model.Address.ShortDescription</p>
                         </div>
-                        <h5>@Model.Address.Title</h5>
-                        <p>@Model.Address.ShortDescription</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- end contact-info-section -->
-<!-- start contact-section -->
+    </section>
+    <!-- end contact-info-section -->
+    <!-- start contact-section -->
 
-@Html.Action("ContactUsForm", "Home")
+    @Html.Action("ContactUsForm", "Home")
 
-<!-- end contact-section -->*@
+    <!-- end contact-section -->*@
 
 
 
@@ -193,78 +193,80 @@
             <div class="col col-md-10 col-md-offset-1">
                 <div class="comment-respond">
                     <h3 class="form-title">فرم ثبت سفارش را با دقت کامل کنید</h3>
-                    <form method="post" id="commentform" class="comment-form">
-
+                    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form", @class = "comment-form" }))
+                    {
                         <div class="recruitment-form">
                             <div class="flex-form">
-                                <input placeholder="نام " type="text">
+                                @Html.EditorFor(model => model.Customer.User.FirstName, new { htmlAttributes = new { placeholder = "نام" } })
+                                @Html.ValidationMessageFor(model => model.Customer.User.FirstName, "", new { @class = "text-danger" })
                             </div>
                             <div class="flex-form">
-                                <input placeholder="نام خانوادگی" type="text">
+                                @Html.EditorFor(model => model.Customer.User.LastName, new { htmlAttributes = new { placeholder = "نام خانوادگی" } })
+                                @Html.ValidationMessageFor(model => model.Customer.User.LastName, "", new { @class = "text-danger" })
                             </div>
                             <div class="flex-form">
-                                <input placeholder="ایمیل" type="email">
+                                @Html.EditorFor(model => model.Customer.User.Email, new { htmlAttributes = new { placeholder = "ایمیل" } })
+                                @Html.ValidationMessageFor(model => model.Customer.User.Email, "", new { @class = "text-danger" })
                             </div>
                             <div class="flex-form">
-                                <input placeholder="شماره تماس" type="text">
+                                @Html.EditorFor(model => model.Customer.User.PhoneNumber, new { htmlAttributes = new { placeholder = "شماره تماس" } })
+                                @Html.ValidationMessageFor(model => model.Customer.User.PhoneNumber, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="flex-form">
+                                <input id="Service" name="Service" value="@Model.Service.Title" disabled>
+                                <input type="hidden" id="ServiceId" name="ServiceId" value="@Model.ServiceId">
                             </div>
 
                             <div class="flex-form">
-                                <select name="hours" id="hours">
-                                    <option>خدمات درخواستی</option>
-                                    <option>بازسازی آپارتمان</option>
-                                    <option>بازسازی ساختمان های قدیمی</option>
-                                    <option>بازسازی دفتر کار</option>
-                                </select>
+                                @Html.EditorFor(model => model.Customer.PostalCode, new { htmlAttributes = new { placeholder = "کد پستی" } })
+                                @Html.ValidationMessageFor(model => model.Customer.PostalCode, "", new { @class = "text-danger" })
                             </div>
-                            <div class="flex-form">
-                                <input placeholder="کد پستی" type="text">
-                            </div>
-
+                        </div>
+                        <div class="flex-form">
+                            @Html.EditorFor(model => model.Customer.Address, new { htmlAttributes = new { placeholder = "آدرس را وارد کنید" } })
+                            @Html.ValidationMessageFor(model => model.Customer.Address, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-textarea des-form">
-                            <input placeholder="آدرس را وارد کنید" type="text">
-                        </div>
-                        <div class="form-textarea des-form">
-                            <textarea id="comment" placeholder="توضیحات لازم را بنویسید"></textarea>
+                            
+                            @Html.TextAreaFor(model => model.Description, 4, 4, new { htmlAttributes = new { placeholder = "توضیحات لازم را بنویسید" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-submit btn-form">
                             <input id="submit" value="ثبت سفارش" type="submit">
                         </div>
-                    </form>
+                    }
                 </div>
             </div>
         </div>
     </div> <!-- end container -->
 </section>
 <!-- end blog-single-section -->
-
 @*<!-- start contact-map-section -->
-<section class="contact-map-section">
-    <div class="mapouter">
-        <div class="gmap_canvas">
-            @Html.Raw(Model.Map.Description)
-            <br>
-            <style>
-                .mapouter {
-                    position: relative;
-                    text-align: right;
-                    height: 500px;
-                    width: 100%;
-                }
-            </style>
-            <style>
-                .gmap_canvas {
-                    overflow: hidden;
-                    background: none !important;
-                    height: 500px;
-                    width: 100%;
-                }
-            </style>
+    <section class="contact-map-section">
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                @Html.Raw(Model.Map.Description)
+                <br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 500px;
+                        width: 100%;
+                    }
+                </style>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 100%;
+                    }
+                </style>
+            </div>
         </div>
-    </div>
-</section>
-<!-- end contact-map-section -->*@
+    </section>
+    <!-- end contact-map-section -->*@
 
 
 
@@ -272,6 +274,10 @@
 
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $.validator.unobtrusive.parse("#form");
+    </script>
 }
 
 
