@@ -4928,8 +4928,8 @@
     <Content Include="Views\Blog\SocialsSection.cshtml" />
     <Content Include="Views\Blog\ArticleDetails.cshtml" />
     <Content Include="Views\Blog\BlogListTagsSection.cshtml" />
-    <Content Include="Views\Service\ArticleCategoriesSection.cshtml" />
-    <Content Include="Views\Service\ArticleDetails.cshtml" />
+    <Content Include="Views\Service\ServiceCategoriesSection.cshtml" />
+    <Content Include="Views\Service\ServiceDetails.cshtml" />
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Service\RelatedBlogsSection.cshtml" />
     <Content Include="Views\Service\TopArticlesSection.cshtml" />
