@@ -230,6 +230,7 @@
     <Compile Include="Areas\Customer\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -4927,6 +4928,11 @@
     <Content Include="Views\Blog\SocialsSection.cshtml" />
     <Content Include="Views\Blog\ArticleDetails.cshtml" />
     <Content Include="Views\Blog\BlogListTagsSection.cshtml" />
+    <Content Include="Views\Service\ArticleCategoriesSection.cshtml" />
+    <Content Include="Views\Service\ArticleDetails.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\RelatedBlogsSection.cshtml" />
+    <Content Include="Views\Service\TopArticlesSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
