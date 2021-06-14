@@ -30,59 +30,68 @@ namespace NovinTehran.Web.Controllers
             _serviceCategoriesRepo = serviceCategoriesRepo;
             //_serviceTagsRepo = serviceTagsRepo;
         }
-        // GET: Blog
+        //// GET: Service
+        //public ActionResult Index(int pageNumber = 1, string searchString = null, int? category = null)
+        //{
+        //    var services = new List<Service>();
+        //    var take = 3;
+        //    var skip = pageNumber * take - take;
+        //    var count = 0;
+        //    if (category != null)
+        //    {
+        //        services = _servicesRepo.GetServicesList(skip, take, category.Value);
+        //        count = _servicesRepo.GetServicesCount(category.Value);
+        //        var cat = _serviceCategoriesRepo.Get(category.Value);
+        //        ViewBag.CategoryId = category;
+        //        ViewBag.Title = $"دسته {cat.Title}";
+        //    }
+        //    else if (!string.IsNullOrEmpty(searchString))
+        //    {
+        //        services = _servicesRepo.GetServicesList(skip, take, searchString);
+        //        count = _servicesRepo.GetServicesCount(searchString);
+        //        ViewBag.SearchString = searchString;
+        //        ViewBag.Title = $"جستجو: {searchString}";
+        //    }//}
+        //    else
+        //    {
+        //        services = _servicesRepo.GetServicesList(skip, take);
+        //        count = _servicesRepo.GetServicesCount();
+        //        ViewBag.Title = "بلاگ";
+        //    }
+
+        //    var pageCount = (int) Math.Ceiling((double) count / take);
+        //    ViewBag.PageCount = pageCount;
+        //    ViewBag.CurrentPage = pageNumber;
+
+        //    var vm = new List<LatestServicesViewModel>();
+        //    foreach (var item in services)
+        //        vm.Add(new LatestServicesViewModel(item));
+
+        //    var banner = "";
+        //    try
+        //    {
+        //        banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ وبلاگ").Image;
+        //        banner = "/Files/StaticContentImages/Image/" + banner;
+        //    }
+        //    catch
+        //    {
+
+        //    }
+
+        //    ViewBag.banner = banner;
+
+        //    ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
+        //    return View(vm);
+
+        // GET: Service
         public ActionResult Index(int pageNumber = 1, string searchString = null, int? category = null)
         {
-            var services = new List<Service>();
-            var take = 3;
-            var skip = pageNumber * take - take;
-            var count = 0;
-            if (category != null)
-            {
-                services = _servicesRepo.GetServicesList(skip, take, category.Value);
-                count = _servicesRepo.GetServicesCount(category.Value);
-                var cat = _serviceCategoriesRepo.Get(category.Value);
-                ViewBag.CategoryId = category;
-                ViewBag.Title = $"دسته {cat.Title}";
-            }
-            else if (!string.IsNullOrEmpty(searchString))
-            {
-                services = _servicesRepo.GetServicesList(skip, take, searchString);
-                count = _servicesRepo.GetServicesCount(searchString);
-                ViewBag.SearchString = searchString;
-                ViewBag.Title = $"جستجو: {searchString}";
-            }
-            else
-            {
-                services = _servicesRepo.GetServicesList(skip, take);
-                count = _servicesRepo.GetServicesCount();
-                ViewBag.Title = "بلاگ";
-            }
-
-            var pageCount = (int) Math.Ceiling((double) count / take);
-            ViewBag.PageCount = pageCount;
-            ViewBag.CurrentPage = pageNumber;
-
-            var vm = new List<LatestServicesViewModel>();
-            foreach (var item in services)
-                vm.Add(new LatestServicesViewModel(item));
-
-            var banner = "";
-            try
-            {
-                banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ وبلاگ").Image;
-                banner = "/Files/StaticContentImages/Image/" + banner;
-            }
-            catch
-            {
-
-            }
-
-            ViewBag.banner = banner;
+            var allCategoriesWithServices = _serviceCategoriesRepo.GetAllServiceCategoriesWithServices();
 
             ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
 
-            return View(vm);
+            return View(allCategoriesWithServices);
         }
 
         //public ActionResult ServiceCategoriesSection()
@@ -114,12 +123,12 @@ namespace NovinTehran.Web.Controllers
             return PartialView(vm);
         }
 
-        public ActionResult AdBlogSection()
-        {
-            var model = _staticContentRepo.GetStaticContentDetail((int)StaticContents.BlogAd);
+        //public ActionResult AdServiceSection()
+        //{
+        //    var model = _staticContentRepo.GetStaticContentDetail((int)StaticContents.ServiceAd);
 
-            return PartialView(model);
-        }
+        //    return PartialView(model);
+        //}
 
         //public ActionResult ServiceDetailsTagsSection(int id)
         //{
@@ -133,7 +142,7 @@ namespace NovinTehran.Web.Controllers
         //    return PartialView(tags);
         //}
 
-        //public ActionResult BlogListTagsSection()
+        //public ActionResult ServiceListTagsSection()
         //{
         //    //SocialViewModel model = new SocialViewModel();
 
@@ -145,8 +154,8 @@ namespace NovinTehran.Web.Controllers
         //    return PartialView(tags);
         //}
 
-        [Route("Blog/ServiceDetails/{id}/{title}")]
-        [Route("Blog/Service/{id}/{title}")]
+        [Route("Service/ServiceDetails/{id}/{title}")]
+        [Route("Service/Service/{id}/{title}")]
 
         public ActionResult ServiceDetails(int id)
         {
@@ -247,7 +256,7 @@ namespace NovinTehran.Web.Controllers
             return PartialView(model);
         }
 
-        public ActionResult RelatedBlogsSection(int? categoryId, int take)
+        public ActionResult RelatedServicesSection(int? categoryId, int take)
         {
             var relatedServices = new List<LatestServicesViewModel>();
 
