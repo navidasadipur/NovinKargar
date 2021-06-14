@@ -4933,6 +4933,7 @@
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Service\RelatedBlogsSection.cshtml" />
     <Content Include="Views\Service\TopArticlesSection.cshtml" />
+    <Content Include="Views\Service\ServiceOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

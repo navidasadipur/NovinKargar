@@ -147,18 +147,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NovinTehran.Core\NovinTehran.Core.csproj">
-      <Project>{c9289f3f-fb24-495e-a361-11d0f3c81456}</Project>
-      <Name>NovinTehran.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\202106120532054_addServiceModels.resx">
       <DependentUpon>202106120532054_addServiceModels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.resx">
       <DependentUpon>202106120558119_addServiceModelsAndAddToMyDbContext.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NovinTehran.Core\NovinTehran.Core.csproj">
+      <Project>{c9289f3f-fb24-495e-a361-11d0f3c81456}</Project>
+      <Name>NovinTehran.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
