@@ -14,7 +14,7 @@
                         است، چاپگرها و متون بلکه روزنامه و مجله
                     </p>
                     <div class="newsletter-form">
-                        <form action="/Home/AddEmailSubscription" method="post">
+                        <form action="/Home/AddEmailSubscription" method="post" id="newsletter-form">
                             <div>
                                 <input name="Email" id="Name" type="email" class="form-control" placeholder="ایمیل خود را وارد کنید">
                                 <button type="submit">عضویت</button>
@@ -341,3 +341,12 @@
             </div><!-- End .modal-content -->
         </div><!-- End .modal-dialog -->
     </div><!-- End .modal -->*@
+
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+            $.validator.unobtrusive.parse("#newsletter-form");
+    </script>
+}

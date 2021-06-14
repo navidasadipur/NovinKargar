@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using NovinTehran.Core.Models;
@@ -32,10 +33,10 @@ namespace NovinTehran.Web.Controllers
 
         public HomeController(
             StaticContentDetailsRepository staticContentRepo,
-            OffersRepository offersRepo, 
+            OffersRepository offersRepo,
             ProductsRepository productsRepo,
             ProductService productService,
-            TestimonialsRepository testimonialRepo, 
+            TestimonialsRepository testimonialRepo,
             PartnersRepository partnersRepo,
             ArticlesRepository articlesRepo,
             DiscountsRepository discountsRepo,
@@ -79,7 +80,7 @@ namespace NovinTehran.Web.Controllers
 
         public ActionResult HeaderSection()
         {
-            
+
             var allMainGroups = _productGroupRepo.GetMainProductGroups();
 
             foreach (var group in allMainGroups)
@@ -261,7 +262,7 @@ namespace NovinTehran.Web.Controllers
                 vm.Add(tempVm);
             }
 
-            
+
             return PartialView(vm);
         }
 
@@ -274,7 +275,7 @@ namespace NovinTehran.Web.Controllers
 
             return PartialView(vm);
         }
-        
+
 
         public ActionResult LatestArticlesSection(int take)
         {
@@ -304,7 +305,7 @@ namespace NovinTehran.Web.Controllers
         {
             var discountItems = _discountRepo.GetProductsWithDiscount();
             var products = new List<DiscountProductViewModel>();
-            foreach(var item in discountItems)
+            foreach (var item in discountItems)
             {
                 var product = new DiscountProductViewModel();
                 product.Price = _productService.GetProductPrice(item.Product);
@@ -365,7 +366,7 @@ namespace NovinTehran.Web.Controllers
 
             return PartialView(model);
         }
-        
+
 
         public ActionResult OurTeamsSection()
         {
@@ -388,7 +389,7 @@ namespace NovinTehran.Web.Controllers
             var email = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Email);
             var address = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Address);
             var vm = new ContactUsViewModel()
-            { 
+            {
                 Map = map,
                 Phone = phone,
                 Email = email,
@@ -491,40 +492,71 @@ namespace NovinTehran.Web.Controllers
         [HttpPost]
         public ActionResult AddEmailSubscription(string Email)
         {
-            var email = "";
-            var isValid = true;
-            try
+            if (string.IsNullOrEmpty(Email))
             {
-                //email = collection["Email"];
-
-                email = Email;
+                ModelState.AddModelError("Name", "Name is required");
             }
-            catch
+            if (!string.IsNullOrEmpty(Email))
             {
-
+                string emailRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                                         @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                                            @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+                Regex re = new Regex(emailRegex);
+                if (!re.IsMatch(Email))
+                {
+                    ModelState.AddModelError("Email", "Email is not valid");
+                }
             }
-
-            try
+            else
             {
-                var addr = new System.Net.Mail.MailAddress(email);
-                isValid = addr.Address == email;
+                ModelState.AddModelError("Email", "Email is required");
             }
-            catch
-            {
-                isValid = false;
-            }
-
-            if(isValid)
+            if (ModelState.IsValid)
             {
                 EmailSubscription emailSubscription = new EmailSubscription();
-                emailSubscription.Email = email;
+                emailSubscription.Email = Email;
                 emailSubscription.IsDeleted = false;
                 emailSubscription.InsertDate = DateTime.Now;
 
                 _emailSubscriptionRepo.Create(emailSubscription);
+
             }
 
-            ViewBag.Added = isValid;
+            //var email = "";
+            //var isValid = true;
+            //try
+            //{
+            //    //email = collection["Email"];
+
+            //    email = Email;
+            //}
+            //catch
+            //{
+
+            //}
+
+            //try
+            //{
+            //    var addr = new System.Net.Mail.MailAddress(email);
+
+            //    isValid = (addr.Address == email) && ();
+            //}
+            //catch
+            //{
+            //    isValid = false;
+            //}
+
+            //if(isValid)
+            //{
+            //    EmailSubscription emailSubscription = new EmailSubscription();
+            //    emailSubscription.Email = email;
+            //    emailSubscription.IsDeleted = false;
+            //    emailSubscription.InsertDate = DateTime.Now;
+
+            //    _emailSubscriptionRepo.Create(emailSubscription);
+            //}
+
+            ViewBag.Added = ModelState.IsValid;
 
             return View();
         }
