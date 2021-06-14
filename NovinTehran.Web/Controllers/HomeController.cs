@@ -29,6 +29,7 @@ namespace NovinTehran.Web.Controllers
         private readonly FaqGroupsRepository _faqGroupsRepo;
         private readonly EmailSubscriptionRepository _emailSubscriptionRepo;
         private readonly CertificatesRepository _certificatesRepo;
+        private readonly ServiceCategoriesRepository _serviceCategoriesRepo;
         private readonly ProductsRepository _productsRepo;
 
         public HomeController(
@@ -46,6 +47,7 @@ namespace NovinTehran.Web.Controllers
             OurTeamRepository ourTeamRepo,
             FaqGroupsRepository faqGroupsRepo,
             CertificatesRepository certificatesRepository
+            , ServiceCategoriesRepository serviceCategoriesRepo
             )
         {
             _discountRepo = discountsRepo;
@@ -61,6 +63,7 @@ namespace NovinTehran.Web.Controllers
             this._faqGroupsRepo = faqGroupsRepo;
             _emailSubscriptionRepo = emailSubscriptionRepo;
             _certificatesRepo = certificatesRepository;
+            this._serviceCategoriesRepo = serviceCategoriesRepo;
             _productsRepo = productsRepo;
         }
 
@@ -209,6 +212,16 @@ namespace NovinTehran.Web.Controllers
 
             var content = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.HomeAboutSection);
             return PartialView(content);
+        }
+
+        // GET: Service
+        public ActionResult ServiceSection()
+        {
+            var allCategoriesWithServices = _serviceCategoriesRepo.GetAllServiceCategoriesWithServices();
+
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
+            return PartialView(allCategoriesWithServices);
         }
 
         public ActionResult OffersSection()

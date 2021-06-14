@@ -1,0 +1,42 @@
+﻿@model List<NovinTehran.Core.Models.ServiceCategory>
+
+
+<section class="case-study-section services-pg-section-s2">
+    <div class="container">
+        @foreach (var category in Model)
+        {
+            <div class="mt-2">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title-s3">
+                            <h2>@category.Title</h2>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content-area">
+
+                    <div class="case-grids why-choose-us-section  service-slider">
+                        @if (category.Services.Count() != 0)
+                        {
+                            foreach (var service in category.Services)
+                            {
+                                <div class="grid">
+                                    <a href="/Service/ServiceDetails/@service.Id/@service.Title.Replace(' ', '-')">
+                                        <div class="img-holder">
+                                            <img src="/Files/ServiceImages/Thumb/@service.Image" alt>
+                                        </div>
+                                    </a>
+                                    <div class="details">
+                                        <h3>@service.Title</h3>
+                                        <a href="/Service/ServiceDetails/@service.Id/@service.Title.Replace(' ', '-')"><i class="fi flaticon-next"></i></a>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div> <!-- end container -->
+</section>
