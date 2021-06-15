@@ -7,13 +7,13 @@ namespace NovinTehran.Infratructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class SubjectInContactForm : IMigrationMetadata
+    public sealed partial class addSubjectInContactForm : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SubjectInContactForm));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addSubjectInContactForm));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106130728153_SubjectInContactForm"; }
+            get { return "202106150552485_addSubjectInContactForm"; }
         }
         
         string IMigrationMetadata.Source

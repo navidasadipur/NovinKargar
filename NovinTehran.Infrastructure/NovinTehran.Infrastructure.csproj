@@ -95,9 +95,13 @@
     <Compile Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.Designer.cs">
       <DependentUpon>202106120558119_addServiceModelsAndAddToMyDbContext.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106130728153_SubjectInContactForm.cs" />
-    <Compile Include="Migrations\202106130728153_SubjectInContactForm.Designer.cs">
-      <DependentUpon>202106130728153_SubjectInContactForm.cs</DependentUpon>
+    <Compile Include="Migrations\202106150551190_deleteSubjectFromContactForm.cs" />
+    <Compile Include="Migrations\202106150551190_deleteSubjectFromContactForm.Designer.cs">
+      <DependentUpon>202106150551190_deleteSubjectFromContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106150552485_addSubjectInContactForm.cs" />
+    <Compile Include="Migrations\202106150552485_addSubjectInContactForm.Designer.cs">
+      <DependentUpon>202106150552485_addSubjectInContactForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
@@ -163,8 +167,11 @@
     <EmbeddedResource Include="Migrations\202106120558119_addServiceModelsAndAddToMyDbContext.resx">
       <DependentUpon>202106120558119_addServiceModelsAndAddToMyDbContext.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106130728153_SubjectInContactForm.resx">
-      <DependentUpon>202106130728153_SubjectInContactForm.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106150551190_deleteSubjectFromContactForm.resx">
+      <DependentUpon>202106150551190_deleteSubjectFromContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106150552485_addSubjectInContactForm.resx">
+      <DependentUpon>202106150552485_addSubjectInContactForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
