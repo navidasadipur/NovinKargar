@@ -71,6 +71,7 @@ namespace NovinTehran.Core.Models
         [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         public string Email { get; set; }
 
+        [DataType(DataType.MultilineText)]
         [DisplayName("توضیحات")]
         public string Description { get; set; }
 
