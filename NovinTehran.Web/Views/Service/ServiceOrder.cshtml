@@ -192,9 +192,22 @@
         <div class="row">
             <div class="col col-md-10 col-md-offset-1">
                 <div class="comment-respond">
-                    <h3 class="form-title">فرم ثبت سفارش را با دقت کامل کنید</h3>
-                    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form", @class = "comment-form" }))
+                    @if (!string.IsNullOrEmpty(ViewBag.LoginError))
                     {
+                        <div class="container margin-top-50">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="alert alert-warning">
+                                        <span class="text-danger">@ViewBag.Error</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <h3 class="form-title">فرم ثبت سفارش را با دقت کامل کنید</h3>
+                    @using (Html.BeginForm("AddServiceOrder", "Service", FormMethod.Post, new { id = "form", @class = "comment-form" }))
+                    {
+                        @Html.AntiForgeryToken()
                         <div class="recruitment-form">
                             <div class="flex-form">
                                 @Html.EditorFor(model => model.Customer.User.FirstName, new { htmlAttributes = new { placeholder = "نام" } })
@@ -227,7 +240,7 @@
                             @Html.ValidationMessageFor(model => model.Customer.Address, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-textarea des-form">
-                            
+
                             @Html.TextAreaFor(model => model.Description, 4, 4, new { htmlAttributes = new { placeholder = "توضیحات لازم را بنویسید" } })
                             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                         </div>
@@ -235,6 +248,10 @@
                             <input id="submit" value="ثبت سفارش" type="submit">
                         </div>
                     }
+
+                    @*<div class="form-submit btn-form">
+                        <a href="/Customer/Auth/Register">ثبت نام</a>
+                    </div>*@
                 </div>
             </div>
         </div>

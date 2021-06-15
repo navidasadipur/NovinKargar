@@ -23,43 +23,54 @@ namespace NovinTehran.Core.Models
 
         [DisplayName("تاریخ ثبت")]
         public DateTime AddedDate { get; set; }
-        [DisplayName("شماره سفارش")]
-        public string InvoiceNumber { get; set; }
+
+        //[DisplayName("شماره سفارش")]
+        //public string InvoiceNumber { get; set; }
+
         public int? CustomerId { get; set; }
+
         public Customer Customer { get; set; }
+
         [DisplayName("نام")]
         [MaxLength(500,ErrorMessage = "نام وارد شده باید از 500 کارکتر کمتر باشد")]
         [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         public string CustomerFirstName { get; set; }
+
         [DisplayName("نام خانوادگی")]
         [MaxLength(500, ErrorMessage = "نام وارد شده باید از 500 کارکتر کمتر باشد")]
         [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         public string CustomerLastName { get; set; }
+
         //public ICollection<InvoiceItem> InvoiceItems { get; set; }
-        public int? GeoDivisionId { get; set; }
-        public GeoDivision GeoDivision { get; set; }
+        //public int? GeoDivisionId { get; set; }
+        //public GeoDivision GeoDivision { get; set; }
         //[DisplayName("نام شرکت")]
         //public string CompanyName { get; set; }
         //[DisplayName("کشور")]
         //public string Country { get; set; }
         //[DisplayName("شهر")]
         //public string City { get; set; }
+
         [MaxLength(500, ErrorMessage = "آدرس وارد شده باید از 500 کارکتر کمتر باشد")]
         [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         [DisplayName("آدرس")]
         public string Address { get; set; }
+
         [MaxLength(50, ErrorMessage = "شماره تلفن وارد شده باید از 50 کارکتر کمتر باشد")]
         [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         [DisplayName("شماره تلفن")]
         public string Phone { get; set; }
+
         [MaxLength(50, ErrorMessage = "کد پستی وارد شده باید از 50 کارکتر کمتر باشد")]
         [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         [DisplayName("کد پستی")]
         public string PostalCode { get; set; }
+
         [DisplayName("ایمیل")]
         [EmailAddress(ErrorMessage = "ایمیل نا معتبر")]
         [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         public string Email { get; set; }
+
         [DisplayName("توضیحات")]
         public string Description { get; set; }
 

@@ -16,6 +16,7 @@ namespace NovinTehran.Web.Controllers
         private readonly ServiceCategoriesRepository _serviceCategoriesRepo;
         private readonly StaticContentDetailsRepository _staticContentRepo;
         private readonly CustomersRepository _customerRepo;
+        private readonly ServiceOrdersRepository _serviceOrdersRepo;
 
         //private readonly ServiceTagsRepository _serviceTagsRepo;
 
@@ -24,6 +25,7 @@ namespace NovinTehran.Web.Controllers
             ServiceCategoriesRepository serviceCategoriesRepo,
             StaticContentDetailsRepository staticContentDetailsRepo
             , CustomersRepository customerRepo
+            , ServiceOrdersRepository serviceOrdersRepo
             //ServiceTagsRepository serviceTagsRepo
             )
         {
@@ -31,6 +33,7 @@ namespace NovinTehran.Web.Controllers
             _serviceCategoriesRepo = serviceCategoriesRepo;
             _staticContentRepo = staticContentDetailsRepo;
             this._customerRepo = customerRepo;
+            this._serviceOrdersRepo = serviceOrdersRepo;
             _serviceCategoriesRepo = serviceCategoriesRepo;
             //_serviceTagsRepo = serviceTagsRepo;
         }
@@ -331,5 +334,49 @@ namespace NovinTehran.Web.Controllers
 
             return View(serviceOrder);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddServiceOrder(ServiceOrder serviceOrder)
+        {
+            var customer = _customerRepo.GetCurrentCustomer();
+
+            if (customer != null)
+            {
+                serviceOrder.CustomerId = customer.Id;
+                serviceOrder.Customer = customer;
+            }
+
+            //// Update customer info with latest information
+            //customer.Address = serviceOrder.Address;
+            //_customerRepo.Update(customer);
+
+            // updating info
+            serviceOrder.AddedDate = DateTime.Now;
+
+            serviceOrder.CustomerFirstName = serviceOrder.Customer.User.FirstName;
+            serviceOrder.CustomerLastName = serviceOrder.Customer.User.LastName;
+            serviceOrder.Phone = serviceOrder.Customer.User.PhoneNumber;
+            serviceOrder.Email = serviceOrder.Customer.User.Email;
+            serviceOrder.Address = serviceOrder.Customer.Address;
+            serviceOrder.PostalCode = serviceOrder.Customer.PostalCode;
+
+            serviceOrder.Customer = null;
+            try
+            {
+                _serviceOrdersRepo.Add(serviceOrder);
+
+                ViewBag.Added = true;
+
+            return View();
+            }
+            catch (Exception)
+            {
+                ViewBag.Error = "ثبت سفارش ناموفق";
+                ViewBag.Added = false;
+
+                return View();
+                }
+            }
     }
 }
