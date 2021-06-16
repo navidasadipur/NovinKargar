@@ -78,13 +78,13 @@ namespace NovinTehran.Core.Models
         public int ServiceId { get; set; }
         public Service Service { get; set; }
 
-        
+
         //[DisplayName("پرداخت شده")]
         //public bool IsPayed { get; set; }
         //public int? DiscountCodeId { get; set; }
         //public DiscountCode DiscountCode { get; set; }
         //public ICollection<EPayment> EPayments { get; set; }
-
+        public bool IsViewed { get; set; }
         public string InsertUser { get; set; }
         public DateTime? InsertDate { get; set; }
         public string UpdateUser { get; set; }

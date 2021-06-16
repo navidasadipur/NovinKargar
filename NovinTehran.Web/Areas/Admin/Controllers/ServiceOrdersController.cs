@@ -72,6 +72,11 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
             vm.ServiceOrder = serviceOrder;
             vm.PersianDate = new PersianDateTime(serviceOrder.AddedDate).ToString();
 
+
+            serviceOrder.IsViewed = true;
+
+            _serviceOrdersRepo.Update(serviceOrder);
+
             //vm.OrderItems = new List<OrderItemWithMainFeatureViewModel>();
 
             // Getting Order Item SubFeatures

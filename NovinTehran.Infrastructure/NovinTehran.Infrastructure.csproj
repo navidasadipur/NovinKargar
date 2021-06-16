@@ -111,6 +111,10 @@
     <Compile Include="Migrations\202106151330192_modifyDescripitonOfServiceOrderModel.Designer.cs">
       <DependentUpon>202106151330192_modifyDescripitonOfServiceOrderModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106160652325_addIsViewedPropertyToServicOrderModel.cs" />
+    <Compile Include="Migrations\202106160652325_addIsViewedPropertyToServicOrderModel.Designer.cs">
+      <DependentUpon>202106160652325_addIsViewedPropertyToServicOrderModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -186,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106151330192_modifyDescripitonOfServiceOrderModel.resx">
       <DependentUpon>202106151330192_modifyDescripitonOfServiceOrderModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106160652325_addIsViewedPropertyToServicOrderModel.resx">
+      <DependentUpon>202106160652325_addIsViewedPropertyToServicOrderModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
