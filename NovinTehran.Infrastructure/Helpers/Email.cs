@@ -45,8 +45,8 @@ namespace NovinTehran.Infrastructure.Helpers
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.UseDefaultCredentials = false;
                 smtp.Credentials = credential;
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
+                smtp.Host = "NovinTehran.ir";
+                smtp.Port = 25;
                 smtp.EnableSsl = true;
                 await smtp.SendMailAsync(message);
 
