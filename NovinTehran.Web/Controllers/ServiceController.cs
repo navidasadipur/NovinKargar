@@ -296,27 +296,37 @@ namespace NovinTehran.Web.Controllers
 
         public ActionResult ServiceOrder(int id)
         {
-            var serviceOrder = new ServiceOrder();
+            //var serviceOrder = new ServiceOrder();
 
-            var customer = _customerRepo.GetCurrentCustomer();
+            //var customer = _customerRepo.GetCurrentCustomer();
+
+            ////var service = _servicesRepo.GetService(id);
+
+            //if (customer != null)
+            //{
+            //    serviceOrder.ServiceId = id;
+            //    serviceOrder.Service = service;
+            //    serviceOrder.Customer = customer;
+            //    serviceOrder.Address = customer.Address;
+            //    serviceOrder.PostalCode = customer.PostalCode;
+            //    serviceOrder.Phone = customer.User.PhoneNumber;
+            //    serviceOrder.Email = customer.User.Email;
+            //    serviceOrder.CustomerFirstName = customer.User.FirstName;
+            //    serviceOrder.CustomerLastName = customer.User.LastName;
+
+            //}
 
             var service = _servicesRepo.GetService(id);
 
-            if (customer != null)
-            {
-                serviceOrder.ServiceId = id;
-                serviceOrder.Service = service;
-                serviceOrder.Customer = customer;
-            }
+            ViewBag.ServiceTitle = service.Title;
+            ViewBag.ServiceId = service.Id;
 
-            return View(serviceOrder);
+            return View();
         }
 
         [HttpPost]
         public ActionResult ServiceOrder(ServiceOrder model)
         {
-            var serviceOrder = new ServiceOrder();
-
             var customer = _customerRepo.GetCurrentCustomer();
 
             if (customer != null)
@@ -327,12 +337,12 @@ namespace NovinTehran.Web.Controllers
                 //serviceOrder.Phone = customer.User.PhoneNumber;
                 //serviceOrder.PostalCode = customer.PostalCode;
                 //serviceOrder.Address = customer.Address;
-                serviceOrder.Customer = customer;
+                model.Customer = customer;
             }
 
             //ViewBag.ServiceTitle = _servicesRepo.GetService(id).Title;
 
-            return View(serviceOrder);
+            return View(model);
         }
 
         [HttpPost]
@@ -346,29 +356,77 @@ namespace NovinTehran.Web.Controllers
                 serviceOrder.CustomerId = customer.Id;
                 serviceOrder.Customer = customer;
             }
+            //else
+            //{
+            //    #region Check for duplicate username or email
+
+            //    if (form.UserName != null)
+
+            //    {
+            //        if (_usersRepo.UserNameExists(form.UserName, form.UserId))
+            //        {
+            //            ViewBag.Message = "کاربر دیگری با همین نام کاربری در سیستم ثبت شده";
+            //            ViewBag.GeoDivisionId = new SelectList(_geoDivisonsRepo.GetGeoDivisionsByType((int)GeoDivisionType.State), "Id", "Title", form.GeoDivisionId);
+
+            //            return View(form);
+            //        }
+            //    }
+            //    if (_usersRepo.PhoneNumberExists(form.PhoneNumber, form.UserId))
+            //    {
+            //        ViewBag.Message = "کاربر دیگری با همین شماره تلفن در سیستم ثبت شده";
+            //        ViewBag.GeoDivisionId = new SelectList(_geoDivisonsRepo.GetGeoDivisionsByType((int)GeoDivisionType.State), "Id", "Title", form.GeoDivisionId);
+            //        return View(form);
+            //    }
+            //    if (_usersRepo.EmailExists(form.Email, form.UserId))
+            //    {
+            //        ViewBag.Message = "کاربر دیگری با همین ایمیل در سیستم ثبت شده";
+            //        ViewBag.GeoDivisionId = new SelectList(_geoDivisonsRepo.GetGeoDivisionsByType((int)GeoDivisionType.State), "Id", "Title", form.GeoDivisionId);
+            //        return View(form);
+            //    }
+            //    #endregion
+
+            //    var user = _usersRepo.GetUser(form.UserId);
+            //    user.UserName = form.UserName ?? form.PhoneNumber;
+            //    user.FirstName = form.FirstName;
+            //    user.LastName = form.LastName;
+            //    user.Email = form.Email;
+            //    user.PhoneNumber = form.PhoneNumber;
+            //    user.Avatar = form.Avatar;
+
+            //    _usersRepo.UpdateUser(user);
+
+            //    var customer = _customerRepo.Get(form.CustomerId.Value);
+
+            //    customer.NationalCode = form.NationalCode;
+            //    customer.Address = form.Address;
+            //    customer.PostalCode = form.PostalCode;
+            //    customer.GeoDivisionId = form.GeoDivisionId;
+            //    _customerRepo.Update(customer);
+
+            //}
 
             //// Update customer info with latest information
             //customer.Address = serviceOrder.Address;
             //_customerRepo.Update(customer);
 
+            //serviceOrder.CustomerFirstName = serviceOrder.Customer.User.FirstName;
+            //serviceOrder.CustomerLastName = serviceOrder.Customer.User.LastName;
+            //serviceOrder.Phone = serviceOrder.Customer.User.PhoneNumber;
+            //serviceOrder.Email = serviceOrder.Customer.User.Email;
+            //serviceOrder.Address = serviceOrder.Customer.Address;
+            //serviceOrder.PostalCode = serviceOrder.Customer.PostalCode;
+
+
             // updating info
             serviceOrder.AddedDate = DateTime.Now;
 
-            serviceOrder.CustomerFirstName = serviceOrder.Customer.User.FirstName;
-            serviceOrder.CustomerLastName = serviceOrder.Customer.User.LastName;
-            serviceOrder.Phone = serviceOrder.Customer.User.PhoneNumber;
-            serviceOrder.Email = serviceOrder.Customer.User.Email;
-            serviceOrder.Address = serviceOrder.Customer.Address;
-            serviceOrder.PostalCode = serviceOrder.Customer.PostalCode;
-
-            serviceOrder.Customer = null;
             try
             {
                 _serviceOrdersRepo.Add(serviceOrder);
 
                 ViewBag.Added = true;
 
-            return View();
+                return View();
             }
             catch (Exception)
             {
@@ -376,7 +434,7 @@ namespace NovinTehran.Web.Controllers
                 ViewBag.Added = false;
 
                 return View();
-                }
             }
+        }
     }
 }

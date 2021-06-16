@@ -210,34 +210,34 @@
                         @Html.AntiForgeryToken()
                         <div class="recruitment-form">
                             <div class="flex-form">
-                                @Html.EditorFor(model => model.Customer.User.FirstName, new { htmlAttributes = new { placeholder = "نام" } })
-                                @Html.ValidationMessageFor(model => model.Customer.User.FirstName, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.CustomerFirstName, new { htmlAttributes = new { placeholder = "نام" } })
+                                @Html.ValidationMessageFor(model => model.CustomerFirstName, "", new { @class = "text-danger" })
                             </div>
                             <div class="flex-form">
-                                @Html.EditorFor(model => model.Customer.User.LastName, new { htmlAttributes = new { placeholder = "نام خانوادگی" } })
-                                @Html.ValidationMessageFor(model => model.Customer.User.LastName, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.CustomerLastName, new { htmlAttributes = new { placeholder = "نام خانوادگی" } })
+                                @Html.ValidationMessageFor(model => model.CustomerLastName, "", new { @class = "text-danger" })
                             </div>
                             <div class="flex-form">
-                                @Html.EditorFor(model => model.Customer.User.Email, new { htmlAttributes = new { placeholder = "ایمیل" } })
-                                @Html.ValidationMessageFor(model => model.Customer.User.Email, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "ایمیل" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                           <div class="flex-form">
+                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { placeholder = "شماره تماس" } })
+                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                             </div>
                             <div class="flex-form">
-                                @Html.EditorFor(model => model.Customer.User.PhoneNumber, new { htmlAttributes = new { placeholder = "شماره تماس" } })
-                                @Html.ValidationMessageFor(model => model.Customer.User.PhoneNumber, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="flex-form">
-                                <input id="Service" name="Service" value="@Model.Service.Title" disabled>
-                                <input type="hidden" id="ServiceId" name="ServiceId" value="@Model.ServiceId">
+                                <input id="Service" name="Service" value="@ViewBag.ServiceTitle" disabled>
+                                <input type="hidden" id="ServiceId" name="ServiceId" value="@ViewBag.ServiceId">
                             </div>
 
                             <div class="flex-form">
-                                @Html.EditorFor(model => model.Customer.PostalCode, new { htmlAttributes = new { placeholder = "کد پستی" } })
-                                @Html.ValidationMessageFor(model => model.Customer.PostalCode, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.PostalCode, new { htmlAttributes = new { placeholder = "کد پستی" } })
+                                @Html.ValidationMessageFor(model => model.PostalCode, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="flex-form">
-                            @Html.EditorFor(model => model.Customer.Address, new { htmlAttributes = new { placeholder = "آدرس را وارد کنید" } })
-                            @Html.ValidationMessageFor(model => model.Customer.Address, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { placeholder = "آدرس را وارد کنید" } })
+                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-textarea des-form">
 
