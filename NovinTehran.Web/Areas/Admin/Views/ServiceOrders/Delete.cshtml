@@ -8,23 +8,38 @@
 </h4>
 <dl class="row" style="padding-top:10px">
     <dt class="col-sm-4">
-        @Html.DisplayNameFor(model => model.InvoiceNumber)
+        @Html.DisplayNameFor(model => model.CustomerFirstName)
     </dt>
     <dd class="col-sm-8">
-        @Html.DisplayFor(model => model.InvoiceNumber)
+        @Html.DisplayFor(model => model.CustomerFirstName)
     </dd>
     <dt class="col-sm-4">
-        @Html.DisplayNameFor(model => model.CustomerName)
+        @Html.DisplayNameFor(model => model.CustomerLastName)
     </dt>
     <dd class="col-sm-8">
-        @Html.DisplayFor(model => model.CustomerName)
+        @Html.DisplayFor(model => model.CustomerLastName)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Service.Title)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Service.Title)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Address)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Address)
     </dd>
     <dt class="col-sm-4">
         @Html.DisplayNameFor(model => model.AddedDate)
     </dt>
     <dd class="col-sm-8">
-        @ViewBag.PersianDate
+        @Html.DisplayFor(model => model.AddedDate)
     </dd>
+    @*<dd class="col-sm-8">
+        @ViewBag.PersianDate
+    </dd>*@
 </dl>
 <div style="float:left">
     @using (Html.BeginForm())

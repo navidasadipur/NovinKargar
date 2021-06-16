@@ -13,19 +13,21 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
 {
     public class ServiceOrdersController : Controller
     {
-        private readonly ServiceOrdersRepository _repo;
+        private readonly ServiceOrdersRepository _serviceOrdersRepo;
+        private readonly ServicesRepository _servicesRepo;
         private readonly GeoDivisionsRepository _GeoRepo;
 
-        public ServiceOrdersController(ServiceOrdersRepository repo, GeoDivisionsRepository geoRepo)
+        public ServiceOrdersController(ServiceOrdersRepository serviceOrdersRepo, ServicesRepository servicesRepo, GeoDivisionsRepository geoRepo)
         {
-            _repo = repo;
+            _serviceOrdersRepo = serviceOrdersRepo;
+            this._servicesRepo = servicesRepo;
             _GeoRepo = geoRepo;
         }
 
         // GET: Admin/Orders
         public ActionResult Index()
         {
-            var serviceOrders = _repo.GetServiceOrders();
+            var serviceOrders = _serviceOrdersRepo.GetServiceOrders();
             var vm = new List<ServiceOrderTableViewModel>();
             foreach (var serviceOrder in serviceOrders)
             {
@@ -39,12 +41,13 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ServiceOrder serviceOrder = _repo.Get(id.Value);
+            ServiceOrder serviceOrder = _serviceOrdersRepo.GetServiceOrder(id.Value);
             if (serviceOrder == null)
             {
                 return HttpNotFound();
             }
             //ViewBag.GeoDivisionId = new SelectList(_GeoRepo.GetGeoDivisionsByType((int)GeoDivisionType.State), "Id", "Title", serviceOrder.GeoDivisionId);
+            ViewBag.ServiceId = new SelectList(_servicesRepo.GetServices(), "Id", "Title", serviceOrder.ServiceId);
             return View(serviceOrder);
         }
 
@@ -55,7 +58,7 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
 
-                _repo.Update(serviceOrder);
+                _serviceOrdersRepo.Update(serviceOrder);
                 return RedirectToAction("Index");
             }
             //ViewBag.GeoDivisionId = new SelectList(_GeoRepo.GetGeoDivisionsByType((int)GeoDivisionType.State), "Id", "Title", serviceOrder.GeoDivisionId);
@@ -65,7 +68,7 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
         public ActionResult ViewServiceOrder(int serviceOrderId)
         {
             var vm = new ViewServiceOrderViewModel();
-            var serviceOrder = _repo.GetServiceOrder(serviceOrderId);
+            var serviceOrder = _serviceOrdersRepo.GetServiceOrder(serviceOrderId);
             vm.ServiceOrder = serviceOrder;
             vm.PersianDate = new PersianDateTime(serviceOrder.AddedDate).ToString();
 
@@ -76,7 +79,7 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
             //{
             //    var serviceOrderItemWithMainFeature = new OrderItemWithMainFeatureViewModel
             //    {
-            //        OrderItem = serviceOrderItem, MainFeature = _repo.GetOrderItemsMainFeature(serviceOrderItem.Id)
+            //        OrderItem = serviceOrderItem, MainFeature = _serviceOrderRepo.GetOrderItemsMainFeature(serviceOrderItem.Id)
             //    };
             //    vm.OrderItems.Add(serviceOrderItemWithMainFeature);
 
@@ -90,7 +93,7 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ServiceOrder serviceOrder = _repo.Get(id.Value);
+            ServiceOrder serviceOrder = _serviceOrdersRepo.GetServiceOrder(id.Value);
             if (serviceOrder == null)
             {
                 return HttpNotFound();
@@ -104,8 +107,8 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var serviceOrder = _repo.Get(id);
-            _repo.Delete(id);
+            var serviceOrder = _serviceOrdersRepo.Get(id);
+            _serviceOrdersRepo.Delete(id);
             return RedirectToAction("Index");
         }
 
