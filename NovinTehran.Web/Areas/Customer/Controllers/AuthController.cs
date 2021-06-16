@@ -233,18 +233,18 @@ namespace NovinTehran.Web.Areas.Customer.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult ResetMyPasswordByEmail(string Email)
+        public ActionResult ResetMyPasswordByEmail(ForgotPasswordViewModel model)
         {
             ViewBag.Message = null;
 
-            if (!UserRepo.EmailExists(Email.Trim()))
+            if (!UserRepo.EmailExists(model.Email.Trim()))
             {
                 ViewBag.RegisterError = "کاربری با ایمیل وارد شده قبلا ثبت نام نکرده است";
 
                 return View();
             }
 
-            var user = UserRepo.GetUserByEmail(Email);
+            var user = UserRepo.GetUserByEmail(model.Email.Trim());
 
             ViewBag.UserId = user.Id;
 
