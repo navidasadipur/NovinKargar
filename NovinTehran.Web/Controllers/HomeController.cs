@@ -72,7 +72,7 @@ namespace NovinTehran.Web.Controllers
 
             var popup = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Popup);
 
-            ViewBag.BackImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.BackGroundImage).Image;
+            //ViewBag.BackImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.HeaderImage).Image;
 
             //ViewBag.NewsBackImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).Image;
             //ViewBag.NewsTitle = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).Title;
@@ -92,6 +92,7 @@ namespace NovinTehran.Web.Controllers
             }
 
             ViewBag.LogoImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Logo).Image;
+            ViewBag.HeaderImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.HeaderImage).Image;
 
             var wishListModel = new WishListModel();
 

@@ -43,7 +43,7 @@ namespace NovinTehran.Core.Utility
         DiscountNews = 5027,
 
         Logo = 14,
-        BackGroundImage = 2,
+        HeaderImage = 13,
         HomeAboutDescription = 8,
 
         BlogAd = 32,
