@@ -45,33 +45,6 @@
                 </div>
             </div>
         </div>
-        @*<div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
-        <div class="col-md-9">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="pl-0 font-weight-bold text-muted  text-uppercase">محصول</th>
-                            <th class="text-right font-weight-bold text-muted text-uppercase">مبلغ</th>
-                            <th class="text-right font-weight-bold text-muted text-uppercase">تعداد</th>
-                            <th class="text-right pr-0 font-weight-bold text-muted text-uppercase">مبلغ کل</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var item in Model.ServiceOrder)
-                    {
-                        <tr class="font-weight-boldest">
-                            <td class="pl-0 pt-7">@item.ServiceOrder.Product.Title (@item.MainFeature)</td>
-                            <td class="text-right pt-7">@item.ServiceOrder.Price تومان</td>
-                            <td class="text-right pt-7">@item.ServiceOrder.Quantity</td>
-                            <td class="text-danger pr-0 pt-7 text-right">@item.ServiceOrderItem.TotalPrice تومان</td>
-                        </tr>
-                    }
-                    </tbody>
-        </table>
-    </div>*@
-            </div>
-        </div>
         <div class="row justify-content-center bg-gray-100 py-8 px-8 py-md-10 px-md-0">
             <div class="col-md-9">
                 <div class="table-responsive">
@@ -102,6 +75,42 @@
                         <tbody>
                             <tr class="font-weight-bolder">
                                 <td>@Model.ServiceOrder.Description</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
+            <div class="col-md-9">
+                <div class="table-responsive">
+                    <h1 class="display-4 font-weight-boldest mb-10">مشخصات کاربر ثبت نام شده</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="pl-0 font-weight-bold text-muted  text-uppercase">نام</th>
+                                <th class="pl-0 font-weight-bold text-muted  text-uppercase">نام خانوادگی</th>
+                                <th class="pl-0 font-weight-bold text-muted  text-uppercase">ایمیل</th>
+                                <th class="pl-0 font-weight-bold text-muted  text-uppercase">شماره تماس</th>
+                                <th class="pl-0 font-weight-bold text-muted  text-uppercase">کد پستی</th>
+                                <th class="pl-0 font-weight-bold text-muted  text-uppercase">آدرس</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="font-weight-boldest">
+                                @if (Model.ServiceOrder.Customer == null)
+                                {
+                                    <td class="pl-0 pt-7 text-danger">سفارش توسط کاربری ثبت شده که ثبت نام نکرده است</td>
+                                }
+                                else
+                                {
+                                    <td class="pl-0 pt-7">@Model.ServiceOrder.Customer.User.FirstName</td>
+                                    <td class="pl-0 pt-7">@Model.ServiceOrder.Customer.User.LastName</td>
+                                    <td class="pl-0 pt-7">@Model.ServiceOrder.Customer.User.Email</td>
+                                    <td class="pl-0 pt-7">@Model.ServiceOrder.Customer.User.PhoneNumber</td>
+                                    <td class="pl-0 pt-7">@Model.ServiceOrder.Customer.PostalCode</td>
+                                    <td class="pl-0 pt-7">@Model.ServiceOrder.Customer.Address</td>
+                                }
                             </tr>
                         </tbody>
                     </table>
