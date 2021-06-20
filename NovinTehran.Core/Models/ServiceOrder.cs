@@ -78,7 +78,6 @@ namespace NovinTehran.Core.Models
         public int ServiceId { get; set; }
         public Service Service { get; set; }
 
-
         //[DisplayName("پرداخت شده")]
         //public bool IsPayed { get; set; }
         //public int? DiscountCodeId { get; set; }

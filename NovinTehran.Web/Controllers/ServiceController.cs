@@ -37,59 +37,6 @@ namespace NovinTehran.Web.Controllers
             _serviceCategoriesRepo = serviceCategoriesRepo;
             //_serviceTagsRepo = serviceTagsRepo;
         }
-        //// GET: Service
-        //public ActionResult Index(int pageNumber = 1, string searchString = null, int? category = null)
-        //{
-        //    var services = new List<Service>();
-        //    var take = 3;
-        //    var skip = pageNumber * take - take;
-        //    var count = 0;
-        //    if (category != null)
-        //    {
-        //        services = _servicesRepo.GetServicesList(skip, take, category.Value);
-        //        count = _servicesRepo.GetServicesCount(category.Value);
-        //        var cat = _serviceCategoriesRepo.Get(category.Value);
-        //        ViewBag.CategoryId = category;
-        //        ViewBag.Title = $"دسته {cat.Title}";
-        //    }
-        //    else if (!string.IsNullOrEmpty(searchString))
-        //    {
-        //        services = _servicesRepo.GetServicesList(skip, take, searchString);
-        //        count = _servicesRepo.GetServicesCount(searchString);
-        //        ViewBag.SearchString = searchString;
-        //        ViewBag.Title = $"جستجو: {searchString}";
-        //    }//}
-        //    else
-        //    {
-        //        services = _servicesRepo.GetServicesList(skip, take);
-        //        count = _servicesRepo.GetServicesCount();
-        //        ViewBag.Title = "بلاگ";
-        //    }
-
-        //    var pageCount = (int) Math.Ceiling((double) count / take);
-        //    ViewBag.PageCount = pageCount;
-        //    ViewBag.CurrentPage = pageNumber;
-
-        //    var vm = new List<LatestServicesViewModel>();
-        //    foreach (var item in services)
-        //        vm.Add(new LatestServicesViewModel(item));
-
-        //    var banner = "";
-        //    try
-        //    {
-        //        banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ وبلاگ").Image;
-        //        banner = "/Files/StaticContentImages/Image/" + banner;
-        //    }
-        //    catch
-        //    {
-
-        //    }
-
-        //    ViewBag.banner = banner;
-
-        //    ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
-
-        //    return View(vm);
 
         // GET: Service
         public ActionResult Index(int pageNumber = 1, string searchString = null, int? category = null)
@@ -101,25 +48,6 @@ namespace NovinTehran.Web.Controllers
             return View(allCategoriesWithServices);
         }
 
-        //public ActionResult ServiceCategoriesSection()
-        //{
-        //    var categories = _serviceCategoriesRepo.GetMainServiceCategories();
-
-        //    var serviceCategoriesVm = new List<ServiceCategoriesViewModel>();
-
-        //    foreach (var item in categories)
-        //    {
-        //        var vm = new ServiceCategoriesViewModel();
-        //        vm.Id = item.Id;
-        //        vm.Title = item.Title;
-        //        vm.ServiceCount = _servicesRepo.GetServicesCount(item.Id);
-        //        vm.Children = item.Children;
-        //        serviceCategoriesVm.Add(vm);
-        //    }
-
-        //    return PartialView(serviceCategoriesVm);
-        //}
-
         public ActionResult TopServicesSection(int take)
         {
             var vm = new List<LatestServicesViewModel>();
@@ -129,37 +57,6 @@ namespace NovinTehran.Web.Controllers
 
             return PartialView(vm);
         }
-
-        //public ActionResult AdServiceSection()
-        //{
-        //    var model = _staticContentRepo.GetStaticContentDetail((int)StaticContents.ServiceAd);
-
-        //    return PartialView(model);
-        //}
-
-        //public ActionResult ServiceDetailsTagsSection(int id)
-        //{
-        //    //SocialViewModel model = new SocialViewModel();
-
-        //    //model.Instagram = _staticContentDetailsRepo.GetStaticContentDetail(1009).Link;
-        //    //model.Aparat = _staticContentDetailsRepo.GetStaticContentDetail(1012).Link;
-
-        //    var tags = _serviceTagsRepo.GetServiceTags(id);
-
-        //    return PartialView(tags);
-        //}
-
-        //public ActionResult ServiceListTagsSection()
-        //{
-        //    //SocialViewModel model = new SocialViewModel();
-
-        //    //model.Instagram = _staticContentDetailsRepo.GetStaticContentDetail(1009).Link;
-        //    //model.Aparat = _staticContentDetailsRepo.GetStaticContentDetail(1012).Link;
-
-        //    var tags = _serviceTagsRepo.GetAll();
-
-        //    return PartialView(tags);
-        //}
 
         [Route("Service/ServiceDetails/{id}/{title}")]
         [Route("Service/Service/{id}/{title}")]
@@ -219,26 +116,6 @@ namespace NovinTehran.Web.Controllers
             return View(serviceDetailsVm);
         }
 
-        //[HttpPost]
-        //public ActionResult PostComment(CommentFormViewModel form)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var comment = new ServiceComment()
-        //        {
-        //            ServiceId = form.ServiceId.Value,
-        //            ParentId = form.ParentId,
-        //            Name = form.Name,
-        //            Email = form.Email,
-        //            Message = form.Message,
-        //            AddedDate = DateTime.Now,
-        //        };
-        //        _servicesRepo.AddComment(comment);
-        //        return RedirectToAction("ContactUsSummary", "Home");
-        //    }
-        //    return RedirectToAction("ServiceDetails", new { id = form.ServiceId });
-        //}
-
         public ActionResult ShareSocialsSection()
         {
             SocialViewModel model = new SocialViewModel();
@@ -296,26 +173,6 @@ namespace NovinTehran.Web.Controllers
 
         public ActionResult ServiceOrder(int id)
         {
-            //var serviceOrder = new ServiceOrder();
-
-            //var customer = _customerRepo.GetCurrentCustomer();
-
-            ////var service = _servicesRepo.GetService(id);
-
-            //if (customer != null)
-            //{
-            //    serviceOrder.ServiceId = id;
-            //    serviceOrder.Service = service;
-            //    serviceOrder.Customer = customer;
-            //    serviceOrder.Address = customer.Address;
-            //    serviceOrder.PostalCode = customer.PostalCode;
-            //    serviceOrder.Phone = customer.User.PhoneNumber;
-            //    serviceOrder.Email = customer.User.Email;
-            //    serviceOrder.CustomerFirstName = customer.User.FirstName;
-            //    serviceOrder.CustomerLastName = customer.User.LastName;
-
-            //}
-
             var service = _servicesRepo.GetService(id);
 
             ViewBag.ServiceTitle = service.Title;
@@ -354,68 +211,7 @@ namespace NovinTehran.Web.Controllers
             if (customer != null)
             {
                 serviceOrder.CustomerId = customer.Id;
-                serviceOrder.Customer = customer;
             }
-            //else
-            //{
-            //    #region Check for duplicate username or email
-
-            //    if (form.UserName != null)
-
-            //    {
-            //        if (_usersRepo.UserNameExists(form.UserName, form.UserId))
-            //        {
-            //            ViewBag.Message = "کاربر دیگری با همین نام کاربری در سیستم ثبت شده";
-            //            ViewBag.GeoDivisionId = new SelectList(_geoDivisonsRepo.GetGeoDivisionsByType((int)GeoDivisionType.State), "Id", "Title", form.GeoDivisionId);
-
-            //            return View(form);
-            //        }
-            //    }
-            //    if (_usersRepo.PhoneNumberExists(form.PhoneNumber, form.UserId))
-            //    {
-            //        ViewBag.Message = "کاربر دیگری با همین شماره تلفن در سیستم ثبت شده";
-            //        ViewBag.GeoDivisionId = new SelectList(_geoDivisonsRepo.GetGeoDivisionsByType((int)GeoDivisionType.State), "Id", "Title", form.GeoDivisionId);
-            //        return View(form);
-            //    }
-            //    if (_usersRepo.EmailExists(form.Email, form.UserId))
-            //    {
-            //        ViewBag.Message = "کاربر دیگری با همین ایمیل در سیستم ثبت شده";
-            //        ViewBag.GeoDivisionId = new SelectList(_geoDivisonsRepo.GetGeoDivisionsByType((int)GeoDivisionType.State), "Id", "Title", form.GeoDivisionId);
-            //        return View(form);
-            //    }
-            //    #endregion
-
-            //    var user = _usersRepo.GetUser(form.UserId);
-            //    user.UserName = form.UserName ?? form.PhoneNumber;
-            //    user.FirstName = form.FirstName;
-            //    user.LastName = form.LastName;
-            //    user.Email = form.Email;
-            //    user.PhoneNumber = form.PhoneNumber;
-            //    user.Avatar = form.Avatar;
-
-            //    _usersRepo.UpdateUser(user);
-
-            //    var customer = _customerRepo.Get(form.CustomerId.Value);
-
-            //    customer.NationalCode = form.NationalCode;
-            //    customer.Address = form.Address;
-            //    customer.PostalCode = form.PostalCode;
-            //    customer.GeoDivisionId = form.GeoDivisionId;
-            //    _customerRepo.Update(customer);
-
-            //}
-
-            //// Update customer info with latest information
-            //customer.Address = serviceOrder.Address;
-            //_customerRepo.Update(customer);
-
-            //serviceOrder.CustomerFirstName = serviceOrder.Customer.User.FirstName;
-            //serviceOrder.CustomerLastName = serviceOrder.Customer.User.LastName;
-            //serviceOrder.Phone = serviceOrder.Customer.User.PhoneNumber;
-            //serviceOrder.Email = serviceOrder.Customer.User.Email;
-            //serviceOrder.Address = serviceOrder.Customer.Address;
-            //serviceOrder.PostalCode = serviceOrder.Customer.PostalCode;
-
 
             // updating info
             serviceOrder.AddedDate = DateTime.Now;

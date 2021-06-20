@@ -39,7 +39,7 @@
 {
 columns.Bound(item => @item.ServiceOrder.AddedDate).IncludeInMenu(false).Title("تاریخ ثبت").Template(@<text>@item.PersianDate</text>).Width(160);;
 columns.Bound(model => model.ServiceOrder.CustomerFirstName).Title("نام").Width(100);
-columns.Bound(model => model.ServiceOrder.CustomerLastName).Title("نام خانوادگی").Width(100);
+columns.Bound(model => model.ServiceOrder.CustomerLastName).Title("نام خانوادگی").Width(130);
 columns.Bound(model => model.ServiceOrder.Address).Title("آدرس");
 columns.Bound(model => model.ServiceOrder.Service.Title).Title("خدمات").Width(100);
 columns.Bound(item => item.ServiceOrder.IsViewed).IncludeInMenu(false).Sortable(true).Title("وضعیت").Filterable(false).Groupable(false).Template(

@@ -29,7 +29,7 @@ namespace NovinTehran.Infrastructure.Repositories
 
         public List<ServiceOrder> GetServiceOrders()
         {
-            return _context.ServiceOrders.Where(o => o.IsDeleted == false).Include(o => o.Customer).Include(o => o.Service).ToList();
+            return _context.ServiceOrders.Where(o => o.IsDeleted == false).Include(o => o.Customer).Include(o => o.Service).OrderByDescending(o => o.Id).ToList();
         }
 
         public ServiceOrder GetServiceOrder(int serviceOrderId)
