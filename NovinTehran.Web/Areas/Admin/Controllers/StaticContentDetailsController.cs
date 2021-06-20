@@ -60,6 +60,8 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
                         image = new ImageResizer(1450, 250, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.About)
                         image = new ImageResizer(1450, 600, true);
+                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.HomeAboutSection)
+                        image = new ImageResizer(370, 433, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.HeaderFooter)
                         image = new ImageResizer(1400, 1400, true);
                     if (staticContentDetail.Id == (int)StaticContents.HeaderImage)
@@ -126,7 +128,9 @@ namespace NovinTehran.Web.Areas.Admin.Controllers
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.PageBanner)
                         image = new ImageResizer(1450, 250, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.About)
-                        image = new ImageResizer(1450, 600, true);
+                    image = new ImageResizer(1450, 600, true);
+                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.HomeAboutSection)
+                        image = new ImageResizer(370, 433, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.HeaderFooter)
                     image = new ImageResizer(1000, 1000, true);
                     if (staticContentDetail.Id == (int)StaticContents.HeaderImage)
