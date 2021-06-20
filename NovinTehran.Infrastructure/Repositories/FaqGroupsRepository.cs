@@ -49,7 +49,17 @@ namespace NovinTehran.Infrastructure.Repositories
 
         public List<FaqGroup> GetAllFaqGroupsWithFaqs()
         {
-            var allFaqGroups = _context.FaqGroups.Where(fq => fq.IsDeleted == false).Include(fq => fq.Faqs).ToList();
+            var allFaqGroups = _context.FaqGroups.Where(fg => fg.IsDeleted == false).ToList();
+
+            foreach (var faqGroup in allFaqGroups)
+            {
+                var faqList = _context.Faqs.Where(f => f.IsDeleted == false && f.FaqGroupId == faqGroup.Id).ToList();
+
+                foreach (var faq in faqList)
+                {
+                    faqGroup.Faqs.Add(faq);
+                }
+            }
 
             return allFaqGroups;
         }
