@@ -107,7 +107,7 @@ namespace NovinTehran.Web.Controllers
         public ActionResult TopArticlesSection(int take)
         {
             var vm = new List<LatestArticlesViewModel>();
-            var articles = _articlesRepo.GetTopArticles(take);
+            var articles = _articlesRepo.GetLatestArticles(take);
             foreach (var item in articles)
                 vm.Add(new LatestArticlesViewModel(item));
 

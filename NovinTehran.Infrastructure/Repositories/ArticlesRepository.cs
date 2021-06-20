@@ -94,11 +94,11 @@ namespace NovinTehran.Infrastructure.Repositories
         #region Get Articles List
         public List<Article> GetArticlesList(int skip, int take)
         {
-            return _context.Articles.Where(a => a.IsDeleted == false).Include(a=>a.User).OrderByDescending(a=>a.AddedDate).Skip(skip).Take(take).ToList();
+            return _context.Articles.Where(a => a.IsDeleted == false).Include(a=>a.User).OrderByDescending(a=>a.Id).Skip(skip).Take(take).ToList();
         }
         public List<Article> GetArticlesList(int skip, int take, int categoryId)
         {
-            return _context.Articles.Where(a => a.IsDeleted == false && a.ArticleCategoryId == categoryId).Include(a => a.User).OrderByDescending(a => a.AddedDate).Skip(skip).Take(take).ToList();
+            return _context.Articles.Where(a => a.IsDeleted == false && a.ArticleCategoryId == categoryId).Include(a => a.User).OrderByDescending(a => a.Id).Skip(skip).Take(take).ToList();
         }
 
         public List<Article> GetArticlesList(int skip, int take, string searchString)
@@ -113,13 +113,13 @@ namespace NovinTehran.Infrastructure.Repositories
                         || a.ShortDescription != null && a.ShortDescription.Trim().ToLower().Contains(trimedSearchString) 
                         || a.Description != null && a.Description.Trim().ToLower().Contains(trimedSearchString)
                      ))
-                .Include(a => a.User).OrderByDescending(a => a.AddedDate).Skip(skip).Take(take).ToList();
+                .Include(a => a.User).OrderByDescending(a => a.Id).Skip(skip).Take(take).ToList();
 
             var tags = _context.ArticleTags
                     .Where(t => t.IsDeleted == false && (
                            t.Title != null && t.Title.ToLower().Trim().Contains(trimedSearchString)
                    ))
-                   .OrderByDescending(t => t.InsertDate).Skip(skip).Take(take).ToList();
+                   .OrderByDescending(t => t.Id).Skip(skip).Take(take).ToList();
 
             foreach (var tag in tags)
             {
