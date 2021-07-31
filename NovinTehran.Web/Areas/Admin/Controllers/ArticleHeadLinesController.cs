@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Core.Models;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Core.Models;
 using System.Net;
 
-namespace NovinTehran.Web.Areas.Admin.Controllers
+namespace NovinKargar.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class ArticleHeadLinesController : Controller

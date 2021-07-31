@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using NovinTehran.Core.Models;
-using NovinTehran.Core.Utility;
-using NovinTehran.Infratructure.Dtos.Product;
+using NovinKargar.Core.Models;
+using NovinKargar.Core.Utility;
+using NovinKargar.Infratructure.Dtos.Product;
 
-namespace NovinTehran.Web.ViewModels
+namespace NovinKargar.Web.ViewModels
 {
     public class NewProductViewModel
     {

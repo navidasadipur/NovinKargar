@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 
-namespace NovinTehran.Infrastructure.Helpers
+namespace NovinKargar.Infrastructure.Helpers
 {
 
     public class PersianCulture : CultureInfo

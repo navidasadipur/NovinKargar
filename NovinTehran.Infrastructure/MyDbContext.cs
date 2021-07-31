@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Text;
-using NovinTehran.Core.Models;
+using NovinKargar.Core.Models;
 
-namespace NovinTehran.Infrastructure
+namespace NovinKargar.Infrastructure
 {
     public class MyDbContext : IdentityDbContext<User>
     {

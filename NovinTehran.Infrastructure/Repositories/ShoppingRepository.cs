@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovinTehran.Infrastructure;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Core.Models;
+using NovinKargar.Infrastructure;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Core.Models;
 
-namespace NovinTehran.Infratructure.Repositories
+namespace NovinKargar.Infratructure.Repositories
 {
     public class ShoppingRepository
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Net;
 using System.Web.Mvc;
-using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure.Repositories;
+using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure.Repositories;
 
-namespace NovinTehran.Web.Areas.Admin.Controllers
+namespace NovinKargar.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class StaticContentTypesController : Controller

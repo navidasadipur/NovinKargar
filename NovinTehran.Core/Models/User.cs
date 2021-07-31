@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace NovinTehran.Core.Models
+namespace NovinKargar.Core.Models
 {
     public class UserMetadata
     {

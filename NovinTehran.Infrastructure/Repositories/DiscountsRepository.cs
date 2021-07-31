@@ -4,10 +4,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure.Extensions;
+using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure.Extensions;
 
-namespace NovinTehran.Infrastructure.Repositories
+namespace NovinKargar.Infrastructure.Repositories
 {
     public class DiscountsRepository : BaseRepository<Discount, MyDbContext>
     {

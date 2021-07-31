@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NovinTehran.Infrastructure.Filters
+namespace NovinKargar.Infrastructure.Filters
 {
     public class PaginationFilter
     {

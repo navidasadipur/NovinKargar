@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using NovinTehran.Core.Models;
+using NovinKargar.Core.Models;
 
-namespace NovinTehran.Web.ViewModels
+namespace NovinKargar.Web.ViewModels
 {
     public class NewProductGroupViewModel
     {

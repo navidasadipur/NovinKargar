@@ -7,13 +7,13 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using NovinTehran.Core.Models;
-using NovinTehran.Core.Utility;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Web.Controllers;
-using NovinTehran.Web.ViewModels;
+using NovinKargar.Core.Models;
+using NovinKargar.Core.Utility;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Web.Controllers;
+using NovinKargar.Web.ViewModels;
 
-namespace NovinTehran.Web.Areas.Customer.Controllers
+namespace NovinKargar.Web.Areas.Customer.Controllers
 {
     [Authorize]
     public class AuthController : Controller

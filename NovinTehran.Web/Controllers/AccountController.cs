@@ -8,13 +8,13 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using NovinTehran.Web.ViewModels;
-using NovinTehran.Infrastructure.Helpers;
-using NovinTehran.Infrastructure.Repositories;
+using NovinKargar.Web.ViewModels;
+using NovinKargar.Infrastructure.Helpers;
+using NovinKargar.Infrastructure.Repositories;
 
 
 
-namespace NovinTehran.Web.Controllers
+namespace NovinKargar.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -170,7 +170,7 @@ namespace NovinTehran.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new NovinTehran.Web.Models.ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new NovinKargar.Web.Models.ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -241,8 +241,8 @@ namespace NovinTehran.Web.Controllers
                    protocol: Request.Url.Scheme);
                 var emailForm = new Email.EmailFormModel
                 {
-                    FromName = "NovinTehran Way Team",
-                    FromEmail = "NovinTehranWayTeam@gmail.com",
+                    FromName = "NovinKargar Way Team",
+                    FromEmail = "NovinKargarWayTeam@gmail.com",
                     ToEmail = user.Email,
                     Subject = "بروز رسانی رمز عبور",
                     Message = "با استفاده از این <a href=\"" + callbackUrl + "\">لینک</a> میتوانید رمز عبور خود را بروز رسانی کنید"
@@ -401,7 +401,7 @@ namespace NovinTehran.Web.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new NovinTehran.Web.Models.ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new NovinKargar.Web.Models.ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Net;
 using System.Web.Mvc;
-using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure.Repositories;
+using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure.Repositories;
 using System.Web;
 using System.IO;
-using NovinTehran.Infrastructure.Helpers;
+using NovinKargar.Infrastructure.Helpers;
 
-namespace NovinTehran.Web.Areas.Admin.Controllers
+namespace NovinKargar.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class OurTeamController : Controller

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NovinTehran.Core.Models
+namespace NovinKargar.Core.Models
 {
     public class PaymentAccount : IBaseEntity
     {

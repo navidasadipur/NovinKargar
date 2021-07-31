@@ -1,7 +1,7 @@
-﻿using NovinTehran.Core;
-using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure.Filters;
-using NovinTehran.Infrastructure.Repositories;
+﻿using NovinKargar.Core;
+using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure.Filters;
+using NovinKargar.Infrastructure.Repositories;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace NovinTehran.Infrastructure
+namespace NovinKargar.Infrastructure
 {
     public interface IBaseRepository<T> where T : class, IBaseEntity
     {

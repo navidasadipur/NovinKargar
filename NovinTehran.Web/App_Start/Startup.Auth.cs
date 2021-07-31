@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using NovinTehran.Web.Models;
+using NovinKargar.Web.Models;
 
-namespace NovinTehran.Web
+namespace NovinKargar.Web
 {
     public partial class Startup
     {

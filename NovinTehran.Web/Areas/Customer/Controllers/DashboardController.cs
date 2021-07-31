@@ -5,13 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using NovinTehran.Core.Models;
-using NovinTehran.Core.Utility;
-using NovinTehran.Infrastructure.Helpers;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Web.ViewModels;
+using NovinKargar.Core.Models;
+using NovinKargar.Core.Utility;
+using NovinKargar.Infrastructure.Helpers;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Web.ViewModels;
 
-namespace NovinTehran.Web.Areas.Customer.Controllers
+namespace NovinKargar.Web.Areas.Customer.Controllers
 {
     [Authorize(Roles = "Customer")]
     public class DashboardController : Controller

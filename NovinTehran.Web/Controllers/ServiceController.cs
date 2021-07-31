@@ -1,14 +1,14 @@
-﻿using NovinTehran.Core.Models;
-using NovinTehran.Core.Utility;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Web.ViewModels;
+﻿using NovinKargar.Core.Models;
+using NovinKargar.Core.Utility;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NovinTehran.Web.Controllers
+namespace NovinKargar.Web.Controllers
 {
     public class ServiceController : Controller
     {

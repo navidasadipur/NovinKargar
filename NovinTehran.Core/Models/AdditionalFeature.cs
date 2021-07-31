@@ -1,4 +1,4 @@
-﻿using NovinTehran.Core.Utility;
+﻿using NovinKargar.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NovinTehran.Core.Models
+namespace NovinKargar.Core.Models
 {
     public class AdditionalFeature : IBaseEntity
     {

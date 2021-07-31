@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using NovinTehran.Infrastructure;
+using NovinKargar.Infrastructure;
 using Kendo.Mvc.UI;
-using NovinTehran.Web.ViewModels;
-using NovinTehran.Core.Models;
+using NovinKargar.Web.ViewModels;
+using NovinKargar.Core.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace NovinTehran.Web.Areas.Admin.Controllers
+namespace NovinKargar.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class RolesController : Controller

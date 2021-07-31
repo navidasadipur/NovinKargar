@@ -1,11 +1,11 @@
-﻿using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure.Repositories;
+﻿using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace NovinTehran.Web.ViewModels
+namespace NovinKargar.Web.ViewModels
 {
     public class DiscountCodeResponseViewModel
     {

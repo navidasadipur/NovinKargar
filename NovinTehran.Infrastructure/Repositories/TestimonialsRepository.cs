@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure;
-using NovinTehran.Infrastructure.Repositories;
+using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure;
+using NovinKargar.Infrastructure.Repositories;
 
-namespace NovinTehran.Infratructure.Repositories
+namespace NovinKargar.Infratructure.Repositories
 {
     public class TestimonialsRepository : BaseRepository<Testimonial, MyDbContext>
     {

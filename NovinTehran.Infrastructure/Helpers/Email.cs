@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 
 
-namespace NovinTehran.Infrastructure.Helpers
+namespace NovinKargar.Infrastructure.Helpers
 {
     public class Email
     {
@@ -45,7 +45,7 @@ namespace NovinTehran.Infrastructure.Helpers
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.UseDefaultCredentials = false;
                 smtp.Credentials = credential;
-                smtp.Host = "NovinTehran.ir";
+                smtp.Host = "NovinKargar.ir";
                 smtp.Port = 25;
                 smtp.EnableSsl = true;
                 await smtp.SendMailAsync(message);

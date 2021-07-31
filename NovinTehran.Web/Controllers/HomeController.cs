@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
-using NovinTehran.Core.Models;
-using NovinTehran.Core.Utility;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Infratructure.Repositories;
-using NovinTehran.Infratructure.Services;
-using NovinTehran.Web.ViewModels;
+using NovinKargar.Core.Models;
+using NovinKargar.Core.Utility;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Infratructure.Repositories;
+using NovinKargar.Infratructure.Services;
+using NovinKargar.Web.ViewModels;
 
-namespace NovinTehran.Web.Controllers
+namespace NovinKargar.Web.Controllers
 {
     public class HomeController : Controller
     {

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Web.Mvc;
 
-namespace NovinTehran.Core.Models
+namespace NovinKargar.Core.Models
 {
    public class StaticContentDetail : IBaseEntity
     {

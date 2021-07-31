@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
-using NovinTehran.Core.Models;
+using NovinKargar.Core.Models;
 
-namespace NovinTehran.Infrastructure.Repositories
+namespace NovinKargar.Infrastructure.Repositories
 {
     public class InvoicesRepository : BaseRepository<Invoice, MyDbContext>
     {

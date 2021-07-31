@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovinTehran.Core.Models;
+using NovinKargar.Core.Models;
 
-namespace NovinTehran.Infrastructure.Helpers
+namespace NovinKargar.Infrastructure.Helpers
 {
     public static class HierarchyLoop
     {

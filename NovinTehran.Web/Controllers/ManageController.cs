@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using NovinTehran.Web.ViewModels;
+using NovinKargar.Web.ViewModels;
 
-namespace NovinTehran.Web.Controllers
+namespace NovinKargar.Web.Controllers
 {
     [Authorize]
     public class ManageController : Controller

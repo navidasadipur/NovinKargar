@@ -1,4 +1,4 @@
-﻿using NovinTehran.Core.Models;
+﻿using NovinKargar.Core.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace NovinTehran.Infrastructure.Repositories
+namespace NovinKargar.Infrastructure.Repositories
 {
     public class LogsRepository
     {

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace NovinTehran.Web.Areas.Customer
+namespace NovinKargar.Web.Areas.Customer
 {
     public class CustomerAreaRegistration : AreaRegistration 
     {

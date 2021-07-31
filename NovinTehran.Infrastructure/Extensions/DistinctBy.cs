@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NovinTehran.Infrastructure.Extensions
+namespace NovinKargar.Infrastructure.Extensions
 {
     public static class DistinctByExtension
     {

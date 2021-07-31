@@ -1,12 +1,12 @@
 using System.Web.Mvc;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Web.Areas.Customer.Controllers;
-using NovinTehran.Web.Controllers;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Web.Areas.Customer.Controllers;
+using NovinKargar.Web.Controllers;
 using Unity;
 using Unity.Injection;
 using Unity.Mvc5;
 
-namespace NovinTehran.Web
+namespace NovinKargar.Web
 {
     public static class UnityConfig
     {

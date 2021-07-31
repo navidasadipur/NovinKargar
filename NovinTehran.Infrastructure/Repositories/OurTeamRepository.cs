@@ -1,12 +1,12 @@
-﻿using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure;
-using NovinTehran.Infrastructure.Repositories;
+﻿using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure;
+using NovinKargar.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NovinTehran.Infrastructure.Repositories
+namespace NovinKargar.Infrastructure.Repositories
 {
     public class OurTeamRepository : BaseRepository<OurTeam, MyDbContext>
     {

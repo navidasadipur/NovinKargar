@@ -1,10 +1,10 @@
-﻿using NovinTehran.Core.Models;
+﻿using NovinKargar.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace NovinTehran.Web.Providers
+namespace NovinKargar.Web.Providers
 {
     public interface ISMSProvider
     {

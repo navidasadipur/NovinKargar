@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NovinTehran.Core.Models
+namespace NovinKargar.Core.Models
 {
     public class UserRole : IdentityUserRole
     {

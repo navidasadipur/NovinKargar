@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Routing;
 
 
-namespace NovinTehran.Infrastructure.Helpers
+namespace NovinKargar.Infrastructure.Helpers
 {
     public class CheckPermission
     {

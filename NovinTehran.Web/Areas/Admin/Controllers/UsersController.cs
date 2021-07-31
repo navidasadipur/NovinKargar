@@ -8,16 +8,16 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure;
-using NovinTehran.Infrastructure.Helpers;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Web.ViewModels;
+using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure;
+using NovinKargar.Infrastructure.Helpers;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Web.ViewModels;
 using Kendo.Mvc.UI;
 using Microsoft.AspNet.Identity;
-using NovinTehran.Core.Utility;
+using NovinKargar.Core.Utility;
 
-namespace NovinTehran.Web.Areas.Admin.Controllers
+namespace NovinKargar.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class UsersController : Controller

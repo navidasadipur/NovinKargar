@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace NovinTehran.Web
+namespace NovinKargar.Web
 {
     public class BundleConfig
     {

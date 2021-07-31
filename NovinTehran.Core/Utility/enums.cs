@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NovinTehran.Core.Utility
+namespace NovinKargar.Core.Utility
 {
     public enum DiscountType
     {

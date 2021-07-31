@@ -1,4 +1,4 @@
-﻿using NovinTehran.Core.Models;
+﻿using NovinKargar.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,13 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Microsoft.AspNet.Identity;
-using NovinTehran.Infrastructure.Filters;
+using NovinKargar.Infrastructure.Filters;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using System.Net.Mail;
-using NovinTehran.Infrastructure;
+using NovinKargar.Infrastructure;
 
-namespace NovinTehran.Infratructure.Repositories
+namespace NovinKargar.Infratructure.Repositories
 {
     public class EmailSubscriptionRepository : IDisposable
     {

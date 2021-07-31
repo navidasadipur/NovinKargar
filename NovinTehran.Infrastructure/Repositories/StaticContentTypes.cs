@@ -1,11 +1,11 @@
-﻿using NovinTehran.Core.Models;
+﻿using NovinKargar.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NovinTehran.Infrastructure.Repositories
+namespace NovinKargar.Infrastructure.Repositories
 {
     public class StaticContentTypesRepository : BaseRepository<StaticContentType, MyDbContext>
     {

@@ -1,4 +1,4 @@
-namespace NovinTehran.Infratructure.Migrations
+namespace NovinKargar.Infratructure.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

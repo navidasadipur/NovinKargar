@@ -1,5 +1,5 @@
-﻿using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure.Filters;
+﻿using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure.Filters;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
 
-namespace NovinTehran.Infrastructure.Repositories
+namespace NovinKargar.Infrastructure.Repositories
 {
     public class ServicesRepository : BaseRepository<Service, MyDbContext>
     {

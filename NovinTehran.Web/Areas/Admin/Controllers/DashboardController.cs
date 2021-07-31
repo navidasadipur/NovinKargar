@@ -1,5 +1,5 @@
-﻿using NovinTehran.Infrastructure;
-using NovinTehran.Infrastructure.Helpers;
+﻿using NovinKargar.Infrastructure;
+using NovinKargar.Infrastructure.Helpers;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -7,9 +7,9 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using NovinTehran.Web.ViewModels;
+using NovinKargar.Web.ViewModels;
 
-namespace NovinTehran.Web.Areas.Admin.Controllers
+namespace NovinKargar.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class DashboardController : Controller

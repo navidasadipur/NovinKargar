@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(NovinTehran.Web.Startup))]
-namespace NovinTehran.Web
+[assembly: OwinStartupAttribute(typeof(NovinKargar.Web.Startup))]
+namespace NovinKargar.Web
 {
     public partial class Startup
     {

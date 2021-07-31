@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NovinTehran.Core
+namespace NovinKargar.Core
 {
     public interface IBaseEntity
     {

@@ -8,10 +8,10 @@ using System.Web;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
-using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure;
+using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure;
 
-namespace NovinTehran.Web.Areas.Admin.Controllers
+namespace NovinKargar.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class GridController : Controller

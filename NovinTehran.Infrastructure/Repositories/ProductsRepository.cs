@@ -4,10 +4,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovinTehran.Core.Models;
-using NovinTehran.Core.Utility;
+using NovinKargar.Core.Models;
+using NovinKargar.Core.Utility;
 
-namespace NovinTehran.Infrastructure.Repositories
+namespace NovinKargar.Infrastructure.Repositories
 {
     public class ProductsRepository : BaseRepository<Product, MyDbContext>
     {

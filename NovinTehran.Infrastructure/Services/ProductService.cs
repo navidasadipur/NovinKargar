@@ -4,13 +4,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovinTehran.Core.Models;
-using NovinTehran.Core.Utility;
-using NovinTehran.Infrastructure;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Infratructure.Dtos.Product;
+using NovinKargar.Core.Models;
+using NovinKargar.Core.Utility;
+using NovinKargar.Infrastructure;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Infratructure.Dtos.Product;
 
-namespace NovinTehran.Infratructure.Services
+namespace NovinKargar.Infratructure.Services
 {
     public class ProductService
     {

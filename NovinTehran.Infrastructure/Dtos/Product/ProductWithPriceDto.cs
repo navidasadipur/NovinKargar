@@ -1,4 +1,4 @@
-﻿using NovinTehran.Core.Utility;
+﻿using NovinKargar.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NovinTehran.Infratructure.Dtos.Product
+namespace NovinKargar.Infratructure.Dtos.Product
 {
     public class ProductGridDto
     {

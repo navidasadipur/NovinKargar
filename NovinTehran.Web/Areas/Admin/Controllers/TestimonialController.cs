@@ -5,11 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure.Helpers;
-using NovinTehran.Infratructure.Repositories;
+using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure.Helpers;
+using NovinKargar.Infratructure.Repositories;
 
-namespace NovinTehran.Web.Areas.Admin.Controllers
+namespace NovinKargar.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class TestimonialController : Controller

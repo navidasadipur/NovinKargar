@@ -1,6 +1,6 @@
-﻿using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure;
-using NovinTehran.Infrastructure.Repositories;
+﻿using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure;
+using NovinKargar.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -12,7 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace NovinTehran.Web.Providers
+namespace NovinKargar.Web.Providers
 {
     public class PasargadGatewayRepository : IBankGatewayRepository
     {

@@ -1,11 +1,11 @@
-﻿using NovinTehran.Infrastructure;
+﻿using NovinKargar.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 
-namespace NovinTehran.Web.Providers
+namespace NovinKargar.Web.Providers
 {
     public class MyRoleProvider : RoleProvider
     {

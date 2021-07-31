@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
-using NovinTehran.Core.Models;
-using NovinTehran.Core.Utility;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Infratructure.Dtos.Product;
-using NovinTehran.Infratructure.Repositories;
-using NovinTehran.Infratructure.Services;
-using NovinTehran.Web.Providers;
-using NovinTehran.Web.ViewModels;
+using NovinKargar.Core.Models;
+using NovinKargar.Core.Utility;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Infratructure.Dtos.Product;
+using NovinKargar.Infratructure.Repositories;
+using NovinKargar.Infratructure.Services;
+using NovinKargar.Web.Providers;
+using NovinKargar.Web.ViewModels;
 
-namespace NovinTehran.Web.Controllers
+namespace NovinKargar.Web.Controllers
 {
     public class ShopController : Controller
     {

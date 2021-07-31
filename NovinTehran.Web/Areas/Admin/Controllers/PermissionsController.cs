@@ -1,5 +1,5 @@
-﻿using NovinTehran.Core.Models;
-using NovinTehran.Infrastructure;
+﻿using NovinKargar.Core.Models;
+using NovinKargar.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,7 +9,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NovinTehran.Web.Areas.Admin.Controllers
+namespace NovinKargar.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class PermissionsController : Controller

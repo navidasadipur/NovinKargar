@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using Newtonsoft.Json.Linq;
-using NovinTehran.Core.Models;
+using NovinKargar.Core.Models;
 
-namespace NovinTehran.Web.ViewModels
+namespace NovinKargar.Web.ViewModels
 {
     public class DiscountFormViewModel
     {

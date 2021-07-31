@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovinTehran.Web", "NovinTehran.Web\NovinTehran.Web.csproj", "{F22B1371-1311-4836-96F4-750A8C763EF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovinKargar.Web", "NovinTehran.Web\NovinKargar.Web.csproj", "{F22B1371-1311-4836-96F4-750A8C763EF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovinTehran.Core", "NovinTehran.Core\NovinTehran.Core.csproj", "{C9289F3F-FB24-495E-A361-11D0F3C81456}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovinKargar.Core", "NovinTehran.Core\NovinKargar.Core.csproj", "{C9289F3F-FB24-495E-A361-11D0F3C81456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovinTehran.Infrastructure", "NovinTehran.Infrastructure\NovinTehran.Infrastructure.csproj", "{0D2FF993-9241-444D-8BB7-44B31CCD4165}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovinKargar.Infrastructure", "NovinTehran.Infrastructure\NovinKargar.Infrastructure.csproj", "{0D2FF993-9241-444D-8BB7-44B31CCD4165}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

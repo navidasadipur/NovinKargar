@@ -1,9 +1,9 @@
-﻿using NovinTehran.Core.Models;
-using NovinTehran.Core.Utility;
-using NovinTehran.Infrastructure.Repositories;
-using NovinTehran.Infratructure.Services;
-using NovinTehran.Web.Providers;
-using NovinTehran.Web.ViewModels;
+﻿using NovinKargar.Core.Models;
+using NovinKargar.Core.Utility;
+using NovinKargar.Infrastructure.Repositories;
+using NovinKargar.Infratructure.Services;
+using NovinKargar.Web.Providers;
+using NovinKargar.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NovinTehran.Web.Controllers
+namespace NovinKargar.Web.Controllers
 {
     public class PaymentController : Controller
     {

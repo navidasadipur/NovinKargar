@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NovinTehran.Core.Utility
+namespace NovinKargar.Core.Utility
 {
     public static class StaticVariables
     {
