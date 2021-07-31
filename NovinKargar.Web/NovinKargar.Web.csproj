@@ -1885,7 +1885,6 @@
     <Content Include="Content\client\assets\images\fancybox\fancybox_overlay.png" />
     <Content Include="Content\client\assets\images\fancybox\fancybox_sprite%402x.png" />
     <Content Include="Content\client\assets\images\fancybox\fancybox_sprite.png" />
-    <Content Include="Content\client\assets\images\fav-icon.png" />
     <Content Include="Content\client\assets\images\footer-logo.png" />
     <Content Include="Content\client\assets\images\fun-fact-bg.jpg" />
     <Content Include="Content\client\assets\images\latest-projects\img-1.jpg" />
@@ -4978,11 +4977,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NovinTehran.Core\NovinKargar.Core.csproj">
+    <ProjectReference Include="..\NovinKargar.Core\NovinKargar.Core.csproj">
       <Project>{c9289f3f-fb24-495e-a361-11d0f3c81456}</Project>
       <Name>NovinKargar.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NovinTehran.Infrastructure\NovinKargar.Infrastructure.csproj">
+    <ProjectReference Include="..\NovinKargar.Infrastructure\NovinKargar.Infrastructure.csproj">
       <Project>{0d2ff993-9241-444d-8bb7-44b31ccd4165}</Project>
       <Name>NovinKargar.Infrastructure</Name>
     </ProjectReference>
