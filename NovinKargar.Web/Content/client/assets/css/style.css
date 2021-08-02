@@ -3460,7 +3460,7 @@ img {
   }
 }
 .owl-carousel .owl-stage-outer{
-  direction: ltr;
+  direction: rtl;
 }
 .work-process h3 {
   font-size: 20px;
