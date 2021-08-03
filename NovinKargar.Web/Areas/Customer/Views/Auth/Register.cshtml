@@ -213,13 +213,13 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-8 col-md-offset-2">
-                @if (!string.IsNullOrEmpty(ViewBag.LoginError))
+                @if (!string.IsNullOrEmpty(ViewBag.RegisterError))
                 {
-                    <div class="container margin-top-50">
+                    <div class=" margin-top-50">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="alert alert-warning">
-                                    <span class="text-danger">@ViewBag.LoginError</span>
+                                    <span class="text-danger">@ViewBag.RegisterError</span>
                                 </div>
                             </div>
                         </div>
@@ -277,9 +277,11 @@
         color: darkred;
     }
 </style>
-<script>
-    $.validator.unobtrusive.parse("#form");
-</script>
+
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $.validator.unobtrusive.parse("#form");
+    </script>
 }

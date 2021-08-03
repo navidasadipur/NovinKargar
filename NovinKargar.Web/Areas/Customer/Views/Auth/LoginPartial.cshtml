@@ -117,9 +117,11 @@
 
 
 
-<script>
-    $.validator.unobtrusive.parse("#form");
-</script>
+
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $.validator.unobtrusive.parse("#form");
+    </script>
 }
