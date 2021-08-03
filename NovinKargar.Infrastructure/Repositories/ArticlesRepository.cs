@@ -27,11 +27,11 @@ namespace NovinKargar.Infrastructure.Repositories
         }
         public List<Article> GetArticles()
         {
-            return _context.Articles.Where(a=>a.IsDeleted == false).Include(a => a.User).Include(a=>a.ArticleCategory).OrderBy(a=>a.InsertDate).ToList();
+            return _context.Articles.Where(a=>a.IsDeleted == false).Include(a => a.User).Include(a=>a.ArticleCategory).OrderByDescending(a=>a.InsertDate).ToList();
         }
         public List<ArticleCategory> GetArticleCategories()
         {
-            return _context.ArticleCategories.Where(a => a.IsDeleted == false).Include(a => a.Children).ToList();
+            return _context.ArticleCategories.Where(a => a.IsDeleted == false).OrderByDescending(a => a.InsertDate).Include(a => a.Children).ToList();
         }
         public void AddArticle(Article article)
         {
