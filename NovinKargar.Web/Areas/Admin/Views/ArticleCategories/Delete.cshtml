@@ -1,7 +1,20 @@
 ﻿@model NovinKargar.Core.Models.ArticleCategory
+
+@{
+    var subCategories = "";
+
+    if (Model.Children.Count() != 0)
+    {
+        subCategories = "و همه زیر دسته ها";
+    }
+}
+
 <h4 class="card-label">
-    آیا مطمئن هستید که می خواهید این دسته را حذف کنید؟
+    آیا مطمئن هستید که می خواهید این دسته
+    @subCategories
+    را حذف کنید؟
 </h4>
+
 <dl class="row" style="padding-top:10px">
     <dt class="col-sm-4">
         @Html.DisplayNameFor(model => model.Title)

@@ -41,6 +41,7 @@ namespace NovinKargar.Web.Areas.Admin.Controllers
         public ActionResult Create()
         {
             ViewBag.ParentId = new SelectList(_repo.GetMainArticleCategories(), "Id", "Title");
+
             return PartialView();
         }
         [HttpPost]
@@ -71,7 +72,7 @@ namespace NovinKargar.Web.Areas.Admin.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.ParentId = new SelectList(_repo.GetMainArticleCategories(), "Id", "Title", articleCategory.Id);
+            ViewBag.ParentId = new SelectList(_repo.GetMainArticleCategories(), "Id", "Title", articleCategory.ParentId);
 
             return PartialView(articleCategory);
         }
@@ -111,6 +112,13 @@ namespace NovinKargar.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            var allChildrenArticles = _repo.GetChildrenArticleCategories(id);
+
+            foreach (var item in allChildrenArticles)
+            {
+                _repo.Delete(item.Id);
+            }
+
             _repo.Delete(id);
             return RedirectToAction("Index");
         }
