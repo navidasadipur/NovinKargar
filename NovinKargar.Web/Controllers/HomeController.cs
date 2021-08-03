@@ -59,11 +59,11 @@ namespace NovinKargar.Web.Controllers
             _articlesRepo = articlesRepo;
             _contactFormRepo = contactFormRepo;
             _productGroupRepo = productGroupRepo;
-            this._ourTeamRepo = ourTeamRepo;
-            this._faqGroupsRepo = faqGroupsRepo;
+            _ourTeamRepo = ourTeamRepo;
+            _faqGroupsRepo = faqGroupsRepo;
             _emailSubscriptionRepo = emailSubscriptionRepo;
             _certificatesRepo = certificatesRepository;
-            this._serviceCategoriesRepo = serviceCategoriesRepo;
+            _serviceCategoriesRepo = serviceCategoriesRepo;
             _productsRepo = productsRepo;
         }
 
@@ -142,11 +142,6 @@ namespace NovinKargar.Web.Controllers
             return PartialView(allMainGroups);
         }
 
-        public ActionResult FooterTopSection()
-        {
-            return PartialView();
-        }
-
         public ActionResult FooterSection()
         {
             var vm = new FooterViewModel()
@@ -162,6 +157,8 @@ namespace NovinKargar.Web.Controllers
                 Pinterest = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Pinterest),
                 LinkedIn = _staticContentRepo.GetStaticContentDetail((int)StaticContents.linkedin)
             };
+
+            ViewBag.EmailSubscription = _staticContentRepo.GetStaticContentDetail((int)StaticContents.EmailSubscription);
 
             return PartialView(vm);
         }

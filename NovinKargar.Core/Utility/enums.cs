@@ -34,7 +34,8 @@ namespace NovinKargar.Core.Utility
         companyServices = 3003,
         CopyRight = 3004,
         ImplementaitonService = 3005,
-
+        EmailSubscription = 3,
+        
         Address = 5,
         Email = 6,
         Phone = 7,

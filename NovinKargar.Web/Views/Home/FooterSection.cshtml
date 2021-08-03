@@ -8,10 +8,9 @@
         <div class="row">
             <div class="col col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="newsletter">
-                    <h3>عضویت در خبر نامه</h3>
+                    <h3>@ViewBag.EmailSubscription.Title</h3>
                     <p>
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                        است، چاپگرها و متون بلکه روزنامه و مجله
+                        @ViewBag.EmailSubscription.ShortDescription
                     </p>
                     <div class="newsletter-form">
                         <form action="/Home/AddEmailSubscription" method="post" id="newsletter-form">
