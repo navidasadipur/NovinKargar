@@ -64,7 +64,7 @@ namespace NovinKargar.Web.Areas.Admin.Controllers
                     ArticleImage.SaveAs(Server.MapPath("/Files/ArticleImages/Temp/" + newFileName));
 
                     // Resize Image
-                    ImageResizer image = new ImageResizer(1200, 1200,true);
+                    ImageResizer image = new ImageResizer(945, 640,true);
                     image.Resize(Server.MapPath("/Files/ArticleImages/Temp/" + newFileName),
                         Server.MapPath("/Files/ArticleImages/Image/" + newFileName));
 
@@ -128,7 +128,7 @@ namespace NovinKargar.Web.Areas.Admin.Controllers
                     ArticleImage.SaveAs(Server.MapPath("/Files/ArticleImages/Temp/" + newFileName));
 
                     // Resize Image
-                    ImageResizer image = new ImageResizer(1200, 1200,true);
+                    ImageResizer image = new ImageResizer(945, 640, true);
                     image.Resize(Server.MapPath("/Files/ArticleImages/Temp/" + newFileName),
                         Server.MapPath("/Files/ArticleImages/Image/" + newFileName));
 
