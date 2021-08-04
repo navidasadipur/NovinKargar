@@ -6555,6 +6555,14 @@ img {
   color: #933f94;
 }
 
+.blog-single-section .tag-share .share ul > li:nth-child(5) a {
+    color: orangered;
+}
+
+.blog-single-section .tag-share .share ul > li:nth-child(6) a {
+    color: red;
+}
+
 .blog-single-section .author-box {
   padding: 35px 40px 25px;
   margin: 70px 0;

@@ -236,6 +236,8 @@ namespace NovinKargar.Web.Controllers
             model.Twitter = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Twitter);
             model.Instagram = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Instagram);
             model.Linkedin = _staticContentRepo.GetStaticContentDetail((int)StaticContents.linkedin);
+            model.Youtube = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Youtube);
+            model.Pinterest = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Pinterest);
 
             return PartialView(model);
         }
