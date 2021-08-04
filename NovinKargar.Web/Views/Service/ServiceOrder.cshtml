@@ -241,7 +241,7 @@
                         </div>
                         <div class="form-textarea des-form">
 
-                            @Html.TextAreaFor(model => model.Description, 4, 4, new { htmlAttributes = new { placeholder = "توضیحات لازم را بنویسید" } })
+                            @Html.TextAreaFor(model => model.Description, 4, 4, new { @placeholder = "توضیحات لازم را بنویسید" } )
                             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-submit btn-form">
